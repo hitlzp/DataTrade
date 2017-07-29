@@ -15,7 +15,7 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 
-from account.views import login,register,Login,CheckCode,logout,emailverifi
+from account.views import login,register,logout,emailverifi
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
@@ -23,7 +23,5 @@ urlpatterns = [
     url(r'^register/$', register),
     url(r'^logout/$', logout),
     url(r'^verification/$', emailverifi),
-    url(r'^login2/', Login),
-    url(r'^checkcode/', CheckCode),
     
 ]

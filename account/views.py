@@ -1,10 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from django.shortcuts import render_to_response,HttpResponse
-from account.Helper import Checkcode
+from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.views.decorators.csrf import csrf_protect
-import StringIO
 from django.contrib import auth
 from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
@@ -28,9 +26,12 @@ def login(request):
         password = post["password"]
         user = auth.authenticate(username=email, password=password)
         if (user is not None):
-            if user.is_active:
+            if user.is_active and user.is_staff == 0:#普通用户登陆
                 auth.login(request, user)
                 return HttpResponseRedirect("/main/")
+            elif user.is_active and user.is_staff == 1:#管理员登陆
+                auth.login(request, user)
+                return HttpResponseRedirect("/Adminmain/")
             else:
                 content = '用户尚未激活，请去邮箱激活'
         else:
@@ -124,32 +125,3 @@ def emailverifi(request):#验证邮箱
         if str(theuser[0].date_joined) > str(date):
             User.objects.filter(username = username).update(is_active = 1)
             return HttpResponseRedirect("/main/")
-
-def CheckCode(request):
-    mstream = StringIO.StringIO()
-    validate_code = Checkcode.create_validate_code()
-    img = validate_code[0] 
-    img.save(mstream, "GIF")
-    
-    #将验证码保存到session
-    request.session["CheckCode"] = validate_code[1]
-    
-    return HttpResponse(mstream.getvalue()) 
-
-
-def Login(request):
-    print request.method
-    if request.method == 'POST':
-        username = request.POST.get('username')
-        password = request.POST.get('pwd')
-        check_code = request.POST.get('checkcode')
-        #从session中获取验证码
-        session_code = request.session["CheckCode"]
-        if check_code.strip().lower() != session_code.lower():
-            return HttpResponse('验证码不匹配')
-        else:
-            return HttpResponse('验证码正确')          
-        
-    return render_to_response('login2.html',{'error':"",'username':'','pwd':'' })
-
-
