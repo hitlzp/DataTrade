@@ -6,6 +6,12 @@
 	<link href="/static/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	<link href="/static/css/froala_editor.min.css" rel="stylesheet" type="text/css">
 	<link type="text/css" href="/static/css/bootstrap.min.css" rel="stylesheet" />
+
+	<link rel="stylesheet" type="text/css" href="/static/my_uEditor/third-party/SyntaxHighlighter/shCoreDefault.css">
+	<script type="text/javascript" src="/static/my_uEditor/third-party/SyntaxHighlighter/shCore.js"></script>
+	<script type="text/javascript" charset="utf-8" src="/static/my_uEditor/ueditor.config.js"></script>
+	<script type="text/javascript" charset="utf-8" src="/static/my_uEditor/ueditor.all.min.js"> </script>
+	<script type="text/javascript" charset="utf-8" src="/static/my_uEditor/lang/zh-cn/zh-cn.js"></script>
 	<style>
 		body {
 			text-align: center;
@@ -24,6 +30,8 @@
 			});
 		});	  
 	});
+	var ue = UE.getEditor('editor');
+	SyntaxHighlighter.all();
 </script>
 </head>
 
@@ -45,25 +53,8 @@
 						<input type="text" class="form-control" placeholder="类别" id="type" style = "width: 23%;float: left;margin-left: 2%;" >
 						<input type="text" class="form-control"  placeholder="作者" id="author" style = "width: 23%;float: left;margin-left: 2%;" >
 					</div>
-					
-					<section id="editor" style = "width:100%">
-						<div id='edit' style="margin-top: 30px;">
-
-							<h1 style="text-align: center;"><span style="background-color: #CCCCCC; color: rgb(32, 18, 17); font-size: 28px;">2017哈工<strong>大“大数据与商务分析”国际暑期学校圆满结业</strong></span></h1>
-
-							<p><br></p>
-
-							<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7月11日，为期8天的哈工大“大数据与商务分析”国际暑期学校在哈工大科学园举行了结业典礼。此次国际暑期学校由哈工大管理学院主办，邀请到全球范围内信息系统及相关领域的资深学者和业界专家作为授课讲师，讲授大数据的发展方向与前沿专题，旨在为广大青年学者和学生们提供向一流学者学习、系统提高研究水平的机会。同时构建一个相互学习和交流的平台，帮助国内外学者建立长期的合作关系，促进高水平学术研究。</p>
-
-							<p><img class="fr-fin" data-fr-image-preview="false" alt="Image title" src="http://syy.freep.cn/588049/QQ图片20170129134308.jpg" width="496"></p>
-
-							<p><br></p>
-
-							<p><span style="box-sizing: border-box; font-family: 宋体; font-size: 18px;">&nbsp;&nbsp;经过全球范围内遴选，</span><span style="box-sizing: border-box; font-family: 宋体;">&nbsp;2017</span><span style="box-sizing: border-box; font-family: 宋体; font-size: 18px;">年暑期学校共有高校教师、企业人员、在校学生</span><span style="box-sizing: border-box; font-family: 宋体;">231</span><span style="box-sizing: border-box; font-family: 宋体; font-size: 18px;">人</span><span style="box-sizing: border-box; font-family: 宋体;">和</span><span style="box-sizing: border-box; font-family: 宋体; font-size: 18px;">来自美国、英国、澳大利亚、韩国、中国等地的</span><span style="box-sizing: border-box; font-family: 宋体;">69</span><span style="box-sizing: border-box; font-family: 宋体; font-size: 18px;">余家高校、企业单位</span><span style="box-sizing: border-box; font-family: 宋体;">一同参加</span><span style="box-sizing: border-box; font-family: 宋体; font-size: 18px;">。哈工大大数据集团作为合作单位在活动中全面亮相，</span><span style="box-sizing: border-box; color: rgb(62, 62, 62); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 29px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial; font-family: 宋体; line-height: 30px; font-size: 18px;">集团人力资源总监兼创新中心负责人董景蕊出席结业典礼。</span><br></p>
-
-							<p><br></p>
-						</div>
-					</section>
+					<br></br>
+					<script id="editor" type="text/plain" style="width:auto;height:500px;"></script>
 					<input type="button"  class="btn btn-primary" onClick = "copyText()" value="提交" />
 				</form>
 			</div>
@@ -96,7 +87,7 @@
     		if(document.getElementById("title").value != '' && document.getElementById("type").value != '' && $(".froala-element").html()!= '')
     		{
     			var post_data ={
-    				"content":$(".froala-element").html(),
+    				"content":UE.getEditor('editor').getContent(),
     				'title':document.getElementById("title").value,
     				'date':document.getElementById("date").value,
     				'type':document.getElementById("type").value,
@@ -108,8 +99,8 @@
 			traditional:true,  //加上此项可以传数组
 			data : post_data, //JSON数据
 			success: function(mydata){
-					alert("新闻发布成功！");
-				  window.location.href="/Adminmain/"
+				alert("新闻发布成功！");
+				window.location.href="/Adminmain/"
 			},
 		});
     		}

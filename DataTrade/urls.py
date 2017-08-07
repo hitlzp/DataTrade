@@ -16,7 +16,10 @@ from django.conf.urls import include, url
 from django.contrib import admin
 
 from account.views import login,register,logout,emailverifi,Adminmain,Adminusersearch,Adminuseredit  
-from news.views import Addnews,savenews
+from news.views import Addnews,savenews,main,news_detail,news_list
+
+import os
+ROOT = os.path.dirname(__file__)
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
@@ -29,5 +32,13 @@ urlpatterns = [
     url(r'^Admin_User_Search/$', Adminusersearch),
     url(r'^Admin_Edit_User/$', Adminuseredit),
     url(r'^savenews/$', savenews),
+    url(r'^main/$', main),
+    url(r'^news_detail/$', news_detail),
+    url(r'^news_list/$', news_list),
     
+    #uEditor ---start
+    url(r'ueEditorControler','news.controller.handler'),
+    url( r'^UE/(?P<path>.*)$', 'django.views.static.serve',{ 'document_root': (ROOT+"/UE").replace('\\','/')}),
+    url( r'^upload/(?P<path>.*)$', 'django.views.static.serve',{ 'document_root': (ROOT+"/upload").replace('\\','/') }),
+    #uEditor ---end
 ]
