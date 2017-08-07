@@ -15,7 +15,8 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 
-from account.views import login,register,logout,emailverifi
+from account.views import login,register,logout,emailverifi,Adminmain,Adminusersearch,Adminuseredit  
+from news.views import Addnews,savenews
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
@@ -23,5 +24,10 @@ urlpatterns = [
     url(r'^register/$', register),
     url(r'^logout/$', logout),
     url(r'^verification/$', emailverifi),
+    url(r'^addnews/$', Addnews),
+    url(r'^Adminmain/$', Adminmain),
+    url(r'^Admin_User_Search/$', Adminusersearch),
+    url(r'^Admin_Edit_User/$', Adminuseredit),
+    url(r'^savenews/$', savenews),
     
 ]

@@ -12,6 +12,8 @@ from email.mime.text import MIMEText
 from email.utils import formataddr
 import datetime
 
+from django.db import connection, transaction  
+
 my_sender='15754603160@163.com' #发件人邮箱账号，为了后面易于维护，所以写成了变量
 emailurl = '127.0.0.1:8000/verification?'
 
@@ -19,7 +21,10 @@ emailurl = '127.0.0.1:8000/verification?'
 def login(request):
     content = ''
     if request.user.id:
-        return HttpResponseRedirect("/main/")
+        if User.objects.filter(id = request.user.id)[0].is_staff== 0:
+            return HttpResponseRedirect("/main/")
+        else:
+            return HttpResponseRedirect("/Adminmain/")
     if request.POST:
         post = request.POST
         email = post["email"]
@@ -96,7 +101,7 @@ def register(request):
 
 def logout(request):#注销
     auth.logout(request)
-    return HttpResponseRedirect("/main/")
+    return HttpResponseRedirect("/login/")
 
 def mail(request, url, my_user):#发邮件
     ret=True
@@ -125,3 +130,43 @@ def emailverifi(request):#验证邮箱
         if str(theuser[0].date_joined) > str(date):
             User.objects.filter(username = username).update(is_active = 1)
             return HttpResponseRedirect("/main/")
+        
+def Adminmain(request):
+    admin_id = request.user.id
+    admin_name = User.objects.filter(id = admin_id)[0].username
+    row = User.objects.filter(is_staff = 0)
+    return render_to_response("admin-users.html",{"admin_name":admin_name,"allusers":row},context_instance=RequestContext(request))
+
+def Adminusersearch(request):
+    searched_user = ''
+    admin_id = request.user.id
+    admin_name = User.objects.filter(id = admin_id)[0].username
+    get = request.GET
+    if get:
+        searched_user = User.objects.filter(first_name = get["username"])
+    print searched_user
+    content = {"admin_name":admin_name,"allusers":searched_user}
+    return render_to_response("admin-users -search.html",content,context_instance=RequestContext(request))
+
+def Adminuseredit(request):
+    state = ''
+    admin_id = request.user.id
+    admin_name = User.objects.filter(id = admin_id)[0].username
+    get = request.GET
+    person = User.objects.get(id = get["userid"])
+    thisuser = User.objects.filter(id = get["userid"])[0]
+    if thisuser.is_active == 1:
+        state = "用户已激活"
+    else:
+        state = "用户未激活"
+        
+    post = request.POST
+    if post:
+        if post["password"] != '':
+            person.set_password(post["password"])
+            person.save()
+        if post["first_name"] != '':
+            User.objects.filter(id = thisuser.id).update(first_name = post["first_name"])
+    content = {"admin_name":admin_name,"thisuser":thisuser,"state":state,"date_joined":str(thisuser.date_joined).split('.')[0],\
+               "last_login":str(thisuser.last_login).split('.')[0]}
+    return render_to_response("admin-users - edituser.html",content,context_instance=RequestContext(request))

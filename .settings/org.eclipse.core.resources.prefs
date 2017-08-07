@@ -2,3 +2,5 @@ eclipse.preferences.version=1
 encoding//DataTrade/settings.py=utf-8
 encoding//account/models.py=utf-8
 encoding//account/views.py=utf-8
+encoding//news/models.py=utf-8
+encoding//news/views.py=utf-8
