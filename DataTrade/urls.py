@@ -15,7 +15,7 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 
-from account.views import login,register,logout,emailverifi,Adminmain,Adminusersearch,Adminuseredit  
+from account.views import login,register,logout,emailverifi,Adminmain,Adminusersearch,Adminuseredit,phomepage,mymess  
 from news.views import Addnews,savenews,main,news_detail,news_list
 
 import os
@@ -35,6 +35,8 @@ urlpatterns = [
     url(r'^main/$', main),
     url(r'^news_detail/$', news_detail),
     url(r'^news_list/$', news_list),
+    url(r'^phomepage/$', phomepage),
+    url(r'^mymess/$', mymess),
     
     #uEditor ---start
     url(r'ueEditorControler','news.controller.handler'),

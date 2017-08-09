@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>哈工大数据集团数据市场</title>
+<meta name="keywords" content="哈工大数据集团数据市场" />
+<meta name="description" content="哈工大数据集团数据市场" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7"/>
+<link type="text/css" href="/static/css/style10.css" rel="stylesheet" />
+<script type="text/javascript" src="/static/js/jquery-1.2.6.pack.js"></script>
+<!--解决 IE6 背景缓存-->
+<!--[if IE 6]><script type="text/javascript">document.execCommand("BackgroundImageCache", false, true);</script><![endif]-->
+</head>
+
+<body>
+
+<div class="container header">
+	<a class="logo" title="哈工大数据集团数据市场" href="index.html"><img src="/static/img/logo.png" width="405" height="60" alt="哈工大数据集团数据市场" /></a>
+	<script type="text/javascript" src="js/function.js"></script>
+	<div class="clear"></div>
+	<div class="navbox">
+		<span class="arbg arrowleft"></span>
+		<span class="arbg arrowright"></span>
+		<ul>
+			<li><a href="/main">官网首页</a></li>
+			<li><a href="/mymess">个人信息</a></li>
+			<li><a href="#">数据拍卖订单</a></li>
+			<li><a href="#">数据置换订单</a></li>
+			<li><a href="#">******</a></li>
+			<li><a href="#">******</a></li>
+		</ul>
+	</div>
+</div><!--header end-->
+
+<div class="container content">
+
+	<div class="slidebox">
+		<ul class="slidepic">
+			<li><a href="#"><img src="/static/img/b5.jpg" width="1000" height="360" alt="" /></a></li>
+			<li><a href="#"><img src="/static/img/b3.jpg" width="1000" height="360" alt="" /></a></li>
+		</ul>
+		<div class="mask"></div>
+		<ul class="slidebtn">
+			<li class="current">1</li>
+			<li>2</li>
+		</ul>
+	</div><!--slidebox end-->
+
+	<script type="text/javascript">
+	$(function(){
+	
+		// 图片左右翻滚
+		var size = $('.slidebtn>li').length;
+		var frist = 0;
+		var datetime;
+		$('.slidebtn li').mouseover(function(){
+			frist = $('.slidebtn li').index(this);
+			showpic(frist);
+		}).eq(0).mouseover();
+		
+		$('.slidebox').hover(function(){
+			clearInterval(datetime);
+		},function(){
+			datetime = setInterval(function(){
+				showpic(frist)
+				frist++;
+				if(frist==size){
+					frist=0;
+				}
+			},3000);
+		}).trigger('mouseleave');
+	
+		function showpic(frist){
+			var imgheight = $('.slidebox').width();
+			$('.slidepic').stop(true,false).animate({left:-imgheight*frist},600)
+			$('.slidebtn li').removeClass('current').eq(frist).addClass('current');
+		};
+		
+	});
+	</script>	
+	
+	
+</div><!--content end-->
+
+<div class="container footer">
+	<div class="quicknav"><a href="terms.html">使用条款</a><span>|</span><a href="statement.html">隐私权声明</a><span>|</span><a href="pledge.html">服务承诺</a><span>|</span><a href="contact.html">联系我们</a><span>|</span><a href="#">企业邮箱</a></div>
+	<div class="copyright">Copyright © 哈工大数据集团数据市场. All Rights Reserved.<span>|</span>版权所有 哈工大数据集团<span></div>
+</div><!--footer end-->
+	
+</body>
+</html>

@@ -170,3 +170,18 @@ def Adminuseredit(request):
     content = {"admin_name":admin_name,"thisuser":thisuser,"state":state,"date_joined":str(thisuser.date_joined).split('.')[0],\
                "last_login":str(thisuser.last_login).split('.')[0]}
     return render_to_response("admin-users - edituser.html",content,context_instance=RequestContext(request))
+
+
+def phomepage(request):#个人主页
+    return render_to_response("phomepage.html",context_instance=RequestContext(request))
+
+def mymess(request):#个人信息
+    userid = request.user.id
+    thisuser = User.objects.filter(id = userid)[0]
+    if thisuser.is_active == 1:
+        state = "已激活"
+    else:
+        state = "未激活"
+    content = {"thisuser":thisuser,"state":state,"date_joined":str(thisuser.date_joined).split('.')[0],\
+               "last_login":str(thisuser.last_login).split('.')[0]}
+    return render_to_response("mymess.html",content,context_instance=RequestContext(request))

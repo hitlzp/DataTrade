@@ -4,6 +4,7 @@ from django.template import RequestContext
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_protect,csrf_exempt
 from news.models import news
+from django.contrib.auth.models import User
 # Create your views here.
 def Addnews(request):
     return render_to_response("Addnews.html",context_instance=RequestContext(request))
@@ -24,6 +25,9 @@ def savenews(request):
     return JsonResponse({"rr":1})
 
 def main(request):
+    first_name = ''
+    display1 = ''
+    display2 = 'none'
     add = []
     all_news = news.objects.filter(type = '市场新闻')
     print len(all_news)
@@ -34,7 +38,11 @@ def main(request):
     else:
         for i in range(0, len(all_news)):
             add.append(all_news[len(all_news)-i-1])
-    content = {"mynews":add}
+    if request.user.id:
+        first_name = User.objects.filter(id = request.user.id)[0].first_name
+        display1 = 'none'
+        display2=''
+    content = {"mynews":add,"first_name":first_name,"display1":display1,"display2":display2}
     return render_to_response("usermain.html",content,context_instance=RequestContext(request))
 
 def news_detail(request):
