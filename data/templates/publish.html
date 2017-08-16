@@ -1,0 +1,323 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="keywords" content="哈工大数据集团数据市场" />
+	<meta name="description" content="哈工大数据集团数据市场" />
+	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7"/>
+	<link type="text/css" href="/static/css/style10.css" rel="stylesheet" />
+	<link href="/static/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+	<script type="text/javascript" src="/static/js/placeImage.js"></script>
+	<script type="text/javascript" src="/static/js/jquery.min.js"></script> 
+	<script type="text/javascript" src="/static/js/jquery.uploadifive.min.js"></script> 
+	<link rel="stylesheet" type="text/css" href="/static/css/uploadifive.css" />
+
+	<title>哈工大数据集团数据市场</title>
+
+	<style>
+		.upload{position: absolute;left: 50%;top: 60%;font-family: cursive;font-size: 15px;}
+		.upload2{position: absolute;left: 65%;top:60%;font-family: cursive;font-size: 15px;color:red;}
+		.inputpicture{height:100px;width:100px;opacity:0;filter:alpha(opacity=0);cursor:pointer;position: absolute;top:53.5%;left: 50%;z-index:998;}
+	</style>
+
+</head>
+
+<body>
+
+	<div class="container header">
+		<a class="logo" title="哈工大数据集团数据市场" href="index.html"><img src="/static/img/logo.png" width="405" height="60" alt="哈工大数据集团数据市场" /></a>
+		<script type="text/javascript" src="js/function.js"></script>
+		<div class="clear"></div>
+
+	</div><!--header end-->
+
+	<div class="container content">
+
+		<div class="picbox"><img src="/static/img/news-pic.jpg" width="1000" height="157" /></div>
+
+		<div class="pubox" style = "min-height:400px">
+			<div class="left" id="LeftBox">
+				<div class="left01">
+					<div class="left01_right"></div>
+					<div class="left01_left"></div>
+					<div class="left01_c">用户：{{thisuser.first_name}}</div>
+				</div>
+				<div class="left02">
+					<div class="left02top">
+						<div class="left02top_right"></div>
+						<div class="left02top_left"></div>
+						<div class="left02top_c">个人信息</div>
+					</div>
+					<div class="left02down">
+						<div class="left02down01"><a  href="/phomepage/">
+							<div id="Bf999" class="left02down01_img"></div>
+							个人信息</a>
+						</div>
+					</div>
+				</div>
+				<div class="left02">
+					<div class="left02top">
+						<div class="left02top_right"></div>
+						<div class="left02top_left"></div>
+						<div class="left02top_c">卖家窗口</div>
+					</div>
+					<div class="left02down">
+						<div class="left02down01"><a  href="/uploaddata/">
+							<div id="Bf080" class="left02down01_img"></div>
+							发布数据</a>
+						</div>
+						<div class="left02down01"><a  href="/mydata/">
+							<div id="Bf080" class="left02down01_img"></div>
+							已发布数据</a>
+						</div>
+						<div class="left02down01"><a  href="/phomepage/">
+							<div id="Bf081" class="left02down01_img"></div>
+							置换订单</a>
+						</div>
+						<div class="left02down01"><a  href="/phomepage/">
+							<div id="Bf081" class="left02down01_img"></div>
+							数据一口价订单</a>
+						</div>
+						<div class="left02down01"><a  href="/phomepage/">
+							<div id="Bf081" class="left02down01_img"></div>
+							数据议价订单</a>
+						</div>
+						<div class="left02down01"><a  href="/phomepage/">
+							<div id="Bf080" class="left02down01_img"></div>
+							数据拍卖订单</a>
+						</div>
+					</div>
+				</div>
+				<div class="left02">
+					<div class="left02top">
+						<div class="left02top_right"></div>
+						<div class="left02top_left"></div>
+						<div class="left02top_c">买家窗口</div>
+					</div>
+					<div class="left02down">
+						<div class="left02down01"><a  href="/phomepage/">
+							<div id="Bf080" class="left02down01_img"></div>
+							已有数据</a>
+						</div>
+						<div class="left02down01"><a  href="/phomepage/">
+							<div id="Bf081" class="left02down01_img"></div>
+							置换订单</a>
+						</div>
+						<div class="left02down01"><a  href="/phomepage/">
+							<div id="Bf081" class="left02down01_img"></div>
+							数据一口价订单</a>
+						</div>
+						<div class="left02down01"><a  href="/phomepage/">
+							<div id="Bf081" class="left02down01_img"></div>
+							数据议价订单</a>
+						</div>
+						<div class="left02down01"><a  href="/phomepage/">
+							<div id="Bf080" class="left02down01_img"></div>
+							数据拍卖订单</a>
+						</div>
+					</div>
+				</div>
+				<div class="left01">
+					<div class="left03_right"></div>
+					<div class="left01_left"></div>
+					<div class="left03_c" onclick="window.open('/logout/','_self')">安全退出</div>
+				</div>
+			</div>
+
+
+			<div class="rrcc" id="RightBox">
+				<div class="right" id="li010">
+					<div class="right01"  style="text-align: center;">发布数据</div>
+				</div>
+			</div>
+			<div class="rrcc" style = "width: auto;padding-left: 20px">
+				<form enctype="multipart/form-data"  method="post" action=""  class="basic-grey">
+				{% csrf_token %}
+				
+				<label>
+					<span>图片上传 :</span>
+					<input class = "inputpicture" id="f" type="file" name="img" onchange="change1()" rrequired="required"/>
+					<div id = "ii" class="upload">点击上传图片</div>
+					<div id = "ii" class="upload2">{{text}}</div>
+					<p>
+						<img id="preview" alt="" name="pic" width="150px" height="100px"/>
+					</p>
+				</label>
+				<label id = 'dataname'>
+					<span>数据名称 :</span>
+					<input id="dataname" type="text" name="dataname" placeholder="数据名称" required="required"/>
+				</label>
+				<label>
+					<span>数据置换</span><select id = sel1 name="sel1">
+					<option value=1>允许置换</option>
+					<option value=0>不允许置换</option>
+				</select>
+			</label>
+			<label>
+				<span>数据价格 :</span>
+				<input id="price" type="text" name="price" placeholder="单位：元"  required="required"/>
+			</label>
+			<label>
+				<span>人数限制 :</span>
+				<select id = 'sel2' name="sel2" onchange="setsel()">
+					<option value=0>不限人数</option>
+					<option value=1>限制人数</option>
+				</select>
+			</label>
+			<label id = 'usersum' style= "display:none">
+				<span>人数 :</span>
+				<input id="usersum" type="text" name="usersum" placeholder="最多允许购买的人数" />
+			</label>
+			<label>
+				<span>数据类型:</span>
+				<select id =  sel3 name="sel3">
+					<option value=1>生活服务类数据</option>
+					<option value=2>金融类数据</option>
+					<option value=3>教育类数据</option>
+					<option value=4>交通运输类数据</option>
+					<option value=5>建筑房地产类数据</option>
+					<option value=6>政府类数据</option>
+					<option value=7>能源类数据</option>
+					<option value=8>农业类数据</option>
+					<option value=9>医疗卫生类数据</option>
+					<option value=10>其他类数据</option>
+				</select>
+			</label>
+
+			<label>
+				<span>数据详情介绍 :</span>
+				<textarea id="message" name="message" placeholder="编辑数据的介绍" required="required"></textarea>
+			</label>
+
+			<label>
+				<span>数据上传:</span>
+				<div id="queue" ></div> 
+				<input  id="file_upload" name="file_upload" type="file" multiple="false">
+			</label>
+			<br></br>
+			<label style = "clear:both">
+				<span>demo上传:</span>
+				<div id="queue2" ></div>
+				<input  id="file_upload2" name="file_upload2" type="file" multiple="false" style = "float:right"> 
+			</label>
+			<label>
+				<span>&nbsp;</span>
+				<input type="submit" id = "submit" class="button" value="提交审核"/>
+			</label>
+			
+		</form> 
+			</div>
+
+		</div>
+
+	</div><!--content end-->
+
+	<div class="container footer">
+		<div class="quicknav"><a href="terms.html">使用条款</a><span>|</span><a href="statement.html">隐私权声明</a><span>|</span><a href="pledge.html">服务承诺</a><span>|</span><a href="contact.html">联系我们</a><span>|</span><a href="#">企业邮箱</a></div>
+		<div class="copyright">Copyright © 哈工大数据集团数据市场. All Rights Reserved.<span>|</span>版权所有 哈工大数据集团<span></div>
+	</div><!--footer end-->
+
+<script type="text/javascript"> 
+	function setsel()
+	{
+		if($('#sel2 option:selected').val() == 1)
+		{
+			document.getElementById("usersum").style.display="";
+		}
+		else
+		{
+			document.getElementById("usersum").style.display="none";
+		}
+	}
+	$(function() { 
+		$('#file_upload').uploadifive({ 
+			'debug': true,
+                'auto' : true,  //是否自动上传，默认true
+                'uploadScript'     : '/upload_image/',  //上传路径
+                'checkScript'      : '/check_existing/',
+                'fileObjName': 'Filedata',
+                'formData'         : {'thetype':1},
+                'fileTypeExts': '*.*',
+                'buttonText' : '上传',  //上传按钮显示文本
+                'queueID' : 'queue', //	进度条的显示位置
+                'multi' : true,   //是否允许多个文件上传，默认为true
+               'fileSizeLimit'   : 5242880,  //允许文件上传的最大尺寸
+                'uploadLimit' : 5,  //一次可以上传的最大文件数
+                'queueSizeLimit'  : 5, //允许队列中存在的最大文件数
+                //'removeCompleted' : false 隐藏完成上传的文件，默认为false
+                'height' : 20,
+                'width' : 70,
+                'onUploadComplete' : function(file, data) {  //文件上传成功后执行
+                	
+                	var obj = JSON.parse(data);
+                	if (obj.img == "500") {
+                		alert("系统异常！");
+                	} else {
+                		$("#frontSide").val(obj.img);
+                		document.getElementById("submit").disabled = false;
+                	}
+                },
+                onCancel : function(file) {  //	文件被删除时触发
+                	$("#frontSide").val("");
+                	/* 注意：取消后应重新设置uploadLimit */
+                	$data = $(this).data('uploadifive'),
+                	settings = $data.settings;
+                	settings.uploadLimit++;
+                	alert(file.name + " 已取消上传~!");
+                },
+                onFallback : function() {  //	HTML5 API不支持的浏览器触发
+                	alert("该浏览器无法使用!");
+                },
+                onUpload : function(file) {  //	开始上传队列时触发
+                    document.getElementById("submit").disabled = true;//当开始上传文件，要防止上传未完成而表单被提交
+                } 
+            }); 
+
+
+		$('#file_upload2').uploadifive({ 
+			'debug': true,
+                'auto' : true,  //是否自动上传，默认true
+                'uploadScript'     : '/upload_image/',  //上传路径
+                'checkScript'      : '/check_existing/',
+                'fileObjName': 'Filedata',
+                'formData'         : {'thetype':2},
+                'fileTypeExts': '*.*',
+                'buttonText' : '上传',  //上传按钮显示文本
+                'queueID' : 'queue2', //	进度条的显示位置
+                'multi' : true,   //是否允许多个文件上传，默认为true
+               'fileSizeLimit'   : 5242880,  //允许文件上传的最大尺寸
+                'uploadLimit' : 5,  //一次可以上传的最大文件数
+                'queueSizeLimit'  : 5, //允许队列中存在的最大文件数
+                //'removeCompleted' : false 隐藏完成上传的文件，默认为false
+                'height' : 20,
+                'width' : 70,
+                'onUploadComplete' : function(file, data) {  //文件上传成功后执行
+                	
+                	var obj = JSON.parse(data);
+                	if (obj.img == "500") {
+                		alert("系统异常！");
+                	} else {
+                		$("#frontSide").val(obj.img);
+                		document.getElementById("submit").disabled = false;
+                	}
+                },
+                onCancel : function(file) {  //	文件被删除时触发
+                	$("#frontSide").val("");
+                	/* 注意：取消后应重新设置uploadLimit */
+                	$data = $(this).data('uploadifive'),
+                	settings = $data.settings;
+                	settings.uploadLimit++;
+                	alert(file.name + " 已取消上传~!");
+                },
+                onFallback : function() {  //	HTML5 API不支持的浏览器触发
+                	alert("该浏览器无法使用!");
+                },
+                onUpload : function(file) {  //	开始上传队列时触发
+                    document.getElementById("submit").disabled = true;//当开始上传文件，要防止上传未完成而表单被提交
+                } 
+            }); 
+	}); 
+</script>
+</body>
+</html>

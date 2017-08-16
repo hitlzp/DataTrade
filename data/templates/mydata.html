@@ -1,0 +1,254 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>哈工大数据集团数据市场</title>
+	<meta name="keywords" content="哈工大数据集团数据市场" />
+	<meta name="description" content="哈工大数据集团数据市场" />
+	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7"/>
+	<link type="text/css" href="/static/css/style10.css" rel="stylesheet" />
+	<link type="text/css" href="/static/css/bootstrap.min.css" rel="stylesheet" />
+	<link type="text/css" href="/static/css/bootstrap-theme.min.css" rel="stylesheet" />
+
+	<script type="text/javascript" src="/static/js/jquery.min.js"></script> 
+
+</head>
+
+<body>
+
+	<div class="container header">
+		<a class="logo" title="哈工大数据集团数据市场" href="index.html"><img src="/static/img/logo.png" width="405" height="60" alt="哈工大数据集团数据市场" /></a>
+		<script type="text/javascript" src="js/function.js"></script>
+		<div class="clear"></div>
+
+	</div><!--header end-->
+
+	<div class="container content">
+
+		<div class="picbox"><img src="/static/img/news-pic.jpg" width="1000" height="157" /></div>
+
+		<div class="pubox" style = "min-height:400px">
+			<div class="left" id="LeftBox">
+				<div class="left01">
+					<div class="left01_right"></div>
+					<div class="left01_left"></div>
+					<div class="left01_c">用户：{{thisuser.first_name}}</div>
+				</div>
+				<div class="left02">
+					<div class="left02top">
+						<div class="left02top_right"></div>
+						<div class="left02top_left"></div>
+						<div class="left02top_c">个人信息</div>
+					</div>
+					<div class="left02down">
+						<div class="left02down01"><a  href="/phomepage/">
+							<div id="Bf999" class="left02down01_img"></div>
+							个人信息</a>
+						</div>
+					</div>
+				</div>
+				<div class="left02">
+					<div class="left02top">
+						<div class="left02top_right"></div>
+						<div class="left02top_left"></div>
+						<div class="left02top_c">卖家窗口</div>
+					</div>
+					<div class="left02down">
+						<div class="left02down01"><a  href="/uploaddata/">
+							<div id="Bf080" class="left02down01_img"></div>
+							发布数据</a>
+						</div>
+						<div class="left02down01"><a  href="/mydata/">
+							<div id="Bf080" class="left02down01_img"></div>
+							已发布数据</a>
+						</div>
+						<div class="left02down01"><a  href="/phomepage/">
+							<div id="Bf081" class="left02down01_img"></div>
+							置换订单</a>
+						</div>
+						<div class="left02down01"><a  href="/phomepage/">
+							<div id="Bf081" class="left02down01_img"></div>
+							数据一口价订单</a>
+						</div>
+						<div class="left02down01"><a  href="/phomepage/">
+							<div id="Bf081" class="left02down01_img"></div>
+							数据议价订单</a>
+						</div>
+						<div class="left02down01"><a  href="/phomepage/">
+							<div id="Bf080" class="left02down01_img"></div>
+							数据拍卖订单</a>
+						</div>
+					</div>
+				</div>
+				<div class="left02">
+					<div class="left02top">
+						<div class="left02top_right"></div>
+						<div class="left02top_left"></div>
+						<div class="left02top_c">买家窗口</div>
+					</div>
+					<div class="left02down">
+						<div class="left02down01"><a  href="/phomepage/">
+							<div id="Bf080" class="left02down01_img"></div>
+							已有数据</a>
+						</div>
+						<div class="left02down01"><a  href="/phomepage/">
+							<div id="Bf081" class="left02down01_img"></div>
+							置换订单</a>
+						</div>
+						<div class="left02down01"><a  href="/phomepage/">
+							<div id="Bf081" class="left02down01_img"></div>
+							数据一口价订单</a>
+						</div>
+						<div class="left02down01"><a  href="/phomepage/">
+							<div id="Bf081" class="left02down01_img"></div>
+							数据议价订单</a>
+						</div>
+						<div class="left02down01"><a  href="/phomepage/">
+							<div id="Bf080" class="left02down01_img"></div>
+							数据拍卖订单</a>
+						</div>
+					</div>
+				</div>
+				<div class="left01">
+					<div class="left03_right"></div>
+					<div class="left01_left"></div>
+					<div class="left03_c" onclick="window.open('/logout/','_self')">安全退出</div>
+				</div>
+			</div>
+
+
+			<div class="rrcc" id="RightBox">
+				<div class="right" id="li010">
+					<div id = 'tx' class="right01"  style="text-align: center;">已发布数据</div>
+				</div>
+				<div style = "float: right;margin-bottom: 20px;">
+					<select id = 'sel' name="sel" onchange="setsel()">
+						<option value=0>已发布数据</option>
+						<option value=1>审核中数据</option>
+						<option value=2>未通过数据</option>
+					</select>
+				</div>
+			</div>
+			<div class="rrcc" style = "width: auto;padding-left: 20px">
+				<table class="zebra" id = 'tb1'>  
+					<thead>  
+						<tr>  
+							<th>#</th>  
+							<th>数据</th>  
+							<th>价格</th>
+							<th>文件大小</th>  
+							<th>时间</th>    
+
+						</tr>  
+					</thead>  
+					<tfoot>  
+						<tr>  
+							<td> </td>  
+							<td></td>  
+							<td></td>
+							<td></td>  
+							<td></td>    
+						</tr>  
+					</tfoot>  
+					{% for data in mydata %}
+					<tr>  
+						<td>{{data.id}}</td>  
+						<td>{{data.dataname}}</td>  
+						<td>¥{{data.price}}</td> 
+						<td>{{data.file_scale}}</td>  
+						<td>{{data.post_time}}</td>  
+					</tr>  
+					{% endfor %}
+				</table> 
+				<table class="zebra" id = 'tb2' style = "display:none">  
+					<thead>  
+						<tr>  
+							<th>#</th>  
+							<th>数据</th>  
+							<th>价格</th>
+							<th>文件大小</th>  
+							<th>时间</th>    
+
+						</tr>  
+					</thead>  
+					<tfoot>  
+						<tr>  
+							<td> </td>  
+							<td></td>  
+							<td></td>
+							<td></td>  
+							<td></td>    
+						</tr>  
+					</tfoot>  
+					{% for data2 in mydata2 %}
+					<tr>  
+						<td>{{data2.id}}</td>  
+						<td>{{data2.dataname}}</td>  
+						<td>¥{{data2.price}}</td> 
+						<td>{{data2.file_scale}}</td>  
+						<td>{{data2.post_time}}</td>  
+					</tr>  
+					{% endfor %}
+				</table>
+				<table class="zebra" id = 'tb3' style = "display:none">  
+					<thead>  
+						<tr>  
+							<th>#</th>  
+							<th>数据</th>  
+							<th>未通过原因</th>  
+						</tr>  
+					</thead>  
+					<tfoot>  
+						<tr>  
+							<td> </td>  
+							<td></td>  
+							<td></td>  
+						</tr>  
+					</tfoot>  
+					{% for data3 in mydata3 %}
+					<tr>  
+						{% for i in data3 %}
+						<td>{{i}}</td>  
+						{% endfor %}
+					</tr>  
+					{% endfor %}
+				</table>
+			</div>
+
+		</div>
+
+	</div><!--content end-->
+
+	<div class="container footer">
+		<div class="quicknav"><a href="terms.html">使用条款</a><span>|</span><a href="statement.html">隐私权声明</a><span>|</span><a href="pledge.html">服务承诺</a><span>|</span><a href="contact.html">联系我们</a><span>|</span><a href="#">企业邮箱</a></div>
+		<div class="copyright">Copyright © 哈工大数据集团数据市场. All Rights Reserved.<span>|</span>版权所有 哈工大数据集团<span></div>
+	</div><!--footer end-->
+
+<script type="text/javascript"> 
+function setsel()
+{
+	if($('#sel option:selected').val() == 0)
+	{
+		document.getElementById("tb1").style.display="";
+		document.getElementById("tb2").style.display="none";
+		document.getElementById("tb3").style.display="none";
+		document.getElementById("tx").innerHTML = "已发布数据";
+	}
+	else if($('#sel option:selected').val() == 1)
+	{
+		document.getElementById("tb1").style.display="none";
+		document.getElementById("tb2").style.display="";
+		document.getElementById("tb3").style.display="none";
+		document.getElementById("tx").innerHTML = "审核中数据";
+	}
+	else
+	{
+		document.getElementById("tb1").style.display="none";
+		document.getElementById("tb2").style.display="none";
+		document.getElementById("tb3").style.display="";
+		document.getElementById("tx").innerHTML = "未通过数据";
+	}
+}
+</script>
+</body>
+</html>

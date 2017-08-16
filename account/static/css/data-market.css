@@ -1,0 +1,2609 @@
+﻿.data-market-module {
+  /* - -- ---< common.css >--- -- - */
+  /*!=======================================
+	 * college鐩綍鐨勯€氱敤鏍峰紡
+	 * by dingzhiyuan
+	 * =======================================*/
+  /*
+	   绾ц仈鍒楄〃CSS寮€濮�
+	   */
+  /*
+	绾ц仈鍒楄〃CSS缁撴潫
+	*/
+  /*鍒嗛〉寮€濮�*/
+  /*鍒嗛〉缁撴潫*/
+  /*璀﹀憡妗嗗紑濮�*/
+  /*璀﹀憡妗�*/
+  /*璀﹀憡妗嗙粨鏉�*/
+  /*
+	寮瑰嚭妗咰SS寮€濮�
+	*/
+  /*
+	寮瑰嚭妗咰SS缁撴潫
+	*/
+  /* - -- ---< detail.css >--- -- - */
+  /* - -- ---< disclaim.css >--- -- - */
+  /* - -- ---< index.css >--- -- - */
+  /* - -- ---< market.css >--- -- - */
+}
+.data-market-module html,
+.data-market-module body {
+  font-size: 12px;
+}
+.data-market-module li {
+  list-style-type: none;
+}
+.data-market-module a {
+  outline: none;
+}
+.data-market-module a:focus {
+  outline: none;
+}
+.data-market-module .tips-showmvs {
+  width: 400px;
+  height: 119px;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: 2000;
+  background-color: #fff;
+  left: 0;
+  top: 0;
+  box-shadow: 0 0 10px #B2B0B0;
+  border-radius: 5px;
+}
+.data-market-module .tips-showmvs .title-showmvs {
+  margin: 27px 0 0 30px;
+  font-size: 18px;
+  font-weight: 700;
+}
+.data-market-module .tips-showmvs .title-showmvs .tip-plesa {
+  margin: 40px 0 0 147px;
+}
+.data-market-module .tips-showmvs .title-showmvs .btos-clicks {
+  background-image: url("/static/images/allclosings.jpg");
+  width: 22px;
+  height: 23px;
+  float: right;
+  margin-right: 30px;
+  cursor: pointer;
+}
+.data-market-module .tips-showmvs .contonts-showmvs {
+  color: #949494;
+  font-size: 15px;
+  margin: 20px 0 0 30px;
+  text-align: left;
+}
+.data-market-module .tips-showmvs .botons-showmvs {
+  margin: 30px 0 0 185px;
+}
+.data-market-module .clearfix:before,
+.data-market-module .clearfix:after {
+  content: " ";
+  display: table;
+}
+.data-market-module .clearfix:after {
+  clear: both;
+}
+.data-market-module .container {
+  width: 1200px;
+  margin: 0 auto;
+}
+.data-market-module .app-header {
+  height: 112px;
+}
+.data-market-module .app-header:before,
+.data-market-module .app-header:after {
+  content: " ";
+  display: table;
+}
+.data-market-module .app-header:after {
+  clear: both;
+}
+.data-market-module .app-header .icon-logo {
+  font-size: 55px;
+}
+.data-market-module .app-header .app-logo {
+  float: left;
+  margin-top: 28px;
+}
+.data-market-module .app-header .app-split {
+  border-left: 1px solid #ccc;
+  float: left;
+  height: 31px;
+  margin-left: 24px;
+  margin-right: 24px;
+  margin-top: 37px;
+}
+.data-market-module .app-header .app-info-name {
+  color: #666;
+  float: left;
+  font-size: 26px;
+  height: 30px;
+  line-height: 30px;
+  margin-top: 34px;
+  text-align: center;
+}
+.data-market-module .app-header .app-searechs {
+  display: inline-block;
+  margin-top: 33px;
+  margin-left:15%;
+}
+.data-market-module .app-header .app-searechs .searchs-inputs {
+  height: 41px;
+  border: 2px solid #087928;
+  font-size: 15px;
+  font-family: "Microsoft Yahei";
+  letter-spacing: 1px;
+  padding-left: 10px;
+  width: 570px;
+  vertical-align: middle;
+  margin-right: -10px;
+  outline: medium;
+}
+.data-market-module .app-header .app-searechs .searchs-botons {
+  font-size: 20px;
+  color: #FFFFFF;
+  background-color: #087928;
+  padding: 8.5px 0 6.5px;
+  border: 2px solid #087928;
+  margin: 3px;
+  vertical-align: middle;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  width: 122px;
+}
+.data-market-module .nav-spaicl {
+  background-color: #017BBD;
+  float: left;
+}
+.data-market-module .nav-spaicl .defas-alls {
+  cursor: pointer;
+  padding: 16px 20px 16px 17px;
+  font-size: 18px;
+  display: block;
+  height: 100%;
+  color: #fff;
+  text-decoration: none;
+  width: 240px;
+  border-left: 3px solid #017BBD;
+}
+.data-market-module .nav-spaicl .defas-alls .circles-fades {
+  background: url("images/iconfont.png") no-repeat;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 10px;
+}
+.data-market-module .nav-spaicl .defas-alls:hover {
+  border-left: 3px solid #eab601;
+}
+.data-market-module .nav-spaicl .defas-spacial {
+  background-color: #00A9F1;
+  border-left: 3px solid #00A9F1;
+}
+.data-market-module .titile-listers {
+  position: absolute;
+  z-index: 20;
+  display: inline-block;
+  width: 280px;
+  color: #FFFFFF;
+  font-size: 17px;
+}
+.data-market-module .titile-listers .listers-class {
+  height: 22px;
+  cursor: pointer;
+  background-color: #337ab7;
+  width: 220px;
+  padding: 13px 30px 13px 27px;
+  display: block;
+  text-align: left;
+  border-bottom: 1px solid #4E9AD1;
+  border-left: 3px solid #337ab7;
+}
+.data-market-module .titile-listers .listers-class:hover {
+  border-left: 3px solid #eab601;
+}
+.data-market-module .titile-listers .listers-spacialc {
+  border-left: 3px solid #00A9F1;
+  background-color: #00A9F1;
+}
+.data-market-module .titile-listers .lefts-classa {
+  float: right;
+  background: url("images/poninterr.png") no-repeat;
+  background-position: 0 4px;
+  width: 14px;
+  height: 20px;
+}
+.data-market-module .app-navs {
+  min-width: 1200px;
+  background-color: #009FE2;
+}
+.data-market-module .app-navs:before,
+.data-market-module .app-navs:after {
+  content: " ";
+  display: table;
+}
+.data-market-module .app-navs:after {
+  clear: both;
+}
+.data-market-module .app-navs .nav-item:hover {
+  border-bottom: 3px solid #eab601;
+}
+.data-market-module .app-navs .cur {
+  background-color: #00A9F1;
+  border-bottom: 3px solid #00A9F1;
+}
+.data-market-module .app-navs .nav-item {
+  width: 112px;
+  text-align: center;
+  float: left;
+  position: relative;
+  cursor: pointer;
+}
+.data-market-module .app-navs .nav-item a {
+  padding: 16px 20px 13px;
+  font-size: 18px;
+  display: block;
+  color: #fff;
+  text-decoration: none;
+}
+.data-market-module .app-navs .nav-item:hover .sub-navs {
+  display: block;
+}
+.data-market-module .app-navs .nav-item .sub-navs {
+  position: absolute;
+  top: 55px;
+  z-index: 999;
+  display: none;
+  list-style: none;
+  border-top: 1px solid #4289c7;
+}
+.data-market-module .app-navs .nav-item .sub-navs a {
+  background-color: #337ab7;
+}
+.data-market-module .app-navs .nav-item .sub-navs a.cur,
+.data-market-module .app-navs .nav-item .sub-navs a:hover {
+  color: #f1d308;
+}
+.data-market-module .icon-user {
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  margin-right: 5px;
+  background: url("images/denglzc.png") center center no-repeat;
+}
+.data-market-module .mojing-flex-first {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #ccc;
+  display: block;
+  width: 100%;
+  padding: 10px 0 0 0;
+}
+.data-market-module .mojing-flex-first li a {
+  border-bottom: 1px solid #ccc;
+  color: #333;
+  cursor: pointer;
+  display: block;
+  font-size: 16px;
+  margin-left: 20px;
+  padding: 10px 20px 10px 0;
+  position: relative;
+}
+.data-market-module .flex-item .flex-content .mojing-flex-first li a {
+  font-size: 14px;
+}
+.data-market-module .mojing-flex-first > li:last-child > a {
+  border-bottom: 0 none;
+}
+.data-market-module .mojing-flex-first > li > a.select {
+  border-bottom: 1px solid #ccc;
+}
+.data-market-module .mojing-flex-first > li.last-li > a {
+  border-bottom: 0 none;
+}
+.data-market-module .mojing-flex-first li > a:hover,
+.data-market-module .mojing-flex-first li > .select {
+  color: #0e8fea;
+}
+.data-market-module .mojing-flex-first .flex-li > a > span,
+.data-market-module .mojing-flex-first .flex-thrid-li > a > span {
+  margin-right: 10px;
+  position: absolute;
+  right: 0;
+  top: 13px;
+}
+.data-market-module .flex-second {
+  background: #fafafa none repeat scroll 0 0;
+  display: none;
+  font-style: oblique;
+  padding: 0;
+  width: 100%;
+}
+.data-market-module .flex-second li {
+  width: 100%;
+}
+.data-market-module .flex-second li a {
+  background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+  border-bottom: 1px solid #f1f1f1;
+  color: #666;
+  display: block;
+  font-size: 14px;
+  padding: 10px 0 10px 10px;
+}
+.data-market-module .flex-second li a:hover,
+.data-market-module .flex-second li .select {
+  color: #0e8fea;
+}
+.data-market-module .flex-second .flex-thrid-li a:hover,
+.data-market-module .flex-second .flex-thrid-li .select {
+  color: #0e8fea;
+}
+.data-market-module .flex-thrid {
+  background: #ffffff none repeat scroll 0 0;
+  display: none;
+  font-style: oblique;
+  padding: 0 10px;
+}
+.data-market-module .flex-thrid li {
+  position: relative;
+}
+.data-market-module .flex-second .flex-thrid-li .flex-thrid li a {
+  background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+  border-bottom: 1px dotted #f1f1f1;
+  border-top: 0 none;
+  color: #666;
+  font-size: 12px;
+}
+.data-market-module .flex-second .flex-thrid-li .flex-thrid li a:hover {
+  color: #0e8fea;
+}
+.data-market-module .flex-second .flex-thrid-li .flex-thrid li .select {
+  color: #0e8fea;
+}
+.data-market-module .flex-item {
+  background-color: #fff;
+  border-radius: 5px;
+}
+.data-market-module .flex-item .title {
+  color: #333;
+  font-size: 16px;
+  font-weight: bold;
+  padding-left: 20px;
+  padding-top: 12px;
+}
+.data-market-module .flex-item .flex-content ul.mojing-flex-first {
+  border-radius: 0;
+  box-shadow: 0 0 0 #ccc;
+  padding: 0;
+}
+.data-market-module #Pagination {
+  display: inline-block;
+  overflow: hidden;
+}
+.data-market-module #Pagination .pagination {
+  height: 40px;
+  text-align: right;
+  font-family: "microsoft YaHei";
+  margin-right: 30px;
+}
+.data-market-module #Pagination .pagination a,
+.data-market-module #Pagination .pagination span {
+  cursor: pointer;
+  background-color: #eee;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  color: #888;
+  display: inline-block;
+  font-size: 12px;
+  line-height: 24px;
+  margin: 0 2px;
+  padding: 0 10px;
+}
+.data-market-module #Pagination .pagination a:hover {
+  background-color: #337ab7;
+  border: 1px solid #337ab7;
+  color: #fff;
+}
+.data-market-module #Pagination .pagination .current {
+  background-color: #0e8fe9;
+  border: 1px solid #0e8fe9;
+  color: #fff;
+  font-weight: 700;
+}
+.data-market-module #Pagination .pagination .current.prev,
+.data-market-module #Pagination .pagination .current.next {
+  border: 1px solid #eee;
+  font-weight: normal;
+}
+.data-market-module #Pagination .pagination .prev,
+.data-market-module #Pagination .pagination .next {
+  background-color: #eee;
+  border-radius: 5px;
+  border-right: medium none;
+  color: #666;
+  margin: 0 5px;
+  cursor: pointer;
+}
+.data-market-module #Pagination .pagination .prev {
+  border-right: none;
+}
+.data-market-module #Pagination .pagination .prev i {
+  background-position: -144px -1px;
+  *background-position: -144px -4px;
+}
+.data-market-module #Pagination .pagination .next i {
+  background-position: -156px -1px;
+  *background-position: -156px -4px;
+}
+.data-market-module #Pagination .pagination .pagination-break {
+  background: #eee none repeat scroll 0 0;
+  cursor: default;
+}
+.data-market-module .searchPage {
+  float: left;
+  padding: 8px 0;
+}
+.data-market-module .searchPage .page-sum {
+  padding: 11px 13px;
+  color: #999999;
+  font-family: 'Microsoft YaHei';
+  font-size: 14px;
+}
+.data-market-module .searchPage .page-go {
+  padding: 8px 0;
+  color: #999999;
+  font-family: 'Microsoft YaHei';
+  font-size: 14px;
+  padding: 10px 0\9;
+  *padding: 6px 0;
+}
+.data-market-module .searchPage .page-go input {
+  width: 21px;
+  height: 20px;
+  margin: 0 5px;
+  padding-left: 5px;
+  border: 1px solid #e4e4e4;
+}
+.data-market-module .searchPage .page-btn {
+  margin: 9px 0 5px 5px;
+  padding: 2px 5px;
+  background: #ffac59;
+  border-radius: 2px;
+  color: #ffffff;
+  font-family: 'Microsoft YaHei';
+  font-size: 14px;
+  text-decoration: none;
+}
+.data-market-module .login-resign-wram-wrap {
+  width: 396px;
+  margin: -15px auto 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  display: none;
+}
+.data-market-module .login-resign-wram-wrap.getpsd-wram-wrap {
+  margin-left: 94px;
+  text-align: center;
+  width: 170px;
+}
+.data-market-module .login-resign-wram-wrap .login-resign-wram {
+  background-color: #f7e5a3;
+  border: 1px solid #aaa;
+  border-radius: 3px;
+  color: #8c700c;
+  line-height: 30px;
+  margin: -23px -1px;
+  padding: 0;
+  position: absolute;
+  width: 100%;
+}
+.data-market-module .login-resign-wram-wrap .wram-span {
+  position: absolute;
+  margin-left: -8px;
+  margin-top: 9px;
+}
+.data-market-module .login-resign-wram-wrap .wram-span:before {
+  content: "";
+  float: left;
+  position: absolute;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 12px  solid transparent;
+  overflow: hidden;
+  border-top-color: #aaa;
+}
+.data-market-module .login-resign-wram-wrap .wram-span:after {
+  content: "";
+  float: left;
+  position: absolute;
+  margin-top: -1px;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 12px  solid transparent;
+  overflow: hidden;
+  border-top-color: #F7E5A3;
+}
+.data-market-module .Validform_checktip.Validform_wrong {
+  display: block;
+}
+.data-market-module .Validform_checktip.Validform_right {
+  display: none;
+}
+.data-market-module .Validform_loading {
+  padding-left: 20px;
+  background: url(images/onLoad.gif) no-repeat left center;
+}
+.data-market-module .Validform_error {
+  background-color: rgba(242, 225, 163, 0.55);
+}
+.data-market-module .Validform_error:focus {
+  border-color: rgba(242, 225, 163, 0.7);
+}
+.data-market-module #Validform_msg {
+  color: #7d8289;
+  font: 12px/1.5 tahoma, arial, sans-serif;
+  width: 280px;
+  -webkit-box-shadow: 2px 2px 3px #aaa;
+  -moz-box-shadow: 2px 2px 3px #aaa;
+  background: #fff;
+  position: absolute;
+  top: 0px;
+  right: 50px;
+  z-index: 99999;
+  display: none;
+  filter: progid:DXImageTransform.Microsoft.Shadow(Strength=3, Direction=135, Color='#999999');
+}
+.data-market-module #Validform_msg .iframe {
+  position: absolute;
+  left: 0px;
+  top: -1px;
+  z-index: -1;
+}
+.data-market-module #Validform_msg .Validform_title {
+  line-height: 25px;
+  height: 25px;
+  text-align: left;
+  font-weight: bold;
+  padding: 0 8px;
+  color: #fff;
+  position: relative;
+  background-color: #000;
+}
+.data-market-module #Validform_msg a.Validform_close:link,
+.data-market-module #Validform_msg a.Validform_close:visited {
+  line-height: 22px;
+  position: absolute;
+  right: 8px;
+  top: 0px;
+  color: #fff;
+  text-decoration: none;
+}
+.data-market-module #Validform_msg a.Validform_close:hover {
+  color: #cc0;
+}
+.data-market-module #Validform_msg .Validform_info {
+  padding: 8px;
+  border: 1px solid #000;
+  border-top: none;
+  text-align: left;
+}
+.data-market-module .college-tip {
+  display: none;
+  overflow-x: hidden;
+  overflow-y: auto;
+  bottom: 0;
+  left: 0;
+  outline: 0 none;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 1040;
+}
+.data-market-module .college-tip .tip-header {
+  border-bottom: 1px solid #ccc;
+  box-shadow: 1px 0px 1px #ccc;
+  height: 45px;
+  width: 100%;
+}
+.data-market-module .college-tip .tip-header .tip-title {
+  color: #555;
+  float: left;
+  font-size: 18px;
+  margin: 10px 0 0 15px;
+}
+.data-market-module .college-tip .tip-header .tip-close {
+  cursor: pointer;
+  float: right;
+  font-size: 20px;
+  margin: 10px 15px 0 0;
+}
+.data-market-module .college-tip .tip-footer {
+  background-color: #eeeeee;
+  height: 51px;
+}
+.data-market-module .college-tip .tip-footer .tip-btn {
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  cursor: pointer;
+  color: #555;
+  float: right;
+  font-size: 14px;
+  margin: 10px;
+  padding: 5px 25px;
+  text-align: center;
+}
+.data-market-module .college-tip .tip-footer .btn-confirm {
+  border-color: #2284bf;
+  color: #2284bf;
+}
+.data-market-module .college-tip .tip-footer .btn-confirm_a {
+  padding: 5px 0px;
+}
+.data-market-module .college-tip .tip-footer .btn-confirm_a a {
+  color: #2284bf;
+  padding: 0px 25px;
+}
+.data-market-module .college-tip .tip-backdrop {
+  opacity: 0.3;
+  background-color: #000;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+.data-market-module .tip-user-apply {
+  background: #fff none repeat scroll 0 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 0 12px #888;
+  display: none;
+  height: auto;
+  left: 50%;
+  margin-left: -290px;
+  position: fixed;
+  top: 22%;
+  width: 580px;
+}
+.data-market-module .tip-user-apply .tip-content {
+  color: #333;
+  font-size: 14px;
+  padding: 20px;
+}
+.data-market-module .tip-user-apply .tip-content .content-course-info {
+  border: 1px dashed #ccc;
+  padding: 20px 20px 10px;
+}
+.data-market-module .tip-user-apply .tip-content .content-course-info .title {
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.data-market-module .tip-user-apply .tip-content .content-course-info .info {
+  margin-bottom: 10px;
+}
+.data-market-module .tip-user-apply .tip-content .content-course-info .info .label {
+  color: #666;
+}
+.data-market-module .tip-user-apply .tip-content .content-course-info .info .course-length,
+.data-market-module .tip-user-apply .tip-content .content-course-info .info .location {
+  margin-right: 20px;
+}
+.data-market-module .tip-user-apply .tip-content > .title {
+  border-bottom: 1px solid #ccc;
+  margin-top: 20px;
+}
+.data-market-module .tip-user-apply .tip-content > .title .label {
+  border-bottom: 2px solid #009fe2;
+  height: 24px;
+  width: 88px;
+}
+.data-market-module .tip-user-apply .tip-content .user-info {
+  margin-top: 20px;
+  height: 115px;
+}
+.data-market-module .tip-user-apply .tip-content .user-info .user-attr {
+  float: left;
+  margin-bottom: 10px;
+  width: 50%;
+}
+.data-market-module .tip-user-apply .tip-content .user-info .user-attr > .label {
+  float: left;
+  text-align: right;
+  width: 65px;
+  height: 30px;
+  line-height: 30px;
+}
+.data-market-module .tip-user-apply .tip-content .user-info .user-attr > .label > .icon {
+  color: #ff0000;
+}
+.data-market-module .tip-user-apply .tip-content .user-info .user-attr > input {
+  color: #333;
+  height: 30px;
+  line-height: 30px;
+  text-indent: 5px;
+  width: 190px;
+}
+.data-market-module .tip-college-video {
+  display: none;
+  background: #fff none repeat scroll 0 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 0 12px #888;
+  height: auto;
+  left: 50%;
+  margin-left: -600px;
+  position: fixed;
+  top: 18%;
+  width: 1200px;
+}
+.data-market-module .tip-college-video .btn-close {
+  background-color: #000;
+  border-radius: 20px;
+  cursor: pointer;
+  color: #fff;
+  height: 40px;
+  position: absolute;
+  right: -60px;
+  top: 0;
+  width: 40px;
+}
+.data-market-module .tip-college-video .btn-close .icon-Close {
+  float: left;
+  font-size: 30px;
+  margin-left: 5px;
+  margin-top: 7px;
+}
+.data-market-module .tip-apply-success {
+  display: none;
+  background: #fff none repeat scroll 0 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 0 12px #888;
+  height: auto;
+  left: 50%;
+  margin-left: -200px;
+  position: fixed;
+  top: 30%;
+  width: 400px;
+}
+.data-market-module .tip-apply-success .tip-content .img {
+  height: 50px;
+  margin: 20px auto;
+  width: 50px;
+}
+.data-market-module .tip-apply-success .tip-content .img img {
+  width: 100%;
+  height: 100%;
+}
+.data-market-module .tip-apply-success .tip-content .label {
+  margin-bottom: 20px;
+  text-align: center;
+}
+.data-market-module .payfor-tops {
+  top: 250px;
+  right: 0;
+  left: 0;
+  margin: auto;
+  width: 515px;
+  position: fixed;
+  background-color: #FFFFFF;
+  z-index: 2000;
+  border-radius: 5px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.3);
+}
+.data-market-module .payfor-tops .tits-payfors {
+  color: #9D9D9D;
+  height: 60px;
+}
+.data-market-module .payfor-tops .tits-payfors .wors-tisp {
+  font-size: 20px;
+  margin: 17px 0 0 30px;
+  display: inline-block;
+  color: #333;
+}
+.data-market-module .payfor-tops .tits-payfors .refresh-projescr {
+  background-color: #009BEC;
+  border: #009BEC;
+  color: #FFFFFF;
+  cursor: pointer;
+  width: 60px;
+  font-size: 14px;
+  padding: 5px 0;
+  margin-left: 20px;
+  font-family: "Microsoft YaHei";
+  border-radius: 2px;
+}
+.data-market-module .payfor-tops .tits-payfors .wors-iconsc {
+  float: right;
+  margin: 20px 32px 0 0;
+  cursor: pointer;
+  background: url("images/closeers.png");
+  width: 20px;
+  height: 20px;
+}
+.data-market-module .payfor-tops .tits-payfors .icons-tisp {
+  width: 31px;
+  height: 31px;
+  margin: 10px 0 0 15px;
+  background: url(images/settings.jpg);
+  background-color: #FFFFFF;
+  vertical-align: top;
+  position: relative;
+  display: inline-block;
+}
+.data-market-module .payfor-tops .thirds-newwprs {
+  margin-top: 30px;
+  color: #333333;
+  text-align: center;
+  font-size: 18px;
+}
+.data-market-module .payfor-tops .third-cionts {
+  margin: 20px 0 0 145px;
+}
+.data-market-module .payfor-tops .third-cionts .nub-csecv {
+  color: #969696;
+  vertical-align: top;
+}
+.data-market-module .payfor-tops .third-cionts .nub-bads {
+  color: #969696;
+}
+.data-market-module .payfor-tops .third-cionts .pay-ovesr {
+  color: #00A9E4;
+  cursor: pointer;
+}
+.data-market-module .payfor-tops .third-cionts .namer-csecv {
+  display: inline-block;
+  margin: 12px 0 80px;
+  color: #D68A00;
+}
+.data-market-module .payfor-tops .third-cionts .nub-csecvwp {
+  display: inline-block;
+  margin: 0 0 10px 2px;
+  width: 102px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.data-market-module .payfor-tops .third-cionts .anothe-price {
+  margin-bottom: 20px;
+  color: #EB0000;
+  font-size: 18px;
+}
+.data-market-module .payfor-tops .third-cionts .nub-csecvwprmb {
+  vertical-align: top;
+  color: #EB0000;
+}
+.data-market-module .payfor-tops .third-cionts .erv-codes {
+  margin-bottom: 20px;
+}
+.data-market-module .payfor-tops .conttns-payfora {
+  height: 45px;
+  padding: 18px 30px;
+  background-color: #F2F2F2;
+}
+.data-market-module .payfor-tops .conttns-payfora .nub-csecv {
+  font-size: 14px;
+  font-weight: 600;
+  vertical-align: middle;
+}
+.data-market-module .payfor-tops .conttns-payfora .conttns-tis {
+  font-size: 14px;
+  display: inline-block;
+  color: #333333;
+  font-weight: 700;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 211px;
+  padding-right: 5px;
+  vertical-align: middle;
+}
+.data-market-module .payfor-tops .conttns-payfora .right-prices {
+  float: right;
+}
+.data-market-module .payfor-tops .conttns-payfora .right-prices .price-tis {
+  vertical-align: middle;
+  font-size: 14px;
+  font-weight: 600;
+}
+.data-market-module .payfor-tops .conttns-payfora .right-prices .prifore-tis {
+  vertical-align: middle;
+  font-size: 14px;
+  font-weight: 600;
+}
+.data-market-module .payfor-tops .conttns-payfora .right-prices .howmon-tis {
+  vertical-align: middle;
+  font-size: 14px;
+  font-weight: 600;
+}
+.data-market-module .payfor-tops .conttns-payfora .only-pay {
+  color: #666666;
+  margin-top: 5px;
+  font-size: 14px;
+}
+.data-market-module .payfor-tops .pay-ways {
+  padding-bottom: 30px;
+  margin-top: 30px;
+  border-bottom: 1px solid #EEE;
+}
+.data-market-module .payfor-tops .pay-ways .pointer-cirecle {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+  background-color: #0A9DDC;
+  margin-left: 120px;
+}
+.data-market-module .payfor-tops .pay-ways .pointer-cirecle .poinre-inis {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  border-radius: 100%;
+  background-color: #FFFFFF;
+}
+.data-market-module .payfor-tops .pay-ways .pointer-cirecle .poinre-ote {
+  width: 5px;
+  height: 5px;
+}
+.data-market-module .payfor-tops .pay-ways .zhf-imgas {
+  background: url("images/zhifubao.png") no-repeat;
+  width: 102px;
+  height: 40px;
+  display: inline-block;
+  border: 1px solid #DCDCDC;
+  vertical-align: middle;
+  margin-left: 15px;
+}
+.data-market-module .payfor-tops .pay-ways .wcht-imgas {
+  background: url("images/weixin.png") no-repeat;
+  width: 102px;
+  height: 40px;
+  display: inline-block;
+  border: 1px solid #DCDCDC;
+  vertical-align: middle;
+  margin-left: 15px;
+}
+.data-market-module .payfor-tops .pay-ways .wechats-pay {
+  margin-left: 20px;
+}
+.data-market-module .payfor-tops .secend-conts {
+  height: 57px;
+}
+.data-market-module .payfor-tops .secend-conts .nub-csecv {
+  display: inline-block;
+  font-size: 14px;
+  color: #333333;
+  font-weight: 600;
+}
+.data-market-module .payfor-tops .secend-conts .nub-csecvs {
+  font-size: 14px;
+  display: inline-block;
+  color: #333333;
+  font-weight: 700;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 211px;
+  white-space: nowrap;
+  vertical-align: middle;
+  padding-right: 5px;
+}
+.data-market-module .payfor-tops .secend-conts .price-twosa {
+  float: right;
+}
+.data-market-module .payfor-tops .secend-conts .price-twosa .namer-csecv {
+  margin-top: 10px;
+  display: inline-block;
+  font-size: 14px;
+  color: #333333;
+  font-weight: 600;
+}
+.data-market-module .payfor-tops .secend-conts .price-twosa .foitsa-pirmbs {
+  font-size: 14px;
+  color: #333333;
+  font-weight: 600;
+}
+.data-market-module .payfor-tops .secend-conts .price-twosa .namer-csecva {
+  font-size: 14px;
+  color: #333333;
+  font-weight: 600;
+}
+.data-market-module .payfor-tops .wors-payfors {
+  margin: 22px 0 0;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #EEE;
+}
+.data-market-module .payfor-tops .wors-payfors .payals-box {
+  float: left;
+  position: absolute;
+  width: 16px;
+  height: 18px;
+  z-index: 1;
+  opacity: 0;
+  cursor: pointer;
+  margin: 2px 0 0 20px;
+}
+.data-market-module .payfor-tops .wors-payfors .paylas-wors {
+  margin-left: 30px;
+  padding-left: 20px;
+  background-image: url(images/check.png);
+  background-repeat: no-repeat;
+  background-position: 0 2px;
+  color: #656565;
+}
+.data-market-module .payfor-tops .wors-payfors .reds-agert {
+  color: #EB0000;
+  margin-left: 20px;
+  font-size: 14px;
+  display: none;
+}
+.data-market-module .payfor-tops .wors-payfors .clody-wors {
+  color: #009DDC;
+  cursor: pointer;
+}
+.data-market-module .payfor-tops .wors-payfors .white-blacks {
+  color: #656565;
+}
+.data-market-module .payfor-tops .botoms-payfors .clasings-clors {
+  display: inline-block;
+  float: right;
+  margin-top: 20px;
+  padding: 8px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  border: 1px solid #E9E8EB;
+  background-color: #F6F7F9;
+  color: #57585A;
+  border-radius: 3px;
+}
+.data-market-module .payfor-tops .botoms-payfors .subm-its {
+  display: inline-block;
+  float: right;
+  margin: 20px 30px 20px 10px;
+  padding: 8px 20px;
+  text-align: center;
+  font-size: 14px;
+  cursor: pointer;
+  border: 1px solid #049FE4;
+  background-color: #049FE4;
+  color: #FFFFFF;
+  word-spacing: 1px;
+  font-family: "Microsoft Yahei";
+  border-radius: 3px;
+}
+.data-market-module .payfor-tops .botoms-payfors .subm-its:hover {
+  background-color: #00aff6;
+}
+.data-market-module .pres-ists {
+  top: 120px;
+  width: 1010px;
+}
+.data-market-module .pres-ists .ifremers-imgs {
+  min-height: 500px;
+}
+.data-market-module .ifremers-imgs {
+  width: 930px;
+  margin-left: 30px;
+}
+.data-market-module .ifremers-imgs .tbs-tits {
+  margin-top: 30px;
+  width: 100%;
+  white-space: nowrap;
+  border-bottom: 2px solid #EEEEEE;
+  height: 30px;
+}
+.data-market-module .ifremers-imgs .tbs-tits .lists-leftr {
+  display: inline-block;
+  width: 840px;
+}
+.data-market-module .ifremers-imgs .tbs-tits .lists-leftr a {
+  cursor: pointer;
+  width: 110px;
+  padding: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+}
+.data-market-module .ifremers-imgs .tbs-tits .lists-leftr .timeint-sviespacial {
+  background-color: #EEEEEE;
+  color: #00A9E4;
+}
+.data-market-module .ifremers-imgs .tbs-tits .lists-leftr a:hover {
+  background-color: #EEEEEE;
+  color: #00A9E4;
+}
+.data-market-module .ifremers-imgs .tbs-tits .lists-leftr a > div {
+  position: fixed;
+  color: #00A9E4;
+  background-color: #FFFFFF;
+  padding: 5px;
+  box-shadow: 0 0 10px #DCDCDC;
+}
+.data-market-module .ifremers-imgs .tbs-tits span {
+  width: 24px;
+  font-size: 18px;
+  text-align: center;
+  display: inline-block;
+  background-color: #ECECEC;
+  color: #D6D6D6;
+  position: relative;
+  bottom: 9px;
+  margin-left: 3px;
+  cursor: default;
+}
+.data-market-module .ifremers-imgs .tbs-tits .spac-lefst {
+  margin-left: 30px;
+}
+.data-market-module .ifremers-imgs .tbs-tits .check-lefri {
+  cursor: pointer;
+  color: #FFFFFF;
+  background-color: #009EE2;
+}
+.data-market-module .ifremers-imgs .pitst-ifeame {
+  margin-top: 30px;
+  width: 930px;
+  height: 450px;
+}
+.data-market-module .ifremers-imgs .pitst-ifeame .itst-imgirfem {
+  width: 100%;
+  height: 100%;
+}
+.data-market-module .wechev-tops {
+  width: 435px;
+}
+.data-market-module .wasters-wait {
+  width: 64px;
+  height: 64px;
+  display: block;
+  position: fixed;
+  left: 0;
+  top: 0;
+  margin: auto;
+  right: 0;
+  bottom: 0;
+}
+.data-market-module .projs-datas {
+  top: 100px;
+  width: 720px;
+}
+.data-market-module .parosrch-lsit {
+  position: relative;
+  padding: 0 20px 20px 20px;
+}
+.data-market-module .parosrch-lsit .search-listsdata {
+  border: 1px solid #ccc;
+  height: 30px;
+  width: 100%;
+  text-indent: 10px;
+  border-radius: 2px;
+}
+.data-market-module .parosrch-lsit .icon-searchs {
+  background: url("images/searchsbot.png") no-repeat 5px;
+  width: 23px;
+  height: 23px;
+  display: inline-block;
+  position: absolute;
+  right: 30px;
+  top: 5px;
+  padding-left: 5px;
+  border-left: 1px solid #ccc;
+  cursor: pointer;
+}
+.data-market-module .parosrch-lsit .prjsec-liust {
+  font-family: "Microsoft YaHei";
+  margin: 20px 0;
+  overflow: auto;
+  height: 360px;
+}
+.data-market-module .parosrch-lsit .prjsec-liust .list-prosit {
+  cursor: pointer;
+  width: 192px;
+  height: 162px;
+  margin-right: 3.3%;
+  display: inline-block;
+  background: url("images/projectall.png") no-repeat;
+  background-size: 192px 132px;
+  border: 2px solid #FFFFFF;
+  margin-bottom: 20px;
+  position: relative;
+}
+.data-market-module .parosrch-lsit .prjsec-liust .list-prosit .itstwods-pros {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-top: 140px;
+  color: red;
+  font-size: 12px;
+  text-align: center;
+}
+.data-market-module .parosrch-lsit .prjsec-liust .list-prosit .itstwods-pros > div {
+  background-color: #ffffff;
+  box-shadow: 0 0 10px #dcdcdc;
+  color: #00a9e4;
+  left: 5px;
+  padding: 5px;
+  position: absolute;
+  top: 150px;
+  max-width: 170px;
+  text-align: left;
+  word-break: break-all;
+  /*鏀寔IE锛宑hrome锛孎F涓嶆敮鎸�*/
+  word-wrap: break-word;
+  /*鏀寔IE锛宑hrome锛孎F*/
+  white-space: normal;
+  z-index: 999;
+}
+.data-market-module .parosrch-lsit .prjsec-liust .new-staring {
+  background: url("images/firstpro.png") no-repeat;
+  background-size: 192px 132px;
+}
+.data-market-module .parosrch-lsit .prjsec-liust .list-prosit:hover {
+  border: 2px solid #009fe2;
+}
+.data-market-module .parosrch-lsit .prjsec-liust .list-first {
+  cursor: pointer;
+  width: 192px;
+  height: 162px;
+  margin-right: 3.3%;
+  display: inline-block;
+  background: url("images/firstpro.png") no-repeat;
+  background-size: 192px 132px;
+  border: 2px solid #FFFFFF;
+  margin-bottom: 20px;
+  vertical-align: top;
+  text-decoration: none;
+}
+.data-market-module .parosrch-lsit .prjsec-liust .list-first .itstwods-pros {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-top: 140px;
+  color: red;
+  font-size: 12px;
+  text-align: center;
+}
+.data-market-module .parosrch-lsit .prjsec-liust .list-first:hover {
+  border: 2px solid #009fe2;
+}
+.data-market-module .body-movis {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 2000;
+  opacity: 0.2;
+  background-color: #000;
+}
+.data-market-module .detail-css {
+  background-color: #fff;
+}
+.data-market-module .detail-css .ists-all {
+  height: 20px;
+  width: 100%;
+}
+.data-market-module .detail-css .content-all {
+  color: #666;
+  font-size: 14px;
+  margin: 0 auto 20px;
+  min-height: 567px;
+}
+.data-market-module .detail-css a {
+  text-decoration: none;
+  outline: none;
+}
+.data-market-module .detail-css .content-nav {
+  height: 30px;
+  line-height: 30px;
+}
+.data-market-module .detail-css .content-nav .nav-icon,
+.data-market-module .detail-css .content-nav .nav-font {
+  float: left;
+}
+.data-market-module .detail-css .content-nav .nav-icon {
+  margin-right: 10px;
+  margin-top: 2px;
+}
+.data-market-module .detail-css .content-nav .nav-font .font-course-name {
+  font-weight: bold;
+}
+.data-market-module .detail-css .content-nav .nav-font .font-item > a {
+  color: #009fe2;
+}
+.data-market-module .detail-css .course-info,
+.data-market-module .detail-css .course-desc,
+.data-market-module .detail-css .course-discuss,
+.data-market-module .detail-css .guess-like {
+  background-color: #ffffff;
+  box-shadow: 0 0 5px #ccc;
+  margin-top: 20px;
+}
+.data-market-module .detail-css .course-info {
+  height: 225px;
+  padding: 20px;
+  position: relative;
+}
+.data-market-module .detail-css .course-info .contt-left {
+  width: 225px;
+  height: 225px;
+  display: inline-block;
+}
+.data-market-module .detail-css .course-info .contt-left .contt-imgs {
+  width: 225px;
+  height: 225px;
+  border-radius: 8px;
+  display: block;
+}
+.data-market-module .detail-css .course-info .contt-left .contt-imgs .codeat-imgt {
+  width: 225px;
+  height: 225px;
+}
+.data-market-module .detail-css .course-info .contt-mide {
+  vertical-align: top;
+  display: inline-block;
+  margin: 12px 0 0 25px;
+}
+.data-market-module .detail-css .course-info .contt-mide .tit-boxing {
+  color: #333333;
+  margin-top: 1px;
+}
+.data-market-module .detail-css .course-info .contt-mide .tit-boxing .hrf-chagev {
+  color: #333333;
+  text-decoration: none;
+}
+.data-market-module .detail-css .course-info .contt-mide .tit-boxing .hrf-chagev .worsa-tit {
+  font-size: 18px;
+  color: #333333;
+  font-weight: 700;
+}
+.data-market-module .detail-css .course-info .contt-mide .clasa-name {
+  color: #333333;
+  font-weight: 700;
+}
+.data-market-module .detail-css .course-info .contt-mide .clasa-source {
+  color: #333333;
+  font-weight: 700;
+}
+.data-market-module .detail-css .course-info .contt-mide .second-tits {
+  font-size: 0;
+  margin-top: 10px;
+}
+.data-market-module .detail-css .course-info .contt-mide .second-tits .words-prices {
+  font-size: 14px;
+}
+.data-market-module .detail-css .course-info .contt-mide .second-tits .foitsa-picta {
+  margin-left: 15px;
+  font-size: 16px;
+  color: #EB0000;
+  font-weight: 700;
+}
+.data-market-module .detail-css .course-info .contt-mide .second-tits .foitsb-money {
+  font-size: 24px;
+  color: #EB0000;
+  font-weight: 700;
+}
+.data-market-module .detail-css .course-info .contt-mide .contta-clasa {
+  margin-top: 10px;
+}
+.data-market-module .detail-css .course-info .contt-mide .contta-clasa .clasa-lefts {
+  margin-left: 28px;
+}
+.data-market-module .detail-css .course-info .contt-mide .contta-clasa .spaca-lefts {
+  margin-left: 0;
+}
+.data-market-module .detail-css .course-info .contt-mide .contta-clasa .clasa-trade {
+  color: #333333;
+  font-weight: 700;
+}
+.data-market-module .detail-css .course-info .contt-mide .contta-clasa .clasa-leftsexc {
+  margin-left: 28px;
+}
+.data-market-module .detail-css .course-info .contt-mide .conttb-thirds {
+  margin-top: 10px;
+}
+.data-market-module .detail-css .course-info .contt-mide .conttb-thirds .thirds-know,
+.data-market-module .detail-css .course-info .contt-mide .conttb-thirds .foitsd-view,
+.data-market-module .detail-css .course-info .contt-mide .conttb-thirds .foitsf-many {
+  color: #333333;
+  font-weight: 700;
+}
+.data-market-module .detail-css .course-info .contt-mide .conttb-thirds .foitsc-pictb,
+.data-market-module .detail-css .course-info .contt-mide .conttb-thirds .foitse-pictc {
+  margin-left: 28px;
+}
+.data-market-module .detail-css .course-info .contt-mide .whyspadis-spans {
+  margin-top: 15px;
+  color: #EB0000;
+}
+.data-market-module .detail-css .course-info .contt-mide .itstbot-tons {
+  font-size: 16px;
+}
+.data-market-module .detail-css .course-info .contt-mide .itstbot-tons .see-viesimg {
+  display: inline-block;
+  width: 123px;
+  text-align: center;
+  padding: 9px 0;
+  background-color: #009BEC;
+  color: #FFFFFF;
+  border-radius: 2px;
+  margin: 25px 50px 0 0;
+  cursor: pointer;
+}
+.data-market-module .detail-css .course-info .contt-mide .itstbot-tons .worsc-bot {
+  margin-top: 25px;
+  display: inline-block;
+  width: 123px;
+  text-align: center;
+  padding: 9px 0;
+  background-color: #086c0b;
+  color: #FFFFFF;
+  border-radius: 2px;
+  cursor: pointer;
+}
+.data-market-module .detail-css .course-info .contt-mide .itstbot-tons .worsc-botcant {
+  color: #FFFFFF;
+  cursor: default;
+  background-color: #CCC;
+}
+.data-market-module .detail-css .botom-disc {
+  height: 20px;
+  width: 100%;
+}
+.data-market-module .detail-css .content-center {
+  min-height: 610px;
+  width: 100%;
+  position: relative;
+}
+.data-market-module .detail-css .content-center .title {
+  border-bottom: 1px solid #009fe2;
+}
+.data-market-module .detail-css .content-center .title .name {
+  background-color: #086c0b;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  color: #fff;
+  font-size: 16px;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  width: 150px;
+}
+.data-market-module .detail-css .content-center .course-content {
+  width: 100%;
+}
+.data-market-module .detail-css .content-center .course-content .previe-div {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #FFF;
+}
+.data-market-module .detail-css .content-center .course-content .previe-div .previe-contsall {
+  max-height: 450px;
+  overflow: auto;
+}
+.data-market-module .detail-css .content-center .course-content .previe-div .previe-contsall table {
+  width: 100%;
+  line-height: 35px;
+}
+.data-market-module .detail-css .content-center .course-content .previe-div .previe-contsall table .detail-headers th {
+  border-bottom: 1px solid #E3E3E3;
+  text-align: left;
+  white-space: nowrap;
+  padding-right: 20px;
+}
+.data-market-module .detail-css .content-center .course-content .previe-div .previe-contsall table .detail-contents tr td {
+  border-bottom: 2px solid #E3E3E3;
+  text-align: left;
+  white-space: nowrap;
+  padding-right: 20px;
+}
+.data-market-module .detail-css .content-center .course-content .previe-div .previe-contsall table .detail-contents tr:last-child td {
+  border-bottom: none;
+}
+.data-market-module .detail-css .content-center .course-content .course-desc {
+  padding: 20px;
+}
+.data-market-module .detail-css .content-center .course-content .course-desc .desc {
+  display: block;
+  width: 1160px;
+  line-height: 150%;
+  margin-top: 20px;
+  word-break: break-all;
+  overflow: auto;
+}
+.data-market-module .detail-css .content-center .course-content .course-discuss {
+  padding: 20px;
+}
+.data-market-module .detail-css .content-center .course-content .course-discuss > div {
+  width: 100%;
+}
+.data-market-module .detail-css .content-center .course-content .course-discuss .discuss-text {
+  margin-top: 15px;
+}
+.data-market-module .detail-css .content-center .course-content .course-discuss .discuss-text textarea {
+  border: 1px solid #ccc;
+  color: #999;
+  font-size: 13px;
+  height: 120px;
+  padding: 1%;
+  width: 98%;
+}
+.data-market-module .detail-css .content-center .course-content .course-discuss .discuss-option {
+  height: 33px;
+  margin-bottom: 20px;
+  margin-top: 5px;
+}
+.data-market-module .detail-css .content-center .course-content .course-discuss .discuss-option .remind {
+  float: left;
+  font-size: 14px;
+}
+.data-market-module .detail-css .content-center .course-content .course-discuss .discuss-option .remind .remind-number {
+  color: #ff0000;
+  margin: 0 5px;
+}
+.data-market-module .detail-css .content-center .course-content .course-discuss .discuss-option .btn {
+  background-color: #009fe2;
+  border: 1px solid #009fe2;
+  border-radius: 4px;
+  color: #f1f1f1;
+  float: right;
+  font-size: 16px;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 30px;
+}
+.data-market-module .detail-css .content-center .course-content .course-discuss .discuss-title {
+  color: #000;
+  font-weight: bold;
+}
+.data-market-module .detail-css .content-center .course-content .course-discuss .discuss-content {
+  margin-top: 15px;
+}
+.data-market-module .detail-css .content-center .course-content .course-discuss .discuss-content .item {
+  margin-bottom: 15px;
+}
+.data-market-module .detail-css .content-center .course-content .course-discuss .discuss-content .item .text {
+  margin-bottom: 5px;
+  text-align: left;
+  width: 100%;
+  word-break: break-all;
+}
+.data-market-module .detail-css .content-center .course-content .course-discuss .discuss-content .item .time {
+  color: #999;
+  font-size: 12px;
+}
+.data-market-module .detail-css .content-center .course-content .course-discuss .content-bottom {
+  border-top: 1px dotted #ccc;
+  height: 20px;
+  margin-top: 20px;
+  padding-top: 10px;
+  text-align: center;
+  width: 100%;
+}
+.data-market-module .detail-css .content-center .guess-like {
+  margin-top: 0;
+  padding: 20px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 280px;
+}
+.data-market-module .detail-css .content-center .guess-like .like-content {
+  margin-top: 20px;
+}
+.data-market-module .detail-css .content-center .guess-like .like-content .item {
+  height: 80px;
+  margin-bottom: 20px;
+}
+.data-market-module .detail-css .content-center .guess-like .like-content .item .img {
+  float: left;
+  height: 80px;
+  width: 140px;
+}
+.data-market-module .detail-css .content-center .guess-like .like-content .item .img img {
+  width: 100%;
+  height: 100%;
+}
+.data-market-module .detail-css .content-center .guess-like .like-content .item .info {
+  float: right;
+  width: 120px;
+}
+.data-market-module .detail-css .content-center .guess-like .like-content .item .info > div {
+  height: 25px;
+  line-height: 20px;
+  overflow: hidden;
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}
+.data-market-module .detail-css .content-center .guess-like .like-content .item .info .link {
+  margin-top: 10px;
+}
+.data-market-module .detail-css .content-center .guess-like .like-content .item .info .link > a {
+  color: #009fe2;
+}
+.data-market-module .detail-css .content-center .guess-like .link > a {
+  color: #009fe2;
+}
+.data-market-module .detail-css .Validform_position {
+  margin-top: 70px;
+}
+.data-market-module .detail-css .Validform_email {
+  margin-top: 30px;
+}
+.data-market-module .detail-css .Validform_company {
+  margin-left: 363px;
+  margin-top: 30px;
+}
+.data-market-module .detail-css .Validform_mobile {
+  margin-left: 363px;
+}
+.data-market-module .detail-css .woe-bakcl {
+  color: #333333;
+  font-weight: 700;
+}
+.data-market-module .detail-css .pay-conttvs {
+  width: 1200px;
+  margin: 0 auto 20px;
+  background-color: #FFFFFF;
+  padding: 20px 0 43px;
+}
+.data-market-module .detail-css .pay-conttvs .puays-wprs {
+  margin: 0 45px;
+}
+.data-market-module .detail-css .pay-conttvs .puays-wprs .omgs-pays {
+  vertical-align: top;
+  display: inline-block;
+}
+.data-market-module .detail-css .pay-conttvs .puays-wprs .pauus-alls {
+  display: inline-block;
+}
+.data-market-module .detail-css .pay-conttvs .puays-wprs .pauus-alls .payNo-carsnoe {
+  font-size: 13px;
+}
+.data-market-module .detail-css .pay-conttvs .puays-wprs .pauus-alls .payName-carsnoe {
+  margin-top: 12px;
+  font-size: 18px;
+}
+.data-market-module .detail-css .pay-conttvs .puays-wprs .pauus-alls .payBtons-carsnoe {
+  margin-top: 35px;
+}
+.data-market-module .detail-css .pay-conttvs .puays-wprs .pauus-alls .payBtons-carsnoe a {
+  width: 125px;
+  padding: 8px 0;
+  border: 1px solid #009FE2;
+  color: #009FE2;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  margin-right: 5px;
+  border-radius: 2px;
+}
+.data-market-module .detail-css .pay-conttvs .puays-wprs .pauus-alls .payBtons-carsnoe a:hover {
+  border: 1px solid #009FE2;
+  color: #FFFFFF;
+  background-color: #009FE2;
+}
+.data-market-module .disclaim-css {
+  background-color: #EEEEEE;
+}
+.data-market-module .disclaim-css .ists-all {
+  height: 20px;
+  width: 100%;
+}
+.data-market-module .disclaim-css .content-all {
+  color: #666;
+  font-size: 14px;
+  margin: 0 auto;
+  width: 1200px;
+  min-height: 567px;
+}
+.data-market-module .disclaim-css .content-all .content-nav {
+  margin-bottom: 20px;
+}
+.data-market-module .disclaim-css .content-all .content-nav .nav-icon {
+  display: inline-block;
+  vertical-align: middle;
+}
+.data-market-module .disclaim-css .content-all .content-nav .nav-font {
+  display: inline-block;
+  color: #333;
+  margin-left: 10px;
+}
+.data-market-module .disclaim-css .content-all .page-all {
+  background-color: #FFFFFF;
+  padding: 25px 40px 60px;
+}
+.data-market-module .disclaim-css .content-all .page-all .titisle-discl {
+  font-size: 25px;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.data-market-module .disclaim-css .content-all .page-all p {
+  text-indent: 2em;
+  margin-top: 25px;
+}
+.data-market-module .disclaim-css .content-all .page-all .impos-it {
+  font-weight: 700;
+  color: #333;
+}
+.data-market-module .disclaim-css .ists-footers {
+  height: 20px;
+  width: 100%;
+}
+.data-market-module .index-css {
+  /*
+			by marzing Xue
+		*/
+  min-width: 1200px;
+}
+.data-market-module .index-css .content-all {
+  width: 100%;
+  position: relative;
+  font-family: "Microsoft Yahei";
+  text-decoration: none;
+}
+.data-market-module .index-css .content-all a {
+  cursor: pointer;
+  text-decoration: none;
+}
+.data-market-module .index-css .content-all li {
+  list-style-type: none;
+}
+.data-market-module .index-css .content-all .all-pitindx {
+  width: 100%;
+  height: 441px;
+}
+.data-market-module .index-css .content-all .all-pitindx .ist-boxer .pitindxa-imgit {
+  width: 1904px;
+  height: 441px;
+}
+.data-market-module .index-css .content-all .all-pitindx .ist-boxer .pitindxa-botn {
+  position: absolute;
+  width: 186px;
+  padding: 10px 0;
+  text-align: center;
+  color: #FFFFFF;
+  font-size: 20px;
+  display: block;
+  bottom: 100px;
+  right: 0;
+  margin: auto;
+  left: 0;
+  background-color: #00B300;
+  border-radius: 3px;
+  margin: 0 auto;
+}
+.data-market-module .index-css .content-all .all-titmid {
+  padding: 25px 0 40px 0;
+  width: 1200px;
+  margin: 0 auto;
+}
+.data-market-module .index-css .content-all .free-container:after {
+  clear: both;
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+.data-market-module .index-css .content-all .free-container .free-left {
+  float: left;
+  width: 589px;
+  height: 242px;
+  background: url("images/f1.png") no-repeat;
+}
+.data-market-module .index-css .content-all .free-container .free-left h2 {
+  margin: 22px 0 0 34px;
+  font-weight: normal;
+  font-size: 24px;
+  color: #19a3d7;
+}
+.data-market-module .index-css .content-all .free-container .free-left h4 {
+  text-align: center;
+  font-size: 18px;
+  color: #333;
+  font-weight: normal;
+  margin-top: 30px;
+}
+.data-market-module .index-css .content-all .free-container .free-left p {
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+  line-height: 24px;
+  margin-top: 18px;
+}
+.data-market-module .index-css .content-all .free-container .free-left a {
+  color: #00a7ea;
+  font-size: 14px;
+  margin-top: 10px;
+}
+.data-market-module .index-css .content-all .free-container .free-left a:hover {
+  text-decoration: underline;
+}
+.data-market-module .index-css .content-all .free-container .free-right {
+  float: right;
+  width: 589px;
+  height: 242px;
+  background: url("images/f2.png") no-repeat;
+}
+.data-market-module .index-css .content-all .free-container .free-right h2 {
+  margin: 22px 0 0 34px;
+  font-weight: normal;
+  font-size: 24px;
+  color: #00954d;
+}
+.data-market-module .index-css .content-all .free-container .free-right h4 {
+  text-align: center;
+  font-size: 18px;
+  color: #333;
+  font-weight: normal;
+  margin-top: 30px;
+}
+.data-market-module .index-css .content-all .free-container .free-right p {
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+  line-height: 24px;
+  margin-top: 18px;
+}
+.data-market-module .index-css .content-all .free-container .free-right a {
+  color: #00a7ea;
+  font-size: 14px;
+  margin-top: 10px;
+}
+.data-market-module .index-css .content-all .free-container .free-right a:hover {
+  text-decoration: underline;
+}
+.data-market-module .index-css .content-all .flex-container {
+  margin-top: 20px;
+}
+.data-market-module .index-css .content-all .flex-container:after {
+  clear: both;
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+.data-market-module .index-css .content-all .flex-container .flex-left {
+  float: left;
+  width: 353px;
+  height: 127px;
+  background: url("images/f3.png") no-repeat;
+}
+.data-market-module .index-css .content-all .flex-container .flex-left h2 {
+  text-align: center;
+  font-size: 24px;
+  font-weight: normal;
+  color: #fff;
+  margin-top: 30px;
+}
+.data-market-module .index-css .content-all .flex-container .flex-left h4 {
+  text-align: center;
+  font-size: 18px;
+  font-weight: normal;
+  color: #fff;
+  margin-top: 10px;
+}
+.data-market-module .index-css .content-all .flex-container .flex-right {
+  float: left;
+  width: 846px;
+  height: 127px;
+  border: 1px solid #eee;
+  border-left: none;
+  position: relative;
+}
+.data-market-module .index-css .content-all .flex-container .flex-right p {
+  height: 127px;
+  line-height: 127px;
+}
+.data-market-module .index-css .content-all .flex-container .flex-right p span {
+  display: inline-block;
+  color: #333;
+}
+.data-market-module .index-css .content-all .flex-container .flex-right p .title {
+  font-size: 22px;
+  margin-left: 52px;
+}
+.data-market-module .index-css .content-all .flex-container .flex-right p .flex-step {
+  font-size: 18px;
+  margin-left: 18px;
+}
+.data-market-module .index-css .content-all .flex-container .flex-right .icon-img {
+  height: 36px;
+  width: 36px;
+  margin-left: 24px;
+  position: relative;
+  top: 12px;
+}
+.data-market-module .index-css .content-all .flex-container .flex-right .icon1 {
+  background: url("images/f4.png") no-repeat;
+  background-size: contain;
+}
+.data-market-module .index-css .content-all .flex-container .flex-right .icon2 {
+  background: url("images/f5.png") no-repeat;
+  background-size: contain;
+}
+.data-market-module .index-css .content-all .flex-container .flex-right .icon3 {
+  background: url("images/f6.png") no-repeat;
+  background-size: contain;
+}
+.data-market-module .index-css .content-all .flex-container .flex-right .icon-Dropdownarrow2 {
+  font-size: 24px;
+  color: #666;
+  margin-left: 24px;
+  position: relative;
+  top: 5px;
+}
+.data-market-module .index-css .content-all .flex-container .flex-right a {
+  position: absolute;
+  bottom: 15px;
+  right: 20px;
+  color: #00a7ea;
+  font-size: 16px;
+}
+.data-market-module .index-css .content-all .flex-container .flex-right a:hover {
+  text-decoration: underline;
+}
+.data-market-module .index-css .content-all .all-icon {
+  width: 100%;
+  background-color: #F1F2F6;
+  background-size: 100% 372px;
+  margin-bottom: 15px;
+}
+.data-market-module .index-css .content-all .all-icon .bakers-its {
+  height: 100%;
+  background: url("images/backers-tw.png") no-repeat;
+  background-position: center;
+}
+.data-market-module .index-css .content-all .all-icon .bakers-its .titiles-hovers {
+  height: 38px;
+}
+.data-market-module .index-css .content-all .all-icon .bakers-its .incon-cont {
+  margin: auto;
+  width: 1200px;
+  height: 100%;
+  text-align: center;
+  font-size: 13px;
+}
+.data-market-module .index-css .content-all .all-icon .bakers-its .incon-cont .titiles-icons {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 15px;
+  cursor: default;
+}
+.data-market-module .index-css .content-all .all-icon .bakers-its .incon-cont .icons-class {
+  margin-right: 10px;
+}
+.data-market-module .index-css .content-all .all-icon .bakers-its .incon-cont .lconscl-spacial {
+  padding: 3px 10px;
+  background-color: #009BDE;
+  color: #FFF;
+  border-radius: 20px;
+}
+.data-market-module .index-css .content-all .all-icon .bakers-its .incon-cont .icons-mores {
+  color: #009EE2;
+}
+.data-market-module .index-css .content-all .all-icon .bakers-its .incon-cont .true-icons {
+  width: 1200px;
+  margin-bottom: 20px;
+}
+.data-market-module .index-css .content-all .all-icon .bakers-its .incon-cont .true-icons .icon-recommenda {
+  display: inline-block;
+  width: 160px;
+  height: 195px;
+  margin: 40px 40px 0 0;
+  text-align: center;
+}
+.data-market-module .index-css .content-all .all-icon .bakers-its .incon-cont .true-icons .icon-recommenda .recommenda-imgs {
+  border-radius: 8px;
+  width: 160px;
+  height: 160px;
+}
+.data-market-module .index-css .content-all .all-icon .bakers-its .incon-cont .true-icons .icon-recommenda .spacilas-imgs {
+  width: 70px;
+  height: 70px;
+  box-shadow: none;
+  margin: 45px;
+}
+.data-market-module .index-css .content-all .all-icon .bakers-its .incon-cont .true-icons .icon-recommenda .spacils-icwords {
+  color: #0071E5;
+}
+.data-market-module .index-css .content-all .all-icon .bakers-its .incon-cont .true-icons .icon-recommenda .recommenda-words {
+  margin-top: 10px;
+  display: block;
+  font-size: 14px;
+  color: #656668;
+  font-family: "microsoft YaHei";
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 18px;
+}
+.data-market-module .index-css .content-all .all-icon .bakers-its .incon-cont .true-icons .icon-recommenda .incons-spac {
+  box-shadow: 0 0 5px #E8E9EB;
+}
+.data-market-module .index-css .content-all .data-dreams {
+  height: 365px;
+  width: 100%;
+  color: #FFFFFF;
+  text-align: center;
+  cursor: default;
+}
+.data-market-module .index-css .content-all .data-dreams .total-wors {
+  display: block;
+  font-size: 24px;
+}
+.data-market-module .index-css .content-all .data-dreams .total-datas {
+  display: block;
+  font-size: 28px;
+}
+.data-market-module .index-css .content-all .data-dreams .dream-animates {
+  margin: 40px auto 0;
+  width: 1200px;
+  word-spacing: -1px;
+}
+.data-market-module .index-css .content-all .data-dreams .dream-animates a {
+  color: #FFFFFF;
+}
+.data-market-module .index-css .content-all .data-dreams .dream-animates .magic-one {
+  vertical-align: middle;
+  display: inline-block;
+  width: 549px;
+  height: 327px;
+  word-spacing: -1px;
+}
+.data-market-module .index-css .content-all .data-dreams .dream-animates .magic-one .mone-first {
+  height: 169px;
+}
+.data-market-module .index-css .content-all .data-dreams .dream-animates .magic-one .mone-first .contens-maca {
+  display: inline-block;
+  width: 300px;
+  height: 100%;
+  background-color: #00B9F8;
+  vertical-align: middle;
+}
+.data-market-module .index-css .content-all .data-dreams .dream-animates .magic-one .mone-first .contens-maca .total-wors {
+  margin-top: 64px;
+}
+.data-market-module .index-css .content-all .data-dreams .dream-animates .magic-one .mone-first .contens-macbc {
+  vertical-align: top;
+  display: inline-block;
+  width: 245px;
+}
+.data-market-module .index-css .content-all .data-dreams .dream-animates .magic-one .mone-first .contens-macbc .contens-macb {
+  display: inline-block;
+  width: 245px;
+  height: 83px;
+  background-color: #FDD46C;
+  margin-bottom: 3px;
+}
+.data-market-module .index-css .content-all .data-dreams .dream-animates .magic-one .mone-first .contens-macbc .contens-macb .total-wors {
+  margin-top: 24px;
+}
+.data-market-module .index-css .content-all .data-dreams .dream-animates .magic-one .mone-first .contens-macbc .spacsi-color {
+  background-color: #FDAE71;
+}
+.data-market-module .index-css .content-all .data-dreams .dream-animates .magic-one .mone-first .contens-macbc .spacsi-color .total-wors {
+  margin-top: 22px;
+}
+.data-market-module .index-css .content-all .data-dreams .dream-animates .magic-one .mone-seconds {
+  height: 154px;
+  margin-top: 3px;
+}
+.data-market-module .index-css .content-all .data-dreams .dream-animates .magic-one .mone-seconds .contens-macas {
+  background-color: #C78EFB;
+  display: inline-block;
+  height: 155px;
+  width: 245px;
+  vertical-align: top;
+}
+.data-market-module .index-css .content-all .data-dreams .dream-animates .magic-one .mone-seconds .contens-macas .total-wors {
+  margin-top: 60px;
+}
+.data-market-module .index-css .content-all .data-dreams .dream-animates .magic-one .mone-seconds .contens-macab {
+  display: inline-block;
+  height: 155px;
+  width: 300px;
+  background-color: #00DFF7;
+  vertical-align: top;
+}
+.data-market-module .index-css .content-all .data-dreams .dream-animates .magic-one .mone-seconds .contens-macab .total-wors {
+  margin-top: 60px;
+}
+.data-market-module .index-css .content-all .data-dreams .dream-animates .magic-two {
+  vertical-align: middle;
+  display: inline-block;
+  width: 239px;
+  height: 327px;
+}
+.data-market-module .index-css .content-all .data-dreams .dream-animates .magic-two .contens-macbta {
+  vertical-align: middle;
+  display: block;
+  height: 135px;
+  width: 100%;
+  background-color: #F489F9;
+  margin-bottom: 3px;
+  padding-top: 96px;
+}
+.data-market-module .index-css .content-all .data-dreams .dream-animates .magic-two .contens-macbtb {
+  display: block;
+  padding-top: 26px;
+  height: 67px;
+  width: 100%;
+  background-color: #39F7B1;
+}
+.data-market-module .index-css .content-all .data-dreams .dream-animates .magic-threes {
+  vertical-align: middle;
+  display: inline-block;
+  width: 167px;
+  height: 327px;
+}
+.data-market-module .index-css .content-all .data-dreams .dream-animates .magic-threes .contens-macbea {
+  display: block;
+  height: 105px;
+  width: 100%;
+  background-color: #6FAAFD;
+  margin-bottom: 3px;
+  padding-top: 58px;
+}
+.data-market-module .index-css .content-all .data-dreams .dream-animates .magic-threes .contens-macbeb {
+  padding-top: 63px;
+  display: block;
+  height: 98px;
+  width: 100%;
+  background-color: #D0F867;
+}
+.data-market-module .index-css .content-all .data-dreams .dream-animates .magic-four {
+  vertical-align: middle;
+  display: inline-block;
+  width: 230px;
+  height: 327px;
+  background-color: #FFC500;
+  color: #FFFFFF;
+  text-align: center;
+  position: relative;
+}
+.data-market-module .index-css .content-all .data-dreams .dream-animates .magic-four .contens-mac {
+  margin-top: 145px;
+}
+.data-market-module .index-css .content-all .all-worsgo {
+  background-image: url("images/backsec.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 400px;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+.data-market-module .index-css .content-all .all-worsgo .worsgo-titone {
+  cursor: default;
+  font-size: 28px;
+  margin-top: 40px;
+  text-align: center;
+  color: #FFFFFF;
+}
+.data-market-module .index-css .content-all .all-worsgo .worsgo-tittwo {
+  cursor: default;
+  font-size: 14px;
+  margin-top: 10px;
+  text-align: center;
+  color: #FFFFFF;
+}
+.data-market-module .index-css .content-all .all-worsgo .camp-frends {
+  height: 240px;
+  width: 1200px;
+  box-shadow: 0 0 20px #565151;
+  margin: 24px auto 0;
+  background-color: #FFFFFF;
+  font-size: 0;
+}
+.data-market-module .index-css .content-all .all-worsgo .camp-frends .lists-ilist {
+  height: 119px;
+  width: 299.2px;
+  display: inline-block;
+}
+.data-market-module .index-css .content-all .all-worsgo .camp-frends .ilist-lia {
+  background: url("images/camps/camp1.png") no-repeat;
+  background-position: center;
+  border-right: 1px solid #E9E9E9;
+  border-bottom: 1px solid #E9E9E9;
+}
+.data-market-module .index-css .content-all .all-worsgo .camp-frends .ilist-lib {
+  background: url("images/camps/camp2.png") no-repeat;
+  background-position: center;
+  border-right: 1px solid #E9E9E9;
+  border-bottom: 1px solid #E9E9E9;
+}
+.data-market-module .index-css .content-all .all-worsgo .camp-frends .ilist-lic {
+  background: url("images/camps/camp3.png") no-repeat;
+  background-position: center;
+  border-right: 1px solid #E9E9E9;
+  border-bottom: 1px solid #E9E9E9;
+}
+.data-market-module .index-css .content-all .all-worsgo .camp-frends .ilist-lid {
+  background: url("images/camps/camp4.png") no-repeat;
+  background-position: center;
+  border-right: 0px solid #E9E9E9;
+  border-bottom: 1px solid #E9E9E9;
+}
+.data-market-module .index-css .content-all .all-worsgo .camp-frends .ilist-lie {
+  background: url("images/camps/camp5.png") no-repeat;
+  background-position: center;
+  border-right: 1px solid #E9E9E9;
+}
+.data-market-module .index-css .content-all .all-worsgo .camp-frends .ilist-lif {
+  background: url("images/camps/camp6.png") no-repeat;
+  background-position: center;
+  border-right: 1px solid #E9E9E9;
+}
+.data-market-module .index-css .content-all .all-worsgo .camp-frends .ilist-lig {
+  background: url("images/camps/camp7.png") no-repeat;
+  background-position: center;
+  border-right: 1px solid #E9E9E9;
+}
+.data-market-module .index-css .content-all .all-worsgo .camp-frends .ilist-lih {
+  background: url("images/camps/camp8.png") no-repeat;
+  background-position: center;
+  border-right: 0px solid #E9E9E9;
+}
+.data-market-module .index-css .out-sizes {
+  border-radius: 8px;
+  box-shadow: 0 0 5px #E8E9EB;
+  width: 160px;
+  height: 160px;
+  display: inline-block;
+  background-color: #FFFFFF;
+}
+.data-market-module .market-css {
+  /*
+			by marzing Xue
+		*/
+}
+.data-market-module .market-css .content-markall {
+  width: 100%;
+  position: relative;
+  font-family: "Microsoft Yahei";
+  background-color: #fff;
+  min-height: 612px;
+  padding-bottom: 20px;
+}
+.data-market-module .market-css .content-markall a {
+  cursor: pointer;
+}
+.data-market-module .market-css .content-markall li {
+  list-style-type: none;
+}
+.data-market-module .market-css .content-markall .anotthe-heigs {
+  width: 100%;
+  height: 42px;
+  background-color: #fff;
+}
+.data-market-module .market-css .content-markall .show-wodsays {
+  width: 1200px;
+  margin: auto;
+}
+.data-market-module .market-css .content-markall .pay-conttvs {
+  width: 1200px;
+  margin: 0 auto 20px;
+  background-color: #FFFFFF;
+  padding: 43px 0;
+}
+.data-market-module .market-css .content-markall .pay-conttvs .puays-wprs {
+  margin: 0 45px;
+}
+.data-market-module .market-css .content-markall .pay-conttvs .puays-wprs .omgs-pays {
+  vertical-align: top;
+  display: inline-block;
+}
+.data-market-module .market-css .content-markall .pay-conttvs .puays-wprs .pauus-alls {
+  display: inline-block;
+}
+.data-market-module .market-css .content-markall .pay-conttvs .puays-wprs .pauus-alls .payNo-carsnoe {
+  font-size: 13px;
+}
+.data-market-module .market-css .content-markall .pay-conttvs .puays-wprs .pauus-alls .payName-carsnoe {
+  margin-top: 12px;
+  font-size: 18px;
+}
+.data-market-module .market-css .content-markall .pay-conttvs .puays-wprs .pauus-alls .payBtons-carsnoe {
+  margin-top: 35px;
+}
+.data-market-module .market-css .content-markall .pay-conttvs .puays-wprs .pauus-alls .payBtons-carsnoe a {
+  width: 125px;
+  padding: 8px 0;
+  border: 1px solid #009FE2;
+  color: #009FE2;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  margin-right: 5px;
+  border-radius: 2px;
+}
+.data-market-module .market-css .content-markall .pay-conttvs .puays-wprs .pauus-alls .payBtons-carsnoe a:hover {
+  border: 1px solid #009FE2;
+  color: #FFFFFF;
+  background-color: #009FE2;
+}
+.data-market-module .market-css .content-markall .main-conts {
+  margin: auto;
+}
+.data-market-module .market-css .content-markall .main-conts .markall-lists {
+  color: #333;
+  font-size: 14px;
+  margin-left: 30px;
+  width: 880px;
+  border-right: 1px solid #E3E3E3;
+  background-color: #FFFFFF;
+  padding: 10px 20px 0 20px;
+}
+.data-market-module .market-css .content-markall .main-conts .markall-lists .lista-class {
+  width: 100%;
+  line-height: 30px;
+  border-bottom: 1px dashed #EEEEEE;
+  padding: 9px 0;
+}
+.data-market-module .market-css .content-markall .main-conts .markall-lists .lista-class .class-titles {
+  margin-left: 20px;
+  font-weight: 700;
+}
+.data-market-module .market-css .content-markall .main-conts .markall-lists .lista-class .titles-botona {
+  display: inline-block;
+  text-align: center;
+  padding: 0 15px;
+  margin-left: 10px;
+}
+.data-market-module .market-css .content-markall .main-conts .markall-lists .lista-class .titi-spacliac {
+  margin-right: 6px;
+}
+.data-market-module .market-css .content-markall .main-conts .markall-lists .lista-class .titles-botonb {
+  display: inline-block;
+  text-align: center;
+  padding: 0 15px;
+  margin-left: 10px;
+}
+.data-market-module .market-css .content-markall .main-conts .markall-lists .lista-class .titles-botonc {
+  display: inline-block;
+  text-align: center;
+  padding: 0 15px;
+  margin-left: 10px;
+}
+.data-market-module .market-css .content-markall .main-conts .markall-lists .lista-class .titles-botond {
+  display: inline-block;
+  text-align: center;
+  padding: 0 15px;
+  margin-left: 10px;
+}
+.data-market-module .market-css .content-markall .main-conts .markall-lists .lista-class .titles-botone {
+  display: inline-block;
+  text-align: center;
+  padding: 0 15px;
+  margin: 10px 0 0 10px;
+}
+.data-market-module .market-css .content-markall .main-conts .markall-lists .lista-class .titles-boraspc {
+  border-radius: 20px;
+  color: #FFFFFF;
+  background-color: #087928;
+}
+.data-market-module .market-css .content-markall .main-conts .markall-lists .content-eitsin {
+  border-bottom: 1px dashed #EEEEEE;
+}
+.data-market-module .market-css .content-markall .main-conts .markall-lists .indstry-lise {
+  overflow: hidden;
+  width: 795px;
+  display: inline-block;
+  border-bottom: none;
+  height: 41px;
+  padding: 0;
+}
+.data-market-module .market-css .content-markall .main-conts .markall-lists .indstry-shows {
+  width: 795px;
+  display: inline-block;
+  border-bottom: none;
+  padding: 0;
+}
+.data-market-module .market-css .content-markall .main-conts .markall-lists .spac-botom {
+  padding-bottom: 15px;
+  border-bottom: none;
+}
+.data-market-module .market-css .content-markall .main-conts .markall-lists .checks-click {
+  display: inline-block;
+  margin-top: 14px;
+  vertical-align: top;
+  padding: 0 0 15px 25px;
+  width: 55px;
+  text-align: right;
+  color: #00A6E1;
+  cursor: pointer;
+}
+.data-market-module .market-css .content-markall .main-conts .markall-lists .checker-show {
+  background: url("images/showpro.png") no-repeat 33px 7px;
+}
+.data-market-module .market-css .content-markall .main-conts .markall-lists .checker-hide {
+  background: url("images/hidepro.png") no-repeat 33px 7px;
+}
+.data-market-module .market-css .content-markall .main-conts .page-itsv {
+  width: 100%;
+  height: 73px;
+}
+.data-market-module .market-css .content-markall .main-conts .page-itsv .page-nav-wrap {
+  margin-top: 40px;
+}
+.data-market-module .market-css .content-markall .main-conts .noserchs-its {
+  width: 921px;
+}
+.data-market-module .market-css .content-markall .main-conts .buy-listsa {
+  min-height: 482px;
+  margin-left: 30px;
+  width: 920px;
+  background-color: #FFFFFF;
+}
+.data-market-module .market-css .content-markall .main-conts .buy-listsa .buy-itli {
+  padding-top: 12px;
+  width: 920px;
+  border-right: 1px solid #E3E3E3;
+}
+.data-market-module .market-css .content-markall .main-conts .buy-listsa .buy-itli .lista-contt {
+  height: 187px;
+  border-bottom: 1px solid #CBCCD0;
+  margin: 10px 20px 0 20px;
+  color: #666666;
+  font-size: 14px;
+}
+.data-market-module .market-css .content-markall .main-conts .buy-listsa .buy-itli .lista-contt .contt-left {
+  width: 161px;
+  height: 161px;
+  display: inline-block;
+}
+.data-market-module .market-css .content-markall .main-conts .buy-listsa .buy-itli .lista-contt .contt-left .contt-imgs {
+  width: 161px;
+  height: 161px;
+  border-radius: 8px;
+  display: block;
+}
+.data-market-module .market-css .content-markall .main-conts .buy-listsa .buy-itli .lista-contt .contt-mide {
+  vertical-align: top;
+  display: inline-block;
+  margin: 6px 0 0 18px;
+  width: 552.7px;
+}
+.data-market-module .market-css .content-markall .main-conts .buy-listsa .buy-itli .lista-contt .contt-mide .tit-boxing {
+  color: #333333;
+  margin-top: 1px;
+}
+.data-market-module .market-css .content-markall .main-conts .buy-listsa .buy-itli .lista-contt .contt-mide .tit-boxing .hrf-chagev {
+  color: #333333;
+  text-decoration: none;
+}
+.data-market-module .market-css .content-markall .main-conts .buy-listsa .buy-itli .lista-contt .contt-mide .tit-boxing .hrf-chagev .worsa-tit {
+  font-size: 18px;
+  color: #333333;
+  font-weight: 700;
+}
+.data-market-module .market-css .content-markall .main-conts .buy-listsa .buy-itli .lista-contt .contt-mide .clasa-name {
+  color: #333333;
+  font-weight: 700;
+}
+.data-market-module .market-css .content-markall .main-conts .buy-listsa .buy-itli .lista-contt .contt-mide .clasa-source {
+  color: #333333;
+  font-weight: 700;
+}
+.data-market-module .market-css .content-markall .main-conts .buy-listsa .buy-itli .lista-contt .contt-mide .second-tits {
+  font-size: 0;
+  margin-top: 16px;
+}
+.data-market-module .market-css .content-markall .main-conts .buy-listsa .buy-itli .lista-contt .contt-mide .second-tits .words-prices {
+  font-size: 14px;
+}
+.data-market-module .market-css .content-markall .main-conts .buy-listsa .buy-itli .lista-contt .contt-mide .second-tits .foitsa-picta {
+  margin-left: 15px;
+  font-size: 16px;
+  color: #EB0000;
+  font-weight: 700;
+}
+.data-market-module .market-css .content-markall .main-conts .buy-listsa .buy-itli .lista-contt .contt-mide .second-tits .foitsb-money {
+  font-size: 24px;
+  color: #EB0000;
+  font-weight: 700;
+}
+.data-market-module .market-css .content-markall .main-conts .buy-listsa .buy-itli .lista-contt .contt-mide .contta-clasa {
+  margin-top: 15px;
+}
+.data-market-module .market-css .content-markall .main-conts .buy-listsa .buy-itli .lista-contt .contt-mide .contta-clasa .clasa-lefts {
+  margin-left: 28px;
+}
+.data-market-module .market-css .content-markall .main-conts .buy-listsa .buy-itli .lista-contt .contt-mide .contta-clasa .spaca-lefts {
+  margin-left: 0;
+}
+.data-market-module .market-css .content-markall .main-conts .buy-listsa .buy-itli .lista-contt .contt-mide .contta-clasa .clasa-trade {
+  color: #333333;
+  font-weight: 700;
+}
+.data-market-module .market-css .content-markall .main-conts .buy-listsa .buy-itli .lista-contt .contt-mide .conttb-thirds {
+  margin-top: 10px;
+}
+.data-market-module .market-css .content-markall .main-conts .buy-listsa .buy-itli .lista-contt .contt-mide .conttb-thirds .thirds-know {
+  display: inline-block;
+  margin-top: 10px;
+  color: #333333;
+  font-weight: 700;
+}
+.data-market-module .market-css .content-markall .main-conts .buy-listsa .buy-itli .lista-contt .contt-mide .conttb-thirds .blockf-overs {
+  display: inline-block;
+}
+.data-market-module .market-css .content-markall .main-conts .buy-listsa .buy-itli .lista-contt .contt-mide .conttb-thirds .foitsc-pictb {
+  margin-left: 28px;
+}
+.data-market-module .market-css .content-markall .main-conts .buy-listsa .buy-itli .lista-contt .contt-mide .conttb-thirds .foitsc-pictb {
+  height: 18px;
+}
+.data-market-module .market-css .content-markall .main-conts .buy-listsa .buy-itli .lista-contt .contt-mide .conttb-thirds .foitse-pictc {
+  margin-left: 28px;
+}
+.data-market-module .market-css .content-markall .main-conts .buy-listsa .buy-itli .lista-contt .contt-mide .conttb-thirds .foitse-buingits {
+  margin-left: 50px;
+  color: #45BDFF;
+}
+.data-market-module .market-css .content-markall .main-conts .buy-listsa .buy-itli .lista-contt .contt-mide .conttb-thirds .foitsd-view {
+  color: #333333;
+  font-weight: 700;
+}
+.data-market-module .market-css .content-markall .main-conts .buy-listsa .buy-itli .lista-contt .contt-mide .conttb-thirds .foitsf-many {
+  color: #333333;
+  font-weight: 700;
+}
+.data-market-module .market-css .content-markall .main-conts .buy-listsa .buy-itli .lista-contt .conttf-fives {
+  vertical-align: top;
+  display: inline-block;
+  width: 140px;
+  white-space: nowrap;
+}
+.data-market-module .market-css .content-markall .main-conts .buy-listsa .buy-itli .lista-contt .conttf-fives .worsa-date {
+  color: #333333;
+}
+.data-market-module .market-css .content-markall .main-conts .buy-listsa .buy-itli .lista-contt .conttf-fives .worsc-bot {
+  text-decoration: none;
+  font-size: 16px;
+  display: block;
+  width: 138px;
+  text-align: center;
+  padding: 7px 0;
+  background-color: #FFFFFF;
+  color: #000;
+  border-radius: 1px;
+  margin-top: 10px;
+  border: 1px solid #087928;
+}
+.data-market-module .market-css .content-markall .main-conts .buy-listsa .buy-itli .lista-contt .conttf-fives .worsc-botcant {
+  margin-top: 30px;
+}
+.data-market-module .market-css .content-markall .main-conts .buy-listsa .buy-itli .lista-contt .conttf-fives .worsc-bot:hover {
+  background-color: #087928;
+  color: #FFFFFF;
+}

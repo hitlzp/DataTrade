@@ -30,7 +30,6 @@ def main(request):
     display2 = 'none'
     add = []
     all_news = news.objects.filter(type = '市场新闻')
-    print len(all_news)
     if len(all_news) > 4:
         for i in range(0, len(all_news)):
             if i> len(all_news) -5:
@@ -56,3 +55,10 @@ def news_list(request):
     Hnews = news.objects.filter(type = '行业新闻')
     content = {"Snews":Snews,"Hnews":Hnews}
     return render_to_response("newslist.html",content,context_instance=RequestContext(request))
+def about(request):
+    return render_to_response("about.html",context_instance=RequestContext(request))
+def data(request):
+    return render_to_response("data.html",context_instance=RequestContext(request))
+def data_detail(request):
+    return render_to_response("data_detail.html",context_instance=RequestContext(request))
+

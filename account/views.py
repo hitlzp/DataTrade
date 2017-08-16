@@ -144,7 +144,6 @@ def Adminusersearch(request):
     get = request.GET
     if get:
         searched_user = User.objects.filter(first_name = get["username"])
-    print searched_user
     content = {"admin_name":admin_name,"allusers":searched_user}
     return render_to_response("admin-users -search.html",content,context_instance=RequestContext(request))
 
@@ -173,7 +172,15 @@ def Adminuseredit(request):
 
 
 def phomepage(request):#个人主页
-    return render_to_response("phomepage.html",context_instance=RequestContext(request))
+    userid = request.user.id
+    thisuser = User.objects.filter(id = userid)[0]
+    if thisuser.is_active == 1:
+        state = "已激活"
+    else:
+        state = "未激活"
+    content = {"thisuser":thisuser,"state":state,"date_joined":str(thisuser.date_joined).split('.')[0],\
+               "last_login":str(thisuser.last_login).split('.')[0]}
+    return render_to_response("phomepage.html",content,context_instance=RequestContext(request))
 
 def mymess(request):#个人信息
     userid = request.user.id

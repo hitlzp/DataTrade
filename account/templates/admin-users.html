@@ -45,6 +45,13 @@
 					<div class="left01_left"></div>
 					<div class="left01_c">管理员：{{admin_name}}</div>
 				</div>
+                <div class="left02">
+                    <div class="left02top">
+                        <div class="left02_right"></div>
+                        <div class="left02_left"></div>
+                        <div class="left02top_c">新闻添加</div>
+                    </div>
+				</div>
 				<div class="left02">
 					<div class="left02top">
 						<div class="left02top_right"></div>
@@ -58,18 +65,49 @@
 							用户信息查询</a></div>
 						</div>
 					</div>
+
+                <div class="left02">
+					<div class="left02top">
+						<div class="left02top_right"></div>
+						<div class="left02top_left"></div>
+						<div class="left02top_c">订单管理</div>
+					</div>
+					<div class="left02down">
+						<div class="left02down01"><a  href="/Adminmain/">
+                                <div id="Bf080" class="left02down01_img">
+                                </div>审核发布订单</a>
+                        </div>
+						<div class="left02down01"><a  href="/Adminmain/">
+							<div id="Bf081" class="left02down01_img">
+                            </div>置换订单</a>
+                        </div>
+						<div class="left02down01"><a  href="/Adminmain/">
+							<div id="Bf081" class="left02down01_img">
+                            </div>数据一口价订单</a>
+                        </div>
+						<div class="left02down01"><a  href="/Adminmain/">
+							<div id="Bf081" class="left02down01_img">
+                            </div>数据议价订单</a>
+                        </div>
+                        <div class="left02down01"><a  href="/Adminmain/">
+							<div id="Bf081" class="left02down01_img">
+                            </div>拍卖订单</a>
+                        </div>
+                    </div>
+                </div>
 					<div class="left01">
 						<div class="left03_right"></div>
 						<div class="left01_left"></div>
 						<div class="left03_c" onclick="window.open('/logout/','_self')">安全退出</div>
 					</div>
 				</div>
+            <div>
 				<div class="rrcc" id="RightBox">
 					<div class="right" id="li010">
 						<div class="right01"  style="text-align: center;">用户列表</div>
 					</div>
 				</div>
-				<div class="table-responsive" style = "width: auto;padding-left: 20px"> 
+				<div class="rrcc" style = "width: auto;padding-left: 20px">
 					<table  border="0" cellspacing="0" cellpadding="0" class="table"> 
 						<tr class=" label-primary" style = "background-color:#f3f5f7"> 
 							<th scope="col" width="30%" ><span style="color:black">用户id</span></th> 
@@ -84,8 +122,9 @@
 						</tr> 
 						{% endfor %}
 					</table> 
-				</div>      
-			</div>
+				</div>
+            </div>
+        </div>
 
 		</div><!--content end-->
 
