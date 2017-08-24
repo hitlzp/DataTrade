@@ -4,9 +4,10 @@ from django.template import RequestContext
 from django.shortcuts import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponseRedirect
-from data.models import alldata,datastate
+from data.models import alldata,datastate,buydata
 from django.contrib.auth.models import User
 import datetime
+from django.http import JsonResponse
 # Create your views here.
 
 @csrf_exempt
@@ -147,3 +148,76 @@ def mydata(request):
     content = {'mydata':temp,'mydata2':temp2,'mydata3':temp3,"thisuser":thisuser}
     return render_to_response("mydata.html",content,context_instance=RequestContext(request))
     
+#author sctian
+def check_data_list(request):
+    userid = request.user.id
+    thisuser = User.objects.filter(id = userid)[0]
+    datas = datastate.objects.all()
+    content = {'data_list' : datas}
+    return render_to_response("check_data_list.html", content, context_instance=RequestContext(request))
+
+#author sctian
+def check_data_detail(request):
+    admin_id = request.user.id
+    admin_name = User.objects.filter(id = admin_id)[0].username
+    get = request.GET
+    data = datastate.objects.get(dataid_id = get["dataid"])
+    post = request.POST
+    if post:
+        if post['feedback'] != '':
+            data.detail = post['feedback']
+            data.save()
+        if post['judge'] == 'yes':
+            data.state = 1
+            data.save()
+        if post['judge'] == 'no':
+            data.state = -1
+            data.save()
+    content = {'data': data}
+    return render_to_response("check_data_detail.html",content,context_instance=RequestContext(request))
+def data(request):
+    data0=datastate.objects.filter(state = 1)
+    data1=[]
+    for i in data0:
+        data1.append(alldata.objects.get(id=i.dataid_id))
+    content={}
+    content['data']=data1
+    content['dic']={'8':'123','7':'321','1':'hH'}
+    return render_to_response("data.html",content,context_instance=RequestContext(request))
+def data_detail(request):
+    get = request.GET
+    data = alldata.objects.get(id = get["id"])
+    content={}
+    content['data']=data
+    if buydata.objects.filter(buyer_id = request.user.id, data_id = data):
+        set = 1
+    else:
+        set = 0
+    content['set']=set
+    return render_to_response("data_detail.html",content,context_instance=RequestContext(request))
+
+@csrf_exempt
+def buydt(request):
+    dataid = request.POST.get('dataid')
+    userid =  request.user.id
+    now = datetime.datetime.now()
+    thedata = alldata.objects.get(id = dataid)
+    
+    add = buydata(
+                  post_time = now,
+                  price = thedata.price,
+                  buyer_id = userid,
+                  data = thedata,
+                  )
+    add.save()
+    return JsonResponse({"rr":dataid})
+
+@csrf_exempt
+def buyset(request):
+    temp = []
+    alld = buydata.objects.filter(buyer_id = request.user.id)
+    for d in alld:
+        temp.append(int(d.data_id))
+    return JsonResponse({"rr":temp,'length':len(temp)})
+
+

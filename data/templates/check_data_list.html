@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--author sctian-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -100,25 +101,37 @@
 						<div class="left01_left"></div>
 						<div class="left03_c" onclick="window.open('/logout/','_self')">安全退出</div>
 					</div>
-				</div>
+			</div>
             <div>
 				<div class="rrcc" id="RightBox">
 					<div class="right" id="li010">
-						<div class="right01"  style="text-align: center;">用户列表</div>
+						<div class="right01"  style="text-align: center;">待审核订单列表</div>
 					</div>
 				</div>
 				<div class="rrcc" style = "width: auto;padding-left: 20px">
 					<table  border="0" cellspacing="0" cellpadding="0" class="table"> 
 						<tr class=" label-primary" style = "background-color:#f3f5f7"> 
-							<th scope="col" width="30%" ><span style="color:black">用户id</span></th> 
-							<th scope="col" width="30%"><span style="color:black">用户名</span></th> 
-							<th scope="col"><span style="color:black">邮箱</span></th> 
+							<th scope="col" width="10%" ><span style="color:black">用户id</span></th> 
+							<th scope="col" width="15%"><span style="color:black">用户名</span></th> 
+							<th scope="col" width="30%"><span style="color:black">数据名称</span></th> 
+							<th scope="col" width="10%"><span style="color:black">数据状态</span></th> 
+							<th scope="col" width="15%"><span style="color:black">上传时间</span></th> 
+							<th scope="col"><span style="color:black">审查</span></th> 
 						</tr> 
-						{% for user in allusers %}
+						{% for data in data_list %}
 						<tr class="active">
-							<td >{{user.id}}</td> 
-							<td ><a href = "/Admin_Edit_User?userid={{user.id}}">{{user.first_name}}</a></td> 
-							<td>{{user.username}}</td>
+							<td >{{data.owner_id}}</td>
+							<td >{{data.owner.first_name}}</td>
+							<td >{{data.dataid.file_name}}</td>
+							{%if data.state == 0%}
+								<td >待审核</td> 
+							{%elif data.state == 1%}
+								<td >审核通过</td> 
+							{%else %}
+								<td >审核不通过</td> 
+							{%endif%}
+							<td >{{data.dataid.post_time}}</td>
+							<td ><a href = "/check_data_detail?dataid={{data.dataid.id}}">审查</a></td> 
 						</tr> 
 						{% endfor %}
 					</table> 

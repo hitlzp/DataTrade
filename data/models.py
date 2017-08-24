@@ -19,7 +19,13 @@ class alldata(models.Model):
     isaval = models.IntegerField(default=0)
     
 class datastate(models.Model):
-    state = models.IntegerField(default=0)
+    state = models.IntegerField(default=0)   #
     owner = models.ForeignKey(User,null = True)
     dataid = models.ForeignKey(alldata)
     detail = models.TextField(null = True)
+    
+class buydata(models.Model):
+    data = models.ForeignKey(alldata,null = True)
+    post_time = models.DateTimeField(default = "2012-05-15 21:05")
+    price = models.IntegerField(default=0)
+    buyer =  models.ForeignKey(User,null = True)

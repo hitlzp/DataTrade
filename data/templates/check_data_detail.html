@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--author sctian-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -100,33 +101,72 @@
 						<div class="left01_left"></div>
 						<div class="left03_c" onclick="window.open('/logout/','_self')">安全退出</div>
 					</div>
-				</div>
-            <div>
+			</div>
+			<div>
 				<div class="rrcc" id="RightBox">
 					<div class="right" id="li010">
-						<div class="right01"  style="text-align: center;">用户列表</div>
+						<div class="right01"  style="text-align: center;">待审核订单信息</div>
 					</div>
 				</div>
 				<div class="rrcc" style = "width: auto;padding-left: 20px">
 					<table  border="0" cellspacing="0" cellpadding="0" class="table"> 
 						<tr class=" label-primary" style = "background-color:#f3f5f7"> 
-							<th scope="col" width="30%" ><span style="color:black">用户id</span></th> 
-							<th scope="col" width="30%"><span style="color:black">用户名</span></th> 
-							<th scope="col"><span style="color:black">邮箱</span></th> 
+							<th scope="col" width="10%" ><span style="color:black">用户id</span></th> 
+							<th scope="col" width="15%"><span style="color:black">用户名</span></th> 
+							<th scope="col" width="30%"><span style="color:black">数据名称</span></th> 
+							<th scope="col" width="10%"><span style="color:black">数据状态</span></th> 
+							<th scope="col" width="15%"><span style="color:black">上传时间</span></th> 
+							<th scope="col" width="15%"><span style="color:black">数据下载</span></th> 
+							<th scope="col" width="15%"><span style="color:black">demo下载</span></th> 
+							<th scope="col" width="15%"><span style="color:black">审核意见</span></th> 
 						</tr> 
-						{% for user in allusers %}
+						
 						<tr class="active">
-							<td >{{user.id}}</td> 
-							<td ><a href = "/Admin_Edit_User?userid={{user.id}}">{{user.first_name}}</a></td> 
-							<td>{{user.username}}</td>
+							<td >{{data.owner_id}}</td>
+							<td >{{data.owner.first_name}}</td>
+							<td >{{data.dataid.file_name}}</td>
+							{%if data.state == 0%}
+								<td >待审核</td> 
+							{%elif data.state == 1%}
+								<td >审核通过</td> 
+							{%else %}
+								<td >审核不通过</td> 
+							{%endif%}
+							<td >{{data.dataid.post_time}}</td>
+							<td >{{data.dataid.file}}</td>
+							<td >{{data.dataid.Show_demo}}</td>
+							<td >{{data.detail}}</td>
+							 
 						</tr> 
-						{% endfor %}
 					</table> 
 				</div>
-            </div>
-        </div>
+			</div>
+			<div class="rrcc" id="RightBox">
 
-		</div><!--content end-->
+				<div class="right" id="li010">
+					<form action="#" method="post" >
+						{% csrf_token %}
+
+						<div class="input-group"  style = "width:48%;padding: 10px;float:left">
+							<label><input name="judge" type="radio" value='yes' />同意审核 </label>
+						</div>
+						<div class="input-group"  style = "width:48%;padding: 10px;float:left">
+							<label><input name="judge" type="radio" value='no' />不同意审核 </label>
+						</div>
+						<div class="input-group"  style = "width:48%;padding: 10px;float:left">
+							<input type="text"  style = "float:right" name='feedback'  value="审核意见" />
+						</div>
+						<input type="submit"  style = "float:right" value="提交修改" />
+					</form>
+					
+				</div>
+			</div>
+				
+
+
+		</div>
+
+	</div><!--content end-->
 
 		<div class="container footer">
 			<div class="quicknav"><a href="terms.html">使用条款</a><span>|</span><a href="statement.html">隐私权声明</a><span>|</span><a href="pledge.html">服务承诺</a><span>|</span><a href="contact.html">联系我们</a><span>|</span><a href="#">企业邮箱</a></div>

@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """DataTrade URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -29,29 +30,35 @@ urlpatterns = [
     url(r'^login/$', login),
     url(r'^register/$', register),
     url(r'^logout/$', logout),
-    url(r'^verification/$', emailverifi),
-    url(r'^addnews/$', Addnews),
-    url(r'^Adminmain/$', Adminmain),
-    url(r'^Admin_User_Search/$', Adminusersearch),
-    url(r'^Admin_Edit_User/$', Adminuseredit),
-    url(r'^savenews/$', savenews),
-    url(r'^main/$', main),
-    url(r'^news_detail/$', news_detail),
-    url(r'^news_list/$', news_list),
-    url(r'^phomepage/$', phomepage),
-    url(r'^mymess/$', mymess),
-    url(r'^about/$', about),
-    url(r'^data/$', data),
-    url(r'^data_detail/$', data_detail),
-    #uEditor ---start
+    url(r'^verification/$', emailverifi),  #邮箱验证
+    url(r'^addnews/$', Addnews),   #添加新闻
+    url(r'^Adminmain/$', Adminmain),   #管理员主界面
+    url(r'^Admin_User_Search/$', Adminusersearch),  #管理员用户信息查询
+    url(r'^Admin_Edit_User/$', Adminuseredit),  #管理员编辑用户信息
+    url(r'^savenews/$', savenews),   #写新闻
+    url(r'^main/$', main),   #主界面
+    url(r'^news_detail/$', news_detail),   #展示新闻
+    url(r'^news_list/$', news_list),   #新闻中心，展示新闻列表
+    url(r'^phomepage/$', phomepage),  #个人主界面
+    url(r'^mymess/$', mymess),    #?
+    url(r'^about/$', about),  #?
+    url(r'^data/$', data),   #?
+    url(r'^data_detail/$', data_detail),  #?
+    #uEditor ---start   百度编辑器插件
     url(r'ueEditorControler','news.controller.handler'),
     url( r'^UE/(?P<path>.*)$', 'django.views.static.serve',{ 'document_root': (ROOT+"/UE").replace('\\','/')}),
     url( r'^upload/(?P<path>.*)$', 'django.views.static.serve',{ 'document_root': (ROOT+"/upload").replace('\\','/') }),
     #uEditor ---end
     
-    url(r'^uploaddata/$', uploaddata),
-    url(r"^check_existing/$",check_existing), 
-    url(r"^upload_image/$",upload_image), 
-    url(r"^mydata/$",mydata), 
+    url(r'^uploaddata/$', uploaddata),   #上传数据  发布数据
+    url(r"^check_existing/$",check_existing),  #插件
+    url(r"^upload_image/$",upload_image),   #只起调用函数作用
+    url(r"^mydata/$",mydata),    #已发布数据
+
+    url(r'^check_data_list/$', check_data_list),
+    url(r'^check_data_detail/$', check_data_detail),
+    
+    url(r'^data/buydata/$', buydt), 
+    url(r'^data/set/$', buyset),
     
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

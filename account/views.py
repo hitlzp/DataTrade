@@ -6,6 +6,7 @@ from django.views.decorators.csrf import csrf_protect
 from django.contrib import auth
 from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
+from data.models import *
 
 import smtplib  #加载smtplib模块
 from email.mime.text import MIMEText
@@ -192,3 +193,4 @@ def mymess(request):#个人信息
     content = {"thisuser":thisuser,"state":state,"date_joined":str(thisuser.date_joined).split('.')[0],\
                "last_login":str(thisuser.last_login).split('.')[0]}
     return render_to_response("mymess.html",content,context_instance=RequestContext(request))
+

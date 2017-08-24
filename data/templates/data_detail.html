@@ -10,6 +10,7 @@
 <link type="text/css" href="/static/css/common.css" rel="stylesheet" />
 <link type="text/css" href="/static/css/data-market.css" rel="stylesheet" />
 <script type="text/javascript" src="/static/js/jquery-1.2.6.pack.js"></script>
+<script type="text/javascript" src="/static/js/jquery.min.js"></script> 
 <!--解决 IE6 背景缓存-->
 <!--[if IE 6]><script type="text/javascript">document.execCommand("BackgroundImageCache", false, true);</script><![endif]-->
 </head>
@@ -40,15 +41,54 @@
 <div class="detail-css">
 <div class="ists-all"></div>
     <div class="content-all">
-       
-        <div class="course-info" id="courseInfo"><div class="contt-left">					<a class="contt-imgs"><img class="codeat-imgt" src="http://oss-cn-hangzhou.aliyuncs.com/mojingwebupdate/csp-web/csp/images/commons/pic_url_4.png" /></a>				</div>				<div class="contt-mide">					<div class="tit-boxing">						<a class="hrf-chagev"><span class="worsa-tit">北京_生活服务_供热数据（锅炉房）.</span></a>					</div>					<div class="second-tits">						<span class="words-prices">优惠价格：</span>						<span class="foitsa-picta">￥</span>						<span class="foitsb-money">0</span>					</div>					<div class="contta-clasa">						<span class="clasa-lefts spaca-lefts">数据大小：</span>						<span class="clasa-trade">2.21M</span>						<span class="clasa-leftsexc">数据格式：</span>						<span class="clasa-trade">文本</span>						<span class="clasa-lefts">浏览次数：</span>						<span class="clasa-name">3154</span>						<span class="clasa-lefts">购买次数：</span>						<span class="clasa-source">873</span>					</div>					<div class="conttb-thirds">						<span class="blockf-overs">标签：</span><span class="thirds-know">生活服务</span>						<span class="foitsc-pictb">来源：</span>						<span class="foitsd-view">政府</span>						<span class="foitse-pictc">上架时间：</span> <span class="foitsf-many">2016-5-30</span>					</div>					<div class="itstbot-tons">						<a class="worsc-bot buyin-go" authr="35084" authorfromtype="-1" soceid="1315bb33226511e6a2ec9c37f40beb8e">立即购买</a></div></div></div>
+
+        <div class="course-info" id="courseInfo">
+            <div class="contt-left">
+                <a class="contt-imgs">
+                    <img class="codeat-imgt"  src="/media/{{ data.picture }}" />
+                </a>
+            </div>
+            <div class="contt-mide">
+                <div class="tit-boxing">
+                    <a class="hrf-chagev">
+                        <span class="worsa-tit">{{ data.dataname }}</span>
+                    </a>
+                </div>
+                <div class="second-tits">
+                    <span class="words-prices">优惠价格：</span>
+                    <span class="foitsa-picta">￥</span>
+                    <span class="foitsb-money">{{ data.price }}</span>
+                </div>
+                <div class="contta-clasa">
+                    <span class="clasa-lefts spaca-lefts">数据大小：</span>
+                    <span class="clasa-trade">{{ data.file_scale }}</span>
+                    <span class="clasa-leftsexc">数据格式：</span>
+                    <span class="clasa-trade">文本</span>
+
+                </div>
+                <div class="conttb-thirds">
+                    <span class="blockf-overs">标签：</span>
+                    <span class="thirds-know">生活服务</span>
+                    <span class="foitse-pictc">上架时间：</span>
+                    <span class="foitsf-many">{{ data.post_time }}</span>					
+				</div>					
+				<div class="itstbot-tons">	
+					{%if set == 0%}
+					<a id = 'set11' class="worsc-bot buyin-go" authr="35084" authorfromtype="-1" soceid="1315bb33226511e6a2ec9c37f40beb8e" onclick = "buydata({{data.id}})">立即购买</a>
+					{%else %}
+					<a class="worsc-bot buyin-go" >已购买</a>
+					{%endif%}
+					<a class="worsc-bot buyin-go" id = 'set22' style = "display:none">已购买</a>
+				</div>
+			</div>
+		</div>
         <div class="content-center">
             <div class="course-content">
                 <div class="course-desc">
                     <div class="title">
                         <div class="name">数据介绍</div>
                     </div>
-                    <div class="desc" id="contwors"><p>本数据统计了北京市供热系统的相关数据。<br />统计的项目包含：<br />锅炉房名称<br />所在区县<br />街道<br />锅炉房地址<br />锅炉房性质<br />供热面积<br />供热能耗类型<br />供热公司<br />...<br />通过此份数据可以分析了解到北京不同地区供热需求情况及不同的供热公司的供热能力水平和覆盖的区域情况。<br /></p></div>
+                    <div class="desc" id="contwors"><p>{{ data.introduce }}</p></div>
                 </div>
 				<div class="previe-div">
                     <div class="title">
@@ -64,7 +104,7 @@
 					</div>
                     <div class="previes-cont" id="contwors"></div>
                 </div>
-             
+
             </div>
         </div>
     </div>
@@ -89,6 +129,24 @@
 	<div class="quicknav"><a href="terms.html">使用条款</a><span>|</span><a href="statement.html">隐私权声明</a><span>|</span><a href="pledge.html">服务承诺</a><span>|</span><a href="contact.html">联系我们</a><span>|</span><a href="#">企业邮箱</a></div>
 	<div class="copyright">Copyright © 哈工大数据集团数据市场. All Rights Reserved.<span>|</span>版权所有 哈工大数据集团<span></div>
 </div><!--footer end-->
-	
+<script type="text/javascript">
+	function buydata(event)
+	{
+		var post_data ={
+			"dataid":event,
+			};
+		$.ajax({
+			type : "POST", //要插入数据，所以是POST协议 
+			url : "/data/buydata/", //注意结尾的斜线，否则会出现500错误
+			traditional:true,  //加上此项可以传数组
+			data : post_data, //JSON数据
+			success: function(mydata){
+				document.getElementById("set11").style.display="none";//隐藏
+				document.getElementById("set22").style.display="";
+				
+			}
+		});
+	}
+</script>
 </body>
 </html>
