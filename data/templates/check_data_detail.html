@@ -111,20 +111,19 @@
 				<div class="rrcc" style = "width: auto;padding-left: 20px">
 					<table  border="0" cellspacing="0" cellpadding="0" class="table"> 
 						<tr class=" label-primary" style = "background-color:#f3f5f7"> 
-							<th scope="col" width="10%" ><span style="color:black">用户id</span></th> 
-							<th scope="col" width="15%"><span style="color:black">用户名</span></th> 
-							<th scope="col" width="30%"><span style="color:black">数据名称</span></th> 
-							<th scope="col" width="10%"><span style="color:black">数据状态</span></th> 
-							<th scope="col" width="15%"><span style="color:black">上传时间</span></th> 
-							<th scope="col" width="15%"><span style="color:black">数据下载</span></th> 
-							<th scope="col" width="15%"><span style="color:black">demo下载</span></th> 
-							<th scope="col" width="15%"><span style="color:black">审核意见</span></th> 
-						</tr> 
-						
-						<tr class="active">
+							<td><span style="color:black">用户id</span></td> 
 							<td >{{data.owner_id}}</td>
+						</tr>
+						<tr>
+							<td><span style="color:black">用户名</span></td> 
 							<td >{{data.owner.first_name}}</td>
+						</tr>
+						<tr>
+							<td><span style="color:black">数据名称</span></td> 
 							<td >{{data.dataid.file_name}}</td>
+						</tr>
+						<tr>
+							<td><span style="color:black">数据状态</span></td> 
 							{%if data.state == 0%}
 								<td >待审核</td> 
 							{%elif data.state == 1%}
@@ -132,11 +131,22 @@
 							{%else %}
 								<td >审核不通过</td> 
 							{%endif%}
+						</tr>
+						<tr>
+							<td><span style="color:black">上传时间</span></td> 
 							<td >{{data.dataid.post_time}}</td>
+						</tr>
+						<tr>
+							<td><span style="color:black">数据下载</span></td> 
 							<td >{{data.dataid.file}}</td>
+						</tr>
+						<tr>
+							<td><span style="color:black">demo下载</span></td> 
 							<td >{{data.dataid.Show_demo}}</td>
+						</tr>
+						<tr>
+							<td><span style="color:black">审核意见</span></td> 
 							<td >{{data.detail}}</td>
-							 
 						</tr> 
 					</table> 
 				</div>
@@ -154,7 +164,7 @@
 							<label><input name="judge" type="radio" value='no' />不同意审核 </label>
 						</div>
 						<div class="input-group"  style = "width:48%;padding: 10px;float:left">
-							<input type="text"  style = "float:right" name='feedback'  value="审核意见" />
+							<input type="text"  style = "float:right;height:80px;width:300px" name='feedback'  value="审核意见" />
 						</div>
 						<input type="submit"  style = "float:right" value="提交修改" />
 					</form>
