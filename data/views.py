@@ -219,5 +219,15 @@ def buyset(request):
     for d in alld:
         temp.append(int(d.data_id))
     return JsonResponse({"rr":temp,'length':len(temp)})
+#author sctian
+def bought_data_list(request):
+    userid = request.user.id
+    try:
+        datas = buydata.objects.filter(buyer = userid)
+        content = {'data_list': datas}
+    except:
+        content = {}
+    return render_to_response("bought_data_list.html", content, context_instance=RequestContext(request))
+
 
 
