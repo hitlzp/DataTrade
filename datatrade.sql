@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50625
 File Encoding         : 65001
 
-Date: 2017-08-23 17:28:04
+Date: 2017-08-25 10:19:50
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -224,7 +224,8 @@ CREATE TABLE `data_buydata` (
   KEY `data_buydata_data_id_e6ca99d_fk_data_alldata_id` (`data_id`),
   CONSTRAINT `data_buydata_buyer_id_32c699b5_fk_auth_user_id` FOREIGN KEY (`buyer_id`) REFERENCES `auth_user` (`id`),
   CONSTRAINT `data_buydata_data_id_e6ca99d_fk_data_alldata_id` FOREIGN KEY (`data_id`) REFERENCES `data_alldata` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- ----------------------------
 -- Records of data_buydata
