@@ -60,5 +60,7 @@ urlpatterns = [
     
     url(r'^data/buydata/$', buydt), 
     url(r'^data/set/$', buyset),
+
+    url(r'^bought_data_list/$', bought_data_list),
     
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
