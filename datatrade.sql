@@ -224,6 +224,7 @@ CREATE TABLE `data_buydata` (
   KEY `data_buydata_data_id_e6ca99d_fk_data_alldata_id` (`data_id`),
   CONSTRAINT `data_buydata_buyer_id_32c699b5_fk_auth_user_id` FOREIGN KEY (`buyer_id`) REFERENCES `auth_user` (`id`),
   CONSTRAINT `data_buydata_data_id_e6ca99d_fk_data_alldata_id` FOREIGN KEY (`data_id`) REFERENCES `data_alldata` (`id`)
+
 ) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- ----------------------------
