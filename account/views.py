@@ -194,3 +194,28 @@ def mymess(request):#个人信息
                "last_login":str(thisuser.last_login).split('.')[0]}
     return render_to_response("mymess.html",content,context_instance=RequestContext(request))
 
+def fixedPrice_sell(request):
+    temp = []
+    userid= request.user.id
+    name = User.objects.get(id = userid)
+    all_data = alldata.objects.filter(owner_id = userid)
+    buy_data = buydata.objects.all()
+    for data in all_data:
+        for data2 in buy_data:
+            if data.id == data2.data_id:
+                temp.append(data)
+    content = {'data_list': temp,'thisuser':name}
+    return render_to_response("fixed_price_s.html",content,context_instance=RequestContext(request))
+
+def fixedPrice_buy(request):
+    temp = []
+    userid= request.user.id
+    name = User.objects.get(id = userid)
+    all_data = alldata.objects.all()
+    buy_data = buydata.objects.filter(buyer_id = userid)
+    for data in all_data:
+        for data2 in buy_data:
+            if data.id == data2.data_id:
+                temp.append(data)
+    content = {'data_list': temp,'thisuser':name}
+    return render_to_response("fixed_price_b.html",content,context_instance=RequestContext(request))

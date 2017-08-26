@@ -179,7 +179,8 @@ def data(request):
     data0=datastate.objects.filter(state = 1)
     data1=[]
     for i in data0:
-        data1.append(alldata.objects.get(id=i.dataid_id))
+        if not i.owner_id  == request.user.id:
+            data1.append(alldata.objects.get(id=i.dataid_id))
     content={}
     content['data']=data1
     content['dic']={'8':'123','7':'321','1':'hH'}
@@ -219,5 +220,16 @@ def buyset(request):
     for d in alld:
         temp.append(int(d.data_id))
     return JsonResponse({"rr":temp,'length':len(temp)})
+#author sctian
+def bought_data_list(request):
+    userid = request.user.id
+    try:
+        datas = buydata.objects.filter(buyer = userid)
+        name = User.objects.get(id = userid)
+        content = {'data_list': datas,'thisuser':name}
+    except:
+        content = {}
+    return render_to_response("bought_data_list.html", content, context_instance=RequestContext(request))
+
 
 
