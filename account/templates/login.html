@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6 lt8"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7 lt8"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8 lt8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="UTF-8" />
+        <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">  -->
+        <title>登陆</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <meta name="description" content="Login and Registration Form with HTML5 and CSS3" />
+        <meta name="keywords" content="html5, css3, form, switch, animation, :target, pseudo-class" />
+        <meta name="author" content="Codrops" />
+        <link rel="shortcut icon" href="../favicon.ico"> 
+        <link rel="stylesheet" type="text/css" href="/static/css/demo.css" />
+        <link rel="stylesheet" type="text/css" href="/static/css/style.css" />
+		<link rel="stylesheet" type="text/css" href="/static/css/animate-custom.css" />
+    </head>
+    <body>
+        <div class="container">
+           
+            <header>
+                
+            </header>
+            <section>				
+                <div id="container_demo" >
+                    <div id="wrapper">
+                        <div id="login" class="animate form">
+                            <form autocomplete="on" method="post"> 
+                            {% csrf_token %}
+                                <h1>登陆</h1> 
+                                <div style = "color:red;text-align: center">{{error}}</div>
+                                <p> 
+                                    <label for="email" class="uname" data-icon="u" > 邮箱 </label>
+                                    <input id="email" name="email" required="required" type="text" placeholder="邮箱"/>
+                                </p>
+                                <p> 
+                                    <label for="password" class="youpasswd" data-icon="p"> 密码</label>
+                                    <input id="password" name="password" required="required" type="password" placeholder="密码" /> 
+                                </p>
+                                <p class="login button"> 
+                                    <input type="submit" value="登陆" /> 
+								</p>
+                                <p class="change_link">
+									还未创建账号 ?
+									<a href="/register" class="to_register">注册</a>
+								</p>
+                            </form>
+                        </div>
+						
+                    </div>
+                </div>  
+            </section>
+        </div>
+    </body>
+</html>
