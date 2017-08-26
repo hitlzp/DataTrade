@@ -62,8 +62,11 @@ urlpatterns = [
     url(r'^data/set/$', buyset),
 
     url(r'^bought_data_list/$', bought_data_list),
+<<<<<<< HEAD
     
     url(r'^fixed_price_s/$', fixedPrice_sell),
     url(r'^fixed_price_b/$', fixedPrice_buy),  
+=======
+>>>>>>> origin/master
     
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -225,8 +225,12 @@ def bought_data_list(request):
     userid = request.user.id
     try:
         datas = buydata.objects.filter(buyer = userid)
+<<<<<<< HEAD
         name = User.objects.get(id = userid)
         content = {'data_list': datas,'thisuser':name}
+=======
+        content = {'data_list': datas}
+>>>>>>> origin/master
     except:
         content = {}
     return render_to_response("bought_data_list.html", content, context_instance=RequestContext(request))
