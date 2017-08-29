@@ -11,7 +11,7 @@
 <link type="text/css" href="/static/css/data-market.css" rel="stylesheet" />
 <script type="text/javascript" src="/static/js/jquery-1.2.6.pack.js"></script>
 <script type="text/javascript" src="/static/js/jquery.min.js"></script> 
-<!--解决 IE6 背景缓存-- >
+<!--解决 IE6 背景缓存-->
 <!--[if IE 6]><script type="text/javascript">document.execCommand("BackgroundImageCache", false, true);</script><![endif]-->
 </head>
 
@@ -61,77 +61,77 @@
 			<div class="markall-lists">
 				<div class="lista-class indstry-lisd">
 					<span class="class-titles">交易类型：</span>
-					<a class="titles-botond titles-boraspc" iconval="">数据一口价</a>
-					<a class="titles-botond" iconval="true" href = '/data/bargain'>数据议价</a>
+					<a class="titles-botond " iconval="" href = '/data'>数据一口价</a>
+					<a class="titles-botond titles-boraspc" iconval="true" href = '/data/bargain'>数据议价</a>
 					<a class="titles-botond" iconval="false">数据拍卖</a>
 				</div>
 				<div class="content-eitsin">
 					<div class="lista-class indstry-lise">
 						<span class="class-titles">数据标签：</span>
 						{%if css == 0%}
-						<a class="titles-botone titles-boraspc" iconval="" href = '/data/select?tag=0'>不限</a>
+						<a class="titles-botone titles-boraspc" iconval="" href = '/data/bargain/select?tag=0'>不限</a>
 						{%else %}
-						<a class="titles-botone" iconval="" href = '/data/select?tag=0'>不限</a>
+						<a class="titles-botone" iconval="" href = '/data/bargain/select?tag=0'>不限</a>
 						{%endif%}
 
 						{%if css == 1%}
-						<a class="titles-botone titles-boraspc" iconval="" href = '/data/select?tag=1'>生活服务</a>
+						<a class="titles-botone titles-boraspc" iconval="" href = '/data/bargain/select?tag=1'>生活服务</a>
 						{%else %}
-						<a class="titles-botone" iconval="" href = '/data/select?tag=1'>生活服务</a>
+						<a class="titles-botone" iconval="" href = '/data/bargain/select?tag=1'>生活服务</a>
 						{%endif%}
 
 						{%if css == 2%}
-						<a class="titles-botone titles-boraspc" iconval="" href = '/data/select?tag=2'>金融</a>
+						<a class="titles-botone titles-boraspc" iconval="" href = '/data/bargain/select?tag=2'>金融</a>
 						{%else %}
-						<a class="titles-botone" iconval="" href = '/data/select?tag=2'>金融</a>
+						<a class="titles-botone" iconval="" href = '/data/bargain/select?tag=2'>金融</a>
 						{%endif%}
 
 						{%if css == 3%}
-						<a class="titles-botone titles-boraspc" iconval="" href = '/data/select?tag=3'>教育</a>
+						<a class="titles-botone titles-boraspc" iconval="" href = '/data/bargain/select?tag=3'>教育</a>
 						{%else %}
-						<a class="titles-botone" iconval="" href = '/data/select?tag=3'>教育</a>
+						<a class="titles-botone" iconval="" href = '/data/bargain/select?tag=3'>教育</a>
 						{%endif%}
 
 						{%if css == 4%}
-						<a class="titles-botone titles-boraspc" iconval="" href = '/data/select?tag=4'>交通运输</a>
+						<a class="titles-botone titles-boraspc" iconval="" href = '/data/bargain/select?tag=4'>交通运输</a>
 						{%else %}
-						<a class="titles-botone" iconval="" href = '/data/select?tag=4'>交通运输</a>
+						<a class="titles-botone" iconval="" href = '/data/bargain/select?tag=4'>交通运输</a>
 						{%endif%}
 
 						{%if css == 5%}
-						<a class="titles-botone titles-boraspc" iconval="" href = '/data/select?tag=5'>建筑房地产</a>
+						<a class="titles-botone titles-boraspc" iconval="" href = '/data/bargain/select?tag=5'>建筑房地产</a>
 						{%else %}
-						<a class="titles-botone" iconval="" href = '/data/select?tag=5'>建筑房地产</a>
+						<a class="titles-botone" iconval="" href = '/data/bargain/select?tag=5'>建筑房地产</a>
 						{%endif%}
 
 						{%if css == 6%}
-						<a class="titles-botone titles-boraspc" iconval="" href = '/data/select?tag=6'>政府</a>
+						<a class="titles-botone titles-boraspc" iconval="" href = '/data/bargain/select?tag=6'>政府</a>
 						{%else %}
-						<a class="titles-botone" iconval="" href = '/data/select?tag=6'>政府</a>
+						<a class="titles-botone" iconval="" href = '/data/bargain/select?tag=6'>政府</a>
 						{%endif%}
 
 						{%if css == 7%}
-						<a class="titles-botone titles-boraspc" iconval="" href = '/data/select?tag=7'>能源</a>
+						<a class="titles-botone titles-boraspc" iconval="" href = '/data/bargain/select?tag=7'>能源</a>
 						{%else %}
-						<a class="titles-botone" iconval="" href = '/data/select?tag=7'>能源</a>
+						<a class="titles-botone" iconval="" href = '/data/bargain/select?tag=7'>能源</a>
 						{%endif%}
 
 						{%if css == 8%}
-						<a class="titles-botone titles-boraspc" iconval="" href = '/data/select?tag=8'>农业</a>
+						<a class="titles-botone titles-boraspc" iconval="" href = '/data/bargain/select?tag=8'>农业</a>
 						{%else %}
-						<a class="titles-botone" iconval="" href = '/data/select?tag=8'>农业</a>
+						<a class="titles-botone" iconval="" href = '/data/bargain/select?tag=8'>农业</a>
 						{%endif%}
 
 						{%if css == 9%}
-						<a class="titles-botone titles-boraspc" iconval="" href = '/data/select?tag=9'>医疗卫生</a>
+						<a class="titles-botone titles-boraspc" iconval="" href = '/data/bargain/select?tag=9'>医疗卫生</a>
 						{%else %}
-						<a class="titles-botone" iconval="" href = '/data/select?tag=9'>医疗卫生</a>
+						<a class="titles-botone" iconval="" href = '/data/bargain/select?tag=9'>医疗卫生</a>
 						{%endif%}
 
 						{%if css == 10%}
-						<a class="titles-botone titles-boraspc" iconval="" href = '/data/select?tag=10'>其他</a>
+						<a class="titles-botone titles-boraspc" iconval="" href = '/data/bargain/select?tag=10'>其他</a>
 						{%else %}
-						<a class="titles-botone" iconval="" href = '/data/select?tag=10'>其他</a>
+						<a class="titles-botone" iconval="" href = '/data/bargain/select?tag=10'>其他</a>
 						{%endif%}
 					</div>
 				<span class="checks-click checker-show"></span></div>
@@ -196,7 +196,7 @@
 			 	</div>
 			 	<div class="conttf-fives">
 			 	<a class="worsc-bot worsc-botcant" href="/data_detail/?id={{data1.id}}">查看详情</a>
-			 	<a class="worsc-bot buying-clc" id = 'rrr{{data1.id}}' onclick = "buydata({{data1.id}})">立即购买</a>
+			 	<a class="worsc-bot buying-clc" id = 'rrr{{data1.id}}' >联系卖家</a>
 				<a class="worsc-bot buying-clc" id  = 'ttt{{data1.id}}' style = "display:none" disabled>已购买</a>
 
                     {% if data1.exchange  %}

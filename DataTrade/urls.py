@@ -43,6 +43,8 @@ urlpatterns = [
     url(r'^mymess/$', mymess),    #?
     url(r'^about/$', about),  #?
     url(r'^data/$', data),   #?
+    url(r'^data/select/$', data_sel),   #? 
+    url(r'^data/bargain/$', data_bargain),   #?
     url(r'^data_detail/$', data_detail),  #?
     #uEditor ---start   百度编辑器插件
     url(r'ueEditorControler','news.controller.handler'),
@@ -54,7 +56,9 @@ urlpatterns = [
     url(r"^check_existing/$",check_existing),  #插件
     url(r"^upload_image/$",upload_image),   #只起调用函数作用
     url(r"^mydata/$",mydata),    #已发布数据
-
+    url(r"^mydata/bargain/$",mydata_bargain),     #已发布议价数据
+    url(r"^data/bargain/select/$",data_bargain_sel),     #已发布议价数据(加标签) 
+    
     url(r'^check_data_list/$', check_data_list),
     url(r'^check_data_detail/$', check_data_detail),
     
@@ -62,11 +66,11 @@ urlpatterns = [
     url(r'^data/set/$', buyset),
 
     url(r'^bought_data_list/$', bought_data_list),
-<<<<<<< HEAD
     
     url(r'^fixed_price_s/$', fixedPrice_sell),
-    url(r'^fixed_price_b/$', fixedPrice_buy),  
-=======
->>>>>>> origin/master
+    url(r'^fixed_price_b/$', fixedPrice_buy), 
+    
+    url(r'^publish/bargain/$', uploaddata_baigain),  #发布议价数据 
+    url(r"^upload_image_bargain/$",upload_image_bargain),   #只起调用函数作用
     
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

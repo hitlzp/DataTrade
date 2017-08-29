@@ -8,7 +8,6 @@
 	<link type="text/css" href="/static/css/style10.css" rel="stylesheet" />
 	<link href="/static/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 
-	<script type="text/javascript" src="/static/js/placeImage.js"></script>
 	<script type="text/javascript" src="/static/js/jquery.min.js"></script> 
 	<script type="text/javascript" src="/static/js/jquery.uploadifive.min.js"></script> 
 	<link rel="stylesheet" type="text/css" href="/static/css/uploadifive.css" />
@@ -128,12 +127,12 @@
 
 			<div class="rrcc" id="RightBox">
 				<div class="right" id="li010">
-					<div class="right01"  style="text-align: center;">发布数据(一口价)</div>
+					<div class="right01"  style="text-align: center;">发布数据（议价）</div>
 				</div>
 				<div style = "float: right;margin-bottom: 20px;">
 					<select id = 'sel' name="sel" onchange="setsel()">
 						<option value=0>一口价数据</option>
-						<option value=1>议价数据</option>
+						<option value=1 selected = "selected">议价数据 </option>
 						<option value=2>拍卖数据</option>
 					</select>
 				</div>
@@ -232,7 +231,7 @@
 		$('#file_upload').uploadifive({ 
 			'debug': true,
                 'auto' : true,  //是否自动上传，默认true
-                'uploadScript'     : '/upload_image/',  //上传路径
+                'uploadScript'     : '/upload_image_bargain/',  //上传路径
                 'checkScript'      : '/check_existing/',
                 'fileObjName': 'Filedata',
                 'formData'         : {'thetype':1},
@@ -276,7 +275,7 @@
 		$('#file_upload2').uploadifive({ 
 			'debug': true,
                 'auto' : true,  //是否自动上传，默认true
-                'uploadScript'     : '/upload_image/',  //上传路径
+                'uploadScript'     : '/upload_image_bargain/',  //上传路径
                 'checkScript'      : '/check_existing/',
                 'fileObjName': 'Filedata',
                 'formData'         : {'thetype':2},
@@ -316,7 +315,6 @@
                 } 
             }); 
 	}); 
-
 	function setsel()
 	{
 	if($('#sel option:selected').val() == 0)
