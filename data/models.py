@@ -30,11 +30,9 @@ class buydata(models.Model):
     price = models.IntegerField(default=0)
     buyer =  models.ForeignKey(User,null = True)
     
-<<<<<<< HEAD
-class alldata_bargain(models.Model):   #发布
-=======
+
 class alldata_bargain(models.Model):
->>>>>>> hitlzp/master
+
     post_time = models.DateTimeField(default = "2012-05-15 21:05")
     dataname = models.CharField(max_length=40, null = True)
     file = models.FileField(upload_to='file')
@@ -51,11 +49,9 @@ class alldata_bargain(models.Model):
     owner = models.ForeignKey(User,null = True)
     isaval = models.IntegerField(default=0)
     
-<<<<<<< HEAD
-class datastate_bargain(models.Model):   #购买
-=======
+
 class datastate_bargain(models.Model):
->>>>>>> hitlzp/master
+
     state = models.IntegerField(default=0)   #
     owner = models.ForeignKey(User,null = True)
     dataid = models.ForeignKey(alldata_bargain)

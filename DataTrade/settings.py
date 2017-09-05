@@ -84,7 +84,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',   
         'NAME': 'datatrade',   
         'USER': 'root',   
-        'PASSWORD': 'ni1234ren',
+        'PASSWORD': 'root',
         'HOST': 'localhost',   
         'PORT': '3306', 
     }

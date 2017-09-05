@@ -263,6 +263,17 @@ def data_detail(request):
         set = 0
     content['set']=set
     return render_to_response("data_detail.html",content,context_instance=RequestContext(request))
+def data_detail_bargain(request):
+    get = request.GET
+    data = alldata_bargain.objects.get(id = get["id"])
+    content={}
+    content['data']=data
+    #if datastate_bargain.objects.filter(dataid_id = request.user.id, owner_id = data):
+        #set = 1
+    #else:
+    set = 0
+    content['set']=set
+    return render_to_response("data_detail.html",content,context_instance=RequestContext(request))
 
 @csrf_exempt
 def buydt(request):
@@ -333,7 +344,7 @@ def uploaddata_baigain(request):
                 return HttpResponseRedirect("/mydata/")
     content= {"thisuser":thisuser}
     return render_to_response("publish_bargain.html",content,context_instance=RequestContext(request))
-<<<<<<< HEAD
+
 
 
 @csrf_exempt
@@ -422,10 +433,9 @@ def fixed_price_detail(request):
             data.save()
     content = {'data': data}
     return render_to_response("fixed_price_detail.html",content,context_instance=RequestContext(request))
-=======
->>>>>>> hitlzp/master
 
 
+'''
 @csrf_exempt
 def upload_image_bargain(request):
     userid =  request.user.id
@@ -466,7 +476,7 @@ def upload_image_bargain(request):
                           )
             add.save()
             alldata_bargain.objects.filter(id = undone[len(undone)-1].id).delete()
-            
+
     else:
         if int(thetype) == 1:
             add = alldata_bargain(
@@ -485,3 +495,4 @@ def upload_image_bargain(request):
                           )
             add.save()
     return HttpResponse(1)
+'''

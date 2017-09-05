@@ -46,6 +46,7 @@ urlpatterns = [
     url(r'^data/select/$', data_sel),   #? 
     url(r'^data/bargain/$', data_bargain),   #?
     url(r'^data_detail/$', data_detail),  #?
+    url(r'^data_detail_bargain/$',  data_detail_bargain),  #?
     #uEditor ---start   百度编辑器插件
     url(r'ueEditorControler','news.controller.handler'),
     url( r'^UE/(?P<path>.*)$', 'django.views.static.serve',{ 'document_root': (ROOT+"/UE").replace('\\','/')}),
@@ -72,11 +73,10 @@ urlpatterns = [
     
     url(r'^publish/bargain/$', uploaddata_baigain),  #发布议价数据 
     url(r"^upload_image_bargain/$",upload_image_bargain),   #只起调用函数作用
-<<<<<<< HEAD
+
 
     url(r'^fixed_price_list/$', fixed_price_list), #展示用户议价订单，包括买和卖
     url(r'^fixed_price_detail/$', fixed_price_detail), #展示用户议价订单，包括买和卖
-=======
->>>>>>> hitlzp/master
+
     
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
