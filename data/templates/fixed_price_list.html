@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--author sctian-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -10,16 +11,28 @@
 	<link type="text/css" href="/static/css/bootstrap.min.css" rel="stylesheet" />
 	<link type="text/css" href="/static/css/bootstrap-theme.min.css" rel="stylesheet" />
 	<script type="text/javascript" src="/static/js/jquery-1.2.6.pack.js"></script>
-
+	
 </head>
 
 <body>
 
 	<div class="container header">
 		<a class="logo" title="哈工大数据集团数据市场" href="index.html"><img src="/static/img/logo.png" width="405" height="60" alt="哈工大数据集团数据市场" /></a>
+		<a class="addcollect" onclick="window.external.addFavorite(location.href,document.title)" rel="sidebar"  href="javascript:void(0);">加入收藏</a><a class="sethome" href="javascript:void(0);" id="setHomePage" onclick="SetHome(this)" style="behavior:url(#default#homepage);">设为首页</a>
 		<script type="text/javascript" src="js/function.js"></script>
 		<div class="clear"></div>
-
+		<div class="navbox">
+			<span class="arbg arrowleft"></span>
+			<span class="arbg arrowright"></span>
+			<ul>
+				<li><a href="/main/">官网首页</a></li>
+				<li><a href="/Adminmain/">用户管理</a></li>
+				<li><a href="#">数据购买管理</a></li>
+				<li><a href="#">数据拍卖管理</a></li>
+				<li><a href="#">数据置换管理</a></li>
+				<li><a href="/addnews/">新闻中心</a></li>
+			</ul>
+		</div>
 	</div><!--header end-->
 
 	<div class="container content">
@@ -41,12 +54,12 @@
 					</div>
 					<div class="left02down">
 						<div class="left02down01"><a  href="/phomepage/">
-                            <div id="Bf999" class="left02down01_img"></div>
-                            个人信息</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="left02">
+							<div id="Bf999" class="left02down01_img"></div>
+							个人信息</a>
+						</div>
+					</div>
+				</div>
+				<div class="left02">
 					<div class="left02top">
 						<div class="left02top_right"></div>
 						<div class="left02top_left"></div>
@@ -54,32 +67,32 @@
 					</div>
 					<div class="left02down">
 						<div class="left02down01"><a  href="/uploaddata/">
-                            <div id="Bf080" class="left02down01_img"></div>
-                            发布数据</a>
-                        </div>
+							<div id="Bf080" class="left02down01_img"></div>
+							发布数据</a>
+						</div>
 						<div class="left02down01"><a  href="/mydata/">
-                            <div id="Bf080" class="left02down01_img"></div>
-                            已发布数据</a>
-                        </div>
+							<div id="Bf080" class="left02down01_img"></div>
+							已发布数据</a>
+						</div>
 						<div class="left02down01"><a  href="/phomepage/">
 							<div id="Bf081" class="left02down01_img"></div>
 							置换订单</a>
-                        </div>
- 						<div class="left02down01"><a  href="/fixed_price_s/">
+						</div>
+						<div class="left02down01"><a  href="/phomepage/">
 							<div id="Bf081" class="left02down01_img"></div>
 							数据一口价订单</a>
-                        </div>
+						</div>
 						<div class="left02down01"><a  href="/fixed_price_list/">
 							<div id="Bf081" class="left02down01_img"></div>
 							数据议价订单</a>
-                        </div>
+						</div>
 						<div class="left02down01"><a  href="/phomepage/">
-                            <div id="Bf080" class="left02down01_img"></div>
-                            数据拍卖订单</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="left02">
+							<div id="Bf080" class="left02down01_img"></div>
+							数据拍卖订单</a>
+						</div>
+					</div>
+				</div>
+				<div class="left02">
 					<div class="left02top">
 						<div class="left02top_right"></div>
 						<div class="left02top_left"></div>
@@ -87,69 +100,73 @@
 					</div>
 					<div class="left02down">
 						<div class="left02down01"><a  href="/bought_data_list/">
-                            <div id="Bf080" class="left02down01_img"></div>
-                            已有数据</a>
-                        </div>
+							<div id="Bf080" class="left02down01_img"></div>
+							已有数据</a>
+						</div>
 						<div class="left02down01"><a  href="/phomepage/">
 							<div id="Bf081" class="left02down01_img"></div>
 							置换订单</a>
-                        </div>
- 						<div class="left02down01"><a  href="/fixed_price_b/">
+						</div>
+						<div class="left02down01"><a  href="/phomepage/">
 							<div id="Bf081" class="left02down01_img"></div>
 							数据一口价订单</a>
-                        </div>
-						<div class="left02down01"><a  href="/phomepage/">
+						</div>
+						<div class="left02down01"><a  href="/fixed_price_list/">
 							<div id="Bf081" class="left02down01_img"></div>
 							数据议价订单</a>
-                        </div>
+						</div>
 						<div class="left02down01"><a  href="/phomepage/">
-                            <div id="Bf080" class="left02down01_img"></div>
-                            数据拍卖订单</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="left01">
-                    <div class="left03_right"></div>
-                    <div class="left01_left"></div>
-                    <div class="left03_c" onclick="window.open('/logout/','_self')">安全退出</div>
-                </div>
-            </div>
-
-
+							<div id="Bf080" class="left02down01_img"></div>
+							数据拍卖订单</a>
+						</div>
+					</div>
+				</div>
+				<div class="left01">
+					<div class="left03_right"></div>
+					<div class="left01_left"></div>
+					<div class="left03_c" onclick="window.open('/logout/','_self')">安全退出</div>
+				</div>
+			</div>
+            <div>
 				<div class="rrcc" id="RightBox">
 					<div class="right" id="li010">
-						<div class="right01"  style="text-align: center;">个人信息</div>
+						<div class="right01"  style="text-align: center;">议价订单列表</div>
 					</div>
 				</div>
 				<div class="rrcc" style = "width: auto;padding-left: 20px">
-					<form action="#" method="post" >
-							{% csrf_token %}
-							<div class="input-group"  style = "width:48%;padding: 10px;float:left">
-								<span class="input-group-addon">用户名</span>
-								<input type="text" class="form-control"  name = "first_name" placeholder= {{thisuser.first_name}} disabled = true>
-							</div>
-							<div class="input-group"  style = "width:48%;padding: 10px;float:left">
-								<span class="input-group-addon">邮箱</span>
-								<input type="text" class="form-control" placeholder= {{thisuser.username}} disabled = "">
-							</div>
-							<div class="input-group" style = "width:48%;padding: 10px;float:left">
-								<span class="input-group-addon">激活状态</span>
-								<input type="text" class="form-control" placeholder= {{state}} disabled="">
-							</div>
-							<div class="input-group" style = "width:48%;padding: 10px;float:left">
-								<span class="input-group-addon">注册时间</span>
-								<input type="text" class="form-control" placeholder= {{date_joined}} disabled="">
-							</div>
-							<div class="input-group" style = "width:48%;padding: 10px">
-								<span class="input-group-addon">上次登录时间</span>
-								<input type="text" class="form-control" placeholder= {{last_login}} disabled="">
-							</div>
-						</form>
+					<table  border="0" cellspacing="0" cellpadding="0" class="table"> 
+						<tr class=" label-primary" style = "background-color:#f3f5f7"> 
+							<th scope="col" width="10%" ><span style="color:black">购买者id</span></th> 
+							<th scope="col" width="15%"><span style="color:black">购买者</span></th> 
+							<th scope="col" width="30%"><span style="color:black">数据名称</span></th> 
+							<th scope="col" width="10%"><span style="color:black">价格</span></th> 
+							<th scope="col" width="10%"><span style="color:black">审核结果</span></th> 
+							<th scope="col" width="10%"><span style="color:black">审核意见</span></th> 
+							<th scope="col"><span style="color:black">审查</span></th> 
+						</tr> 
+						{% for data in datas %}
+						<tr class="active">
+							<td >购买者id</td>
+							<td >购买者</td>
+							<td >{{data.dataid.file_name}}</td>
+							<td >{{data.dataid.price}}</td>
+							{%if data.state == 0%}
+								<td >待审核</td> 
+							{%elif data.state == 1%}
+								<td >审核通过</td> 
+							{%else %}
+								<td >审核不通过</td> 
+							{%endif%}
+							<td >{{data.detail}}</td>
+							<td ><a href = "/fixed_price_detail?dataid={{data.dataid.id}}">审查</a></td> 
+						</tr> 
+						{% endfor %}
+					</table> 
 				</div>
-
+            </div>
         </div>
 
-    </div><!--content end-->
+		</div><!--content end-->
 
 		<div class="container footer">
 			<div class="quicknav"><a href="terms.html">使用条款</a><span>|</span><a href="statement.html">隐私权声明</a><span>|</span><a href="pledge.html">服务承诺</a><span>|</span><a href="contact.html">联系我们</a><span>|</span><a href="#">企业邮箱</a></div>

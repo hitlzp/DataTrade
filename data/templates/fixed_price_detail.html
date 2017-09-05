@@ -111,7 +111,7 @@
 							<div id="Bf081" class="left02down01_img"></div>
 							数据一口价订单</a>
 						</div>
-						<div class="left02down01"><a  href="/phomepage/">
+						<div class="left02down01"><a  href="/fixed_price_list/">
 							<div id="Bf081" class="left02down01_img"></div>
 							数据议价订单</a>
 						</div>
@@ -130,30 +130,59 @@
             <div>
 				<div class="rrcc" id="RightBox">
 					<div class="right" id="li010">
-						<div class="right01"  style="text-align: center;">待审核订单列表</div>
+						<div class="right01"  style="text-align: center;">议价订单列表</div>
 					</div>
 				</div>
 				<div class="rrcc" style = "width: auto;padding-left: 20px">
 					<table  border="0" cellspacing="0" cellpadding="0" class="table"> 
 						<tr class=" label-primary" style = "background-color:#f3f5f7"> 
-							<th scope="col" width="10%" ><span style="color:black">数据名称</span></th> 
-							<th scope="col" width="15%"><span style="color:black">购买价格</span></th> 
-							<th scope="col" width="15%"><span style="color:black">购买时间</span></th> 
-							<th scope="col" width="30%"><span style="color:black">数据下载</span></th> 
-							<th scope="col" width="10%"><span style="color:black">demo下载</span></th>  
+							<th scope="col" width="10%" ><span style="color:black">购买者id</span></th> 
+							<th scope="col" width="15%"><span style="color:black">购买者</span></th> 
+							<th scope="col" width="30%"><span style="color:black">数据名称</span></th> 
+							<th scope="col" width="10%"><span style="color:black">价格</span></th> 
+							<th scope="col" width="10%"><span style="color:black">审核结果</span></th> 
+							<th scope="col" width="10%"><span style="color:black">审核意见</span></th> 
+							<th scope="col"><span style="color:black">审查</span></th> 
 						</tr> 
-						{% for data in data_list %}
+						
 						<tr class="active">
-							<td >{{data.data.dataname}}</td>
-							<td >{{data.price}}</td>
-							<td >{{data.post_time}}</td>
-							<td ><a href = "/media/{{data.data.file}}">数据下载</a></td>
-							<td ><a href = "/media/{{data.data.Show_demo}}">demo下载</a></td> 
+							<td >购买者id</td>
+							<td >购买者</td>
+							<td >{{data.dataid.file_name}}</td>
+							<td >{{data.dataid.price}}</td>
+							{%if data.state == 0%}
+								<td >待审核</td> 
+							{%elif data.state == 1%}
+								<td >审核通过</td> 
+							{%else %}
+								<td >审核不通过</td> 
+							{%endif%}
+							<td >{{data.detail}}</td>
+							<td ><a href = "/check_fixed_price?dataid={{data.dataid.id}}">审查</a></td> 
 						</tr> 
-						{% endfor %}
 					</table> 
 				</div>
             </div>
+            <div class="rrcc" id="RightBox">
+
+				<div class="right" id="li010">
+					<form action="#" method="post" >
+						{% csrf_token %}
+
+						<div class="input-group"  style = "width:48%;padding: 10px;float:left">
+							<label><input name="judge" type="radio" value='yes' />同意审核 </label>
+						</div>
+						<div class="input-group"  style = "width:48%;padding: 10px;float:left">
+							<label><input name="judge" type="radio" value='no' />不同意审核 </label>
+						</div>
+						<div class="input-group"  style = "width:48%;padding: 10px;float:left">
+							<input type="text"  style = "float:right;height:80px;width:300px" name='feedback'  value="审核意见" />
+						</div>
+						<input type="submit"  style = "float:right" value="提交修改" />
+					</form>
+					
+				</div>
+			</div>
         </div>
 
 		</div><!--content end-->

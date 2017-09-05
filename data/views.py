@@ -333,6 +333,97 @@ def uploaddata_baigain(request):
                 return HttpResponseRedirect("/mydata/")
     content= {"thisuser":thisuser}
     return render_to_response("publish_bargain.html",content,context_instance=RequestContext(request))
+<<<<<<< HEAD
+
+
+@csrf_exempt
+def upload_image_bargain(request):
+    userid =  request.user.id
+    reqfile = request.FILES['Filedata']
+    thetype = request.POST.get('thetype')
+    if (reqfile.size / 1024) > (1024 *1024):
+        thesize = str(round(reqfile.size / (1024.0 * 1024.0 *1024.0),2)) + 'G'
+    elif (reqfile.size / 1024) > 1024:
+        thesize = str(round(reqfile.size / (1024.0 * 1024.0),2)) + 'MB'
+    else:
+        thesize = str(round(reqfile.size / 1024.0,2)) + 'KB'
+    print thesize
+    undone = alldata_bargain.objects.filter(isaval=0, owner_id = userid)
+    if undone:
+        if int(thetype) == 1:
+            sdemo = undone[len(undone)-1].Show_demo
+            add = alldata_bargain(
+                          file_name = reqfile.name,
+                          file_scale = thesize,
+                          file = reqfile,
+                          owner_id = userid,
+                          isaval = 0,
+                          Show_demo = sdemo
+                          )
+            add.save()
+            alldata_bargain.objects.filter(id = undone[len(undone)-1].id).delete()
+        else:
+            fname = undone[len(undone)-1].file_name
+            fscale = undone[len(undone)-1].file_scale
+            ffile = undone[len(undone)-1].file
+            add = alldata_bargain(
+                          file_name = fname,
+                          file_scale = fscale,
+                          file = ffile,
+                          Show_demo = reqfile,
+                          owner_id = userid,
+                          isaval = 0
+                          )
+            add.save()
+            alldata_bargain.objects.filter(id = undone[len(undone)-1].id).delete()
+            
+    else:
+        if int(thetype) == 1:
+            add = alldata_bargain(
+                          file_name = reqfile.name,
+                          file_scale = thesize,
+                          file = reqfile,
+                          owner_id = userid,
+                          isaval = 0
+                          )
+            add.save()
+        else:
+            add = alldata_bargain(
+                          Show_demo = reqfile,
+                          owner_id = userid,
+                          isaval = 0
+                          )
+            add.save()
+    return HttpResponse(1)
+
+#author sctian 
+def fixed_price_list(request):  
+    admin_id = request.user.id
+    datas = datastate_bargain.objects.filter(owner_id = admin_id)
+    content = {'datas': datas}
+    return render_to_response("fixed_price_list.html", content, context_instance=RequestContext(request))
+
+#author sctian
+def fixed_price_detail(request):
+    admin_id = request.user.id
+    admin_name = User.objects.filter(id = admin_id)[0].username
+    get = request.GET
+    data = datastate_bargain.objects.get(dataid_id = get["dataid"])
+    post = request.POST
+    if post:
+        if post['feedback'] != '':
+            data.detail = post['feedback']
+            data.save()
+        if post['judge'] == 'yes':
+            data.state = 1
+            data.save()
+        if post['judge'] == 'no':
+            data.state = -1
+            data.save()
+    content = {'data': data}
+    return render_to_response("fixed_price_detail.html",content,context_instance=RequestContext(request))
+=======
+>>>>>>> hitlzp/master
 
 
 @csrf_exempt
