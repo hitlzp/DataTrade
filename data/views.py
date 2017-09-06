@@ -223,7 +223,7 @@ def data_sel(request):
     return render_to_response("data.html",content,context_instance=RequestContext(request))
 
 def data_bargain(request):
-    data0=datastate_bargain.objects.filter(state = 1)
+    data0=datastate_bargain.objects.filter()
     data1=[]
     for i in data0:
         if not i.owner_id  == request.user.id:
@@ -268,7 +268,8 @@ def data_detail_bargain(request):
     data = alldata_bargain.objects.get(id = get["id"])
     content={}
     content['data']=data
-    #if datastate_bargain.objects.filter(dataid_id = request.user.id, owner_id = data):
+    print "haha:"+str(data.id)
+    #if datastate_bargain.objects.filter(dataid_id = request.user.id, owner_id = request.user.id):
         #set = 1
     #else:
     set = 0
