@@ -56,3 +56,13 @@ class datastate_bargain(models.Model):
     owner = models.ForeignKey(User,null = True)
     dataid = models.ForeignKey(alldata_bargain)
     detail = models.TextField(null = True)
+    
+class buydata_bargain(models.Model):
+    post_time = models.DateTimeField(default = "2012-05-15 21:05")
+    trader_id = models.ForeignKey(User,null = True,related_name='trader')
+    buyer_id = models.ForeignKey(User,null = True,related_name='buyer')
+    dataid = models.ForeignKey(alldata_bargain,null = True)
+    price = models.IntegerField(default=0)
+    state = models.IntegerField(default=0)
+    buyer_detail = models.TextField(null = True)
+    seller_detail = models.TextField(null = True)

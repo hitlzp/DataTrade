@@ -65,6 +65,7 @@ urlpatterns = [
     
     url(r'^data/buydata/$', buydt), 
     url(r'^data/set/$', buyset),
+    url(r'^data/bargain/set/$', buyset_bargain),
 
     url(r'^bought_data_list/$', bought_data_list),
     
@@ -77,6 +78,8 @@ urlpatterns = [
 
     url(r'^fixed_price_list/$', fixed_price_list), #展示用户议价订单，包括买和卖
     url(r'^fixed_price_detail/$', fixed_price_detail), #展示用户议价订单，包括买和卖
+    
+    url(r'^data/bargain/leaveword/$', leave_words), #买家提交留言信息ajax 
 
     
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

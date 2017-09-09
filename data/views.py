@@ -4,7 +4,7 @@ from django.template import RequestContext
 from django.shortcuts import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponseRedirect
-from data.models import alldata,datastate,buydata,alldata_bargain,datastate_bargain
+from data.models import alldata,datastate,buydata,alldata_bargain,datastate_bargain,buydata_bargain
 from django.contrib.auth.models import User
 import datetime
 from django.http import JsonResponse
@@ -295,10 +295,24 @@ def buydt(request):
 @csrf_exempt
 def buyset(request):
     temp = []
+    temp2 = []
     alld = buydata.objects.filter(buyer_id = request.user.id)
     for d in alld:
         temp.append(int(d.data_id))
+        temp2.append()
     return JsonResponse({"rr":temp,'length':len(temp)})
+
+@csrf_exempt
+def buyset_bargain(request):
+    temp = []
+    temp2 = []
+    alld = buydata_bargain.objects.all()
+    for d in alld:
+        temp.append(d.dataid_id)
+        temp2.append(int(d.state))
+    return JsonResponse({"rr":temp,'rr2':temp2,'length':len(temp)})
+
+
 #author sctian
 def bought_data_list(request):
     userid = request.user.id
@@ -497,3 +511,30 @@ def upload_image_bargain(request):
             add.save()
     return HttpResponse(1)
 '''
+
+@csrf_exempt
+def leave_words(request):#买家提交留言信息
+    if request.is_ajax():
+        buyer = request.user.id
+        
+        dataid = request.POST.get('dataid')
+        theprice = request.POST.get('theprice')
+        mywords = request.POST.get('mywords')
+        now = datetime.datetime.now()
+        trader = alldata_bargain.objects.get(id = dataid).owner_id
+        if not buydata_bargain.objects.filter(dataid_id = dataid, buyer_id_id = buyer, trader_id_id = trader):
+            add = buydata_bargain(
+                                  post_time = now,\
+                                  price = theprice,\
+                                  state = 0,\
+                                  buyer_detail = mywords,\
+                                  buyer_id_id = buyer,\
+                                  dataid_id = dataid,\
+                                  trader_id_id = trader
+                                  )
+            add.save()
+            return JsonResponse({"rr":1})
+        else:
+            return JsonResponse({"rr":0})
+    else:
+        return JsonResponse({"rr":0})
