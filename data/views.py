@@ -423,14 +423,14 @@ def upload_image_bargain(request):
     return HttpResponse(1)
 
 #author sctian 
-def fixed_price_list(request):  
+def fixed_price_list(request):  #数据拥有者决定是否交易
     admin_id = request.user.id
     datas = datastate_bargain.objects.filter(owner_id = admin_id)
     content = {'datas': datas}
     return render_to_response("fixed_price_list.html", content, context_instance=RequestContext(request))
 
 #author sctian
-def fixed_price_detail(request):
+def fixed_price_detail(request):   #数据拥有者决定数据是否交易
     admin_id = request.user.id
     admin_name = User.objects.filter(id = admin_id)[0].username
     get = request.GET
@@ -538,3 +538,31 @@ def leave_words(request):#买家提交留言信息
             return JsonResponse({"rr":0})
     else:
         return JsonResponse({"rr":0})
+
+#author sctian
+def check_fixed_data_list(request):  #管理员核对提交的议价数据是否合理
+    userid = request.user.id
+    thisuser = User.objects.filter(id = userid)[0]
+    datas = datastate_bargain.objects.all()
+    content = {'data_list' : datas}
+    return render_to_response("check_fixed_data_list.html", content, context_instance=RequestContext(request))
+
+#author sctian
+def check_fixed_data_detail(request):    #管理员核对提交的议价数据是否合理
+    admin_id = request.user.id
+    admin_name = User.objects.filter(id = admin_id)[0].username
+    get = request.GET
+    data = datastate_bargain.objects.get(dataid_id = get["dataid"])
+    post = request.POST
+    if post:
+        if post['feedback'] != '':
+            data.detail = post['feedback']
+            data.save()
+        if post['judge'] == 'yes':
+            data.state = 1
+            data.save()
+        if post['judge'] == 'no':
+            data.state = -1
+            data.save()
+    content = {'data': data}
+    return render_to_response("check_fixed_data_detail.html",content,context_instance=RequestContext(request))

@@ -81,5 +81,8 @@ urlpatterns = [
     
     url(r'^data/bargain/leaveword/$', leave_words), #买家提交留言信息ajax 
 
+    url(r'^check_fixed_data_list/$', check_fixed_data_list),   #管理员对议价数据进行审核
+    url(r'^check_fixed_data_detail/$', check_fixed_data_detail),   #管理员对议价数据进行审核
+
     
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
