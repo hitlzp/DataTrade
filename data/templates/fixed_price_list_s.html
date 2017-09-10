@@ -82,7 +82,7 @@
 							<div id="Bf081" class="left02down01_img"></div>
 							数据一口价订单</a>
 						</div>
-						<div class="left02down01"><a  href="/fixed_price_list/">
+						<div class="left02down01"><a  href="/fixed_price_list_s/">
 							<div id="Bf081" class="left02down01_img"></div>
 							数据议价订单</a>
 						</div>
@@ -111,7 +111,7 @@
 							<div id="Bf081" class="left02down01_img"></div>
 							数据一口价订单</a>
 						</div>
-						<div class="left02down01"><a  href="/fixed_price_list/">
+						<div class="left02down01"><a  href="/fixed_price_list_b/">
 							<div id="Bf081" class="left02down01_img"></div>
 							数据议价订单</a>
 						</div>
@@ -140,25 +140,27 @@
 							<th scope="col" width="15%"><span style="color:black">购买者</span></th> 
 							<th scope="col" width="30%"><span style="color:black">数据名称</span></th> 
 							<th scope="col" width="10%"><span style="color:black">价格</span></th> 
-							<th scope="col" width="10%"><span style="color:black">审核结果</span></th> 
-							<th scope="col" width="10%"><span style="color:black">审核意见</span></th> 
+							<th scope="col" width="10%"><span style="color:black">交易状态</span></th> 
+							<th scope="col" width="10%"><span style="color:black">购买者反馈</span></th> 
 							<th scope="col"><span style="color:black">审查</span></th> 
 						</tr> 
 						{% for data in datas %}
 						<tr class="active">
-							<td >购买者id</td>
-							<td >购买者</td>
+							<td >{{data.buyer_id}}</td>
+							<td >{{data.buyer_id.first_name}}</td>
 							<td >{{data.dataid.file_name}}</td>
 							<td >{{data.dataid.price}}</td>
-							{%if data.state == 0%}
-								<td >待审核</td> 
-							{%elif data.state == 1%}
-								<td >审核通过</td> 
+							{%if data.state == 0 %}
+								<td >对方已回复</td>
+							{%elif data.state == 1 %}
+								<td >等待对方回复</td> 
+							{%elif data.state == 2%}
+								<td >同意交易</td> 
 							{%else %}
-								<td >审核不通过</td> 
+								<td >不同意交易</td> 
 							{%endif%}
-							<td >{{data.detail}}</td>
-							<td ><a href = "/fixed_price_detail?dataid={{data.dataid.id}}">审查</a></td> 
+							<td >{{data.buyer_detail}}</td>
+							<td ><a href = "/fixed_price_detail_s?dataid={{data.dataid.id}}">审查</a></td> 
 						</tr> 
 						{% endfor %}
 					</table> 

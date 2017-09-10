@@ -76,8 +76,10 @@ urlpatterns = [
     url(r"^upload_image_bargain/$",upload_image_bargain),   #只起调用函数作用
 
 
-    url(r'^fixed_price_list/$', fixed_price_list), #展示用户议价订单，包括买和卖
-    url(r'^fixed_price_detail/$', fixed_price_detail), #展示用户议价订单，包括买和卖
+    url(r'^fixed_price_list_s/$', fixed_price_list_s), #展示卖家用户议价订单
+    url(r'^fixed_price_list_b/$', fixed_price_list_b), #展示买家用户议价订单
+    url(r'^fixed_price_detail_s/$', fixed_price_detail_s), #展示卖家用户议价订单
+    url(r'^fixed_price_detail_b/$', fixed_price_detail_b), #展示买家用户议价订单
     
     url(r'^data/bargain/leaveword/$', leave_words), #买家提交留言信息ajax 
 

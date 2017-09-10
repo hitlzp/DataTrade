@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django.db import models
 from django.contrib.auth.models import User
 # Create your models here.
@@ -63,6 +64,6 @@ class buydata_bargain(models.Model):
     buyer_id = models.ForeignKey(User,null = True,related_name='buyer')
     dataid = models.ForeignKey(alldata_bargain,null = True)
     price = models.IntegerField(default=0)
-    state = models.IntegerField(default=0)
+    state = models.IntegerField(default=0)   #state为0表示买家给卖家留言，为1表示卖家给卖家回复留言，为2表示卖家同意交易数据，为3表示卖家不同意交易数据
     buyer_detail = models.TextField(null = True)
     seller_detail = models.TextField(null = True)

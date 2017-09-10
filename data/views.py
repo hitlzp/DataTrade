@@ -423,32 +423,59 @@ def upload_image_bargain(request):
     return HttpResponse(1)
 
 #author sctian 
-def fixed_price_list(request):  #数据拥有者决定是否交易
+def fixed_price_list_s(request):  #卖家展示议价数据
     admin_id = request.user.id
-    datas = datastate_bargain.objects.filter(owner_id = admin_id)
+    datas = buydata_bargain.objects.filter(trader_id = admin_id)
     content = {'datas': datas}
-    return render_to_response("fixed_price_list.html", content, context_instance=RequestContext(request))
+    return render_to_response("fixed_price_list_s.html", content, context_instance=RequestContext(request))
 
 #author sctian
-def fixed_price_detail(request):   #数据拥有者决定数据是否交易
+def fixed_price_detail_s(request):   #卖家展示议价数据
     admin_id = request.user.id
     admin_name = User.objects.filter(id = admin_id)[0].username
     get = request.GET
-    data = datastate_bargain.objects.get(dataid_id = get["dataid"])
+    data = buydata_bargain.objects.get(dataid_id = get["dataid"])
     post = request.POST
     if post:
         if post['feedback'] != '':
-            data.detail = post['feedback']
+            data.seller_detail = post['feedback']
             data.save()
-        if post['judge'] == 'yes':
+        if post['judge'] == 'talk':
             data.state = 1
             data.save()
+        if post['judge'] == 'yes':
+            data.state = 2
+            data.save()
         if post['judge'] == 'no':
-            data.state = -1
+            data.state = 3
             data.save()
     content = {'data': data}
-    return render_to_response("fixed_price_detail.html",content,context_instance=RequestContext(request))
+    return render_to_response("fixed_price_detail_s.html",content,context_instance=RequestContext(request))
 
+
+#author sctian 
+def fixed_price_list_b(request):  #买家展示议价数据
+    admin_id = request.user.id
+    datas = buydata_bargain.objects.filter(buyer_id = admin_id)
+    content = {'datas': datas}
+    return render_to_response("fixed_price_list_b.html", content, context_instance=RequestContext(request))
+
+#author sctian
+def fixed_price_detail_b(request):   #买家展示议价数据
+    admin_id = request.user.id
+    admin_name = User.objects.filter(id = admin_id)[0].username
+    get = request.GET
+    data = buydata_bargain.objects.get(dataid_id = get["dataid"])
+    post = request.POST
+    if post:
+        if post['feedback'] != '':
+            data.buyer_detail = post['feedback']
+            data.save()
+        if post['judge'] == 'talk':
+            data.state = 0
+            data.save()
+    content = {'data': data}
+    return render_to_response("fixed_price_detail_b.html",content,context_instance=RequestContext(request))
 
 '''
 @csrf_exempt
