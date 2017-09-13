@@ -1,15 +1,16 @@
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<title>哈工大数据集团数据市场</title>
-<meta name="keywords" content="哈工大数据集团数据市场" />
-<meta name="description" content="哈工大数据集团数据市场" />
-<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7"/>
-<link type="text/css" href="/static/css/style10.css" rel="stylesheet" />
-<script type="text/javascript" src="/staticjs/jquery-1.2.6.pack.js"></script>
-<!--解决 IE6 背景缓存-->
-<!--[if IE 6]><script type="text/javascript">document.execCommand("BackgroundImageCache", false, true);</script><![endif]-->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>哈工大数据集团数据市场</title>
+	<meta name="keywords" content="哈工大数据集团数据市场" />
+	<meta name="description" content="哈工大数据集团数据市场" />
+	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7"/>
+	<link type="text/css" href="/static/css/style10.css" rel="stylesheet" />
+	<script type="text/javascript" src="/static/js/jquery-1.2.6.pack.js"></script>
+	<!--解决 IE6 背景缓存-->
+	<!--[if IE 6]><script type="text/javascript">document.execCommand("BackgroundImageCache", false, true);</script><![endif]-->
+
 </head>
 
 <body>
@@ -19,7 +20,7 @@
 	<a class="addcollect" onclick="window.external.addFavorite(location.href,document.title)" rel="sidebar"  href="javascript:void(0);">加入收藏</a><a class="sethome" href="javascript:void(0);" id="setHomePage" onclick="SetHome(this)" style="behavior:url(#default#homepage);">设为首页</a>
 	<script type="text/javascript" src="js/function.js"></script>
 	<div class="clear"></div>
-	<div class="navbox">
+		<div class="navbox">
 		<span class="arbg arrowleft"></span>
 		<span class="arbg arrowright"></span>
 		<ul>
@@ -35,29 +36,25 @@
 
 <div class="container content">
 
-	<div class="picbox"><img src="/static/img/news-pic.jpg" width="1000" height="157" /></div>
+	<div class="picbox"><img src="/static/img/contact-pic.jpg" width="1000" height="157" /></div>
 	
 	<div class="pubox">
-		<div class="pubtit"><h2 class="f-l">新闻中心</h2><div class="f-r breadcrumbs">新闻中心</div></div>
-		<div class="news">
-			<div class="f-l newscon">
-				<h2>市场新闻</h2>
-				<ul style = "min-height:125px">
-					{% for news in Snews %}
-					<li><a href="/news_detail?id={{news.id}}">{{news.title}}</a><span class="date">{{news.date}}</span></li>
-					{% endfor %}
-
-				</ul>
-				<div class="pagelist"><a href="#">首页</a><a href="#">1</a><a href="#">2</a><a href="#">3</a><a href="#">最后一页</a></div>
+		<div class="pubtit"><h2 class="f-l">联系我们</h2><div class="f-r breadcrumbs">联系我们</div></div>
+		<div class="about">
+			<div class="f-l contact-sort">
+				<h2>哈 工 大 数 据 集 团</h2>
+				<address>
+					<ul>
+						<li>地址：西大直街118号哈特大厦12层</li>
+						<li>电话：(0451)57788876&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp</li>
+						<li>传真：021-58808008&nbsp;&nbsp;转&nbsp;&nbsp;805</li>
+						<li>邮编：150001</li>
+						<li>网址：<a href="http://hitbigdatagroup.com/">http://hitbigdatagroup.com/</a></li>
+					</ul>
+				</address>
 			</div>
-			<div class="f-r newscon">
-				<h2>行业新闻</h2>	
-				<ul style = "min-height:125px">
-					{% for news in Hnews %}
-					<li><a href="/news_detail?id={{news.id}}">{{news.title}}</a><span class="date">{{news.date}}</span></li>
-					{% endfor %}
-				</ul>
-				<div class="pagelist"><a href="#">首页</a><a href="#">1</a><a href="#">2</a><a href="#">3</a><a href="#">最后一页</a></div>
+			<div class="f-r contact-con">
+				<img src="/static/img/address.JPG" width="375" height="231" alt="西大直街118号哈特大厦12层" />
 			</div>
 			<div class="clear"></div>
 		</div>

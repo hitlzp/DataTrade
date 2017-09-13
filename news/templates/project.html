@@ -1,15 +1,16 @@
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<title>哈工大数据集团数据市场</title>
-<meta name="keywords" content="哈工大数据集团数据市场" />
-<meta name="description" content="哈工大数据集团数据市场" />
-<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7"/>
-<link type="text/css" href="/static/css/style10.css" rel="stylesheet" />
-<script type="text/javascript" src="/staticjs/jquery-1.2.6.pack.js"></script>
-<!--解决 IE6 背景缓存-->
-<!--[if IE 6]><script type="text/javascript">document.execCommand("BackgroundImageCache", false, true);</script><![endif]-->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>哈工大数据集团数据市场</title>
+	<meta name="keywords" content="哈工大数据集团数据市场" />
+	<meta name="description" content="哈工大数据集团数据市场" />
+	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7"/>
+	<link type="text/css" href="/static/css/style10.css" rel="stylesheet" />
+	<script type="text/javascript" src="/static/js/jquery-1.2.6.pack.js"></script>
+	<!--解决 IE6 背景缓存-->
+	<!--[if IE 6]><script type="text/javascript">document.execCommand("BackgroundImageCache", false, true);</script><![endif]-->
+
 </head>
 
 <body>
@@ -35,35 +36,24 @@
 
 <div class="container content">
 
-	<div class="picbox"><img src="/static/img/news-pic.jpg" width="1000" height="157" /></div>
+	<div class="picbox"><img src="/static/img/project-pic.jpg" width="1000" height="157" /></div>
 	
 	<div class="pubox">
-		<div class="pubtit"><h2 class="f-l">新闻中心</h2><div class="f-r breadcrumbs">新闻中心</div></div>
-		<div class="news">
-			<div class="f-l newscon">
-				<h2>市场新闻</h2>
-				<ul style = "min-height:125px">
-					{% for news in Snews %}
-					<li><a href="/news_detail?id={{news.id}}">{{news.title}}</a><span class="date">{{news.date}}</span></li>
-					{% endfor %}
-
-				</ul>
-				<div class="pagelist"><a href="#">首页</a><a href="#">1</a><a href="#">2</a><a href="#">3</a><a href="#">最后一页</a></div>
-			</div>
-			<div class="f-r newscon">
-				<h2>行业新闻</h2>	
-				<ul style = "min-height:125px">
-					{% for news in Hnews %}
-					<li><a href="/news_detail?id={{news.id}}">{{news.title}}</a><span class="date">{{news.date}}</span></li>
-					{% endfor %}
-				</ul>
-				<div class="pagelist"><a href="#">首页</a><a href="#">1</a><a href="#">2</a><a href="#">3</a><a href="#">最后一页</a></div>
+		<div class="pubtit"><h2 class="f-l">解决方案</h2><div class="f-r breadcrumbs">解决方案</div></div>
+		<div class="about">
+			<ul class="f-l project-sort">
+				<li><a href="#">数据置换</a></li>
+				<li><a href="#">数据拍卖</a></li>
+				<li><a href="#">数据购买</a></li>
+			</ul>
+			<div class="f-r project-con">
+								
 			</div>
 			<div class="clear"></div>
 		</div>
 	</div>
 	
-</div><!--content end-->
+<!--content end-->
 
 <div class="container footer">
 	<div class="quicknav"><a href="terms.html">使用条款</a><span>|</span><a href="statement.html">隐私权声明</a><span>|</span><a href="pledge.html">服务承诺</a><span>|</span><a href="contact.html">联系我们</a><span>|</span><a href="#">企业邮箱</a></div>

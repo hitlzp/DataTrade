@@ -47,6 +47,10 @@ urlpatterns = [
     url(r'^data/bargain/$', data_bargain),   #?
     url(r'^data_detail/$', data_detail),  #?
     url(r'^data_detail_bargain/$',  data_detail_bargain),  #?
+
+    #主页其他
+    url(r'^contact/$',  contact),
+    url(r'^project/$',  project),
     #uEditor ---start   百度编辑器插件
     url(r'ueEditorControler','news.controller.handler'),
     url( r'^UE/(?P<path>.*)$', 'django.views.static.serve',{ 'document_root': (ROOT+"/UE").replace('\\','/')}),

@@ -373,7 +373,7 @@ def upload_image_bargain(request):
         thesize = str(round(reqfile.size / (1024.0 * 1024.0),2)) + 'MB'
     else:
         thesize = str(round(reqfile.size / 1024.0,2)) + 'KB'
-    print thesize
+    #print thesize
     undone = alldata_bargain.objects.filter(isaval=0, owner_id = userid)
     if undone:
         if int(thetype) == 1:
@@ -435,6 +435,7 @@ def fixed_price_detail_s(request):   #卖家展示议价数据
     admin_name = User.objects.filter(id = admin_id)[0].username
     get = request.GET
     data = buydata_bargain.objects.get(dataid_id = get["dataid"])
+    #print data
     post = request.POST
     if post:
         if post['feedback'] != '':
@@ -466,6 +467,8 @@ def fixed_price_detail_b(request):   #买家展示议价数据
     admin_name = User.objects.filter(id = admin_id)[0].username
     get = request.GET
     data = buydata_bargain.objects.get(dataid_id = get["dataid"])
+    #2012-05-15 13:05:00.000000
+    print data.post_time
     post = request.POST
     if post:
         if post['feedback'] != '':

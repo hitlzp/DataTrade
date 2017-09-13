@@ -57,6 +57,10 @@ def news_list(request):
     return render_to_response("newslist.html",content,context_instance=RequestContext(request))
 def about(request):
     return render_to_response("about.html",context_instance=RequestContext(request))
+def contact(request):
+    return render_to_response("contact.html",context_instance=RequestContext(request))
+def project(request):
+    return render_to_response("project.html",context_instance=RequestContext(request))
 def data(request):
     return render_to_response("data.html",context_instance=RequestContext(request))
 def data_detail(request):
