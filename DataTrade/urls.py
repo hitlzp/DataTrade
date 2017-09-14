@@ -70,7 +70,9 @@ urlpatterns = [
     url(r'^data/buydata/$', buydt), 
     url(r'^data/set/$', buyset),
     url(r'^data/bargain/set/$', buyset_bargain),
-
+    url(r'^data/exchange_mes/$', exchange_mes), #一口价置换状态
+    url(r'^data/bargain/exchange_mes/$', exchange_bargain_mes), #议价置换状态 
+    
     url(r'^bought_data_list/$', bought_data_list),
     
     url(r'^fixed_price_s/$', fixedPrice_sell),
@@ -86,6 +88,8 @@ urlpatterns = [
     url(r'^fixed_price_detail_b/$', fixed_price_detail_b), #展示买家用户议价订单
     
     url(r'^data/bargain/leaveword/$', leave_words), #买家提交留言信息ajax 
+    url(r'^data/bargain/exchange/$', exchange_request_bargain), #买家提交置换条件 (议价) 
+    url(r'^data/exchange/$', exchange_request), #买家提交置换条件 （一口价数据）
 
     url(r'^check_fixed_data_list/$', check_fixed_data_list),   #管理员对议价数据进行审核
     url(r'^check_fixed_data_detail/$', check_fixed_data_detail),   #管理员对议价数据进行审核

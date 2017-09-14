@@ -4,7 +4,7 @@ from django.template import RequestContext
 from django.shortcuts import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponseRedirect
-from data.models import alldata,datastate,buydata,alldata_bargain,datastate_bargain,buydata_bargain
+from data.models import alldata,datastate,buydata,alldata_bargain,datastate_bargain,buydata_bargain,exchangedata_bargain,exchangedata
 from django.contrib.auth.models import User
 import datetime
 from django.http import JsonResponse
@@ -199,9 +199,11 @@ def data(request):
     for i in data0:
         if not i.owner_id  == request.user.id:
             data1.append(alldata.objects.get(id=i.dataid_id))
+    mydata = alldata.objects.filter(owner_id = request.user.id)
     content={}
     content['data']=data1
     content['css']= 0
+    content['mydata']= mydata
     return render_to_response("data.html",content,context_instance=RequestContext(request))
 
 def data_sel(request):
@@ -217,26 +219,31 @@ def data_sel(request):
                     data1.append(alldata.objects.get(id=i.dataid_id,type=str(tag)))
                 except:
                     print str(tag)
+    mydata = alldata.objects.filter(owner_id = request.user.id)
     content={}
     content['data']=data1
     content['css']= int(tag)
+    content['mydata']= mydata
     return render_to_response("data.html",content,context_instance=RequestContext(request))
 
 def data_bargain(request):
-    data0=datastate_bargain.objects.filter()
+    data0=datastate_bargain.objects.filter(state = 1)
     data1=[]
+    print request.user.id
     for i in data0:
         if not i.owner_id  == request.user.id:
-            data1.append(alldata_bargain.objects.get(id=i.dataid_id))
+                data1.append(alldata_bargain.objects.get(id=i.dataid_id))
+    mydata = alldata_bargain.objects.filter(owner_id = request.user.id)
     content={}
     content['data']=data1
-    content['css']= 0
+    content['mydata']= mydata
     return render_to_response("data_bargain.html",content,context_instance=RequestContext(request))
 
 def data_bargain_sel(request):
     tag = request.GET['tag']
     data0=datastate_bargain.objects.filter(state = 1)
     data1=[]
+    print request.user.id
     for i in data0:
         if not i.owner_id  == request.user.id:
             if int(tag) == 0:
@@ -247,9 +254,11 @@ def data_bargain_sel(request):
                 except:
                     print str(tag)
     
+    mydata = alldata_bargain.objects.filter(owner_id = request.user.id)
     content={}
     content['data']=data1
     content['css']= int(tag)
+    content['mydata']= mydata
     return render_to_response("data_bargain.html",content,context_instance=RequestContext(request))
 
 def data_detail(request):
@@ -312,6 +321,25 @@ def buyset_bargain(request):
         temp2.append(int(d.state))
     return JsonResponse({"rr":temp,'rr2':temp2,'length':len(temp)})
 
+@csrf_exempt
+def exchange_mes(request):#一口价显示当前置换状态
+    temp = []
+    temp2 = []
+    alld = exchangedata.objects.all()
+    for d in alld:
+        temp.append(d.dataid_id)
+        temp2.append(int(d.state))
+    return JsonResponse({"rr":temp,'rr2':temp2,'length':len(temp)})
+
+@csrf_exempt
+def exchange_bargain_mes(request):#一口价显示当前置换状态
+    temp = []
+    temp2 = []
+    alld = exchangedata_bargain.objects.all()
+    for d in alld:
+        temp.append(d.dataid_id)
+        temp2.append(int(d.state))
+    return JsonResponse({"rr":temp,'rr2':temp2,'length':len(temp)})
 
 #author sctian
 def bought_data_list(request):
@@ -596,3 +624,65 @@ def check_fixed_data_detail(request):    #管理员核对提交的议价数据�
             data.save()
     content = {'data': data}
     return render_to_response("check_fixed_data_detail.html",content,context_instance=RequestContext(request))
+
+@csrf_exempt
+def exchange_request_bargain(request):#买家提出置换数据申请并，给出置换条件(议价数据)
+    if request.is_ajax():
+        buyer = request.user.id
+        data = request.POST.get('data')
+        dataid = request.POST.get('dataid')
+        theprice = request.POST.get('theprice')
+        type = request.POST.get('type')
+        mywords = request.POST.get('mywords')
+        now = datetime.datetime.now()
+        trader = alldata_bargain.objects.get(id = dataid).owner_id
+        if int(type) == 1:
+            theprice = theprice * (-1)
+        if not exchangedata_bargain.objects.filter(dataid_id = dataid, buyer_id_id = buyer, trader_id_id = trader):
+            add = exchangedata_bargain(
+                                  post_time = now,\
+                                  price = theprice,\
+                                  state = 0,\
+                                  buyer_detail = mywords,\
+                                  buyer_id_id = buyer,\
+                                  dataid_id = dataid,\
+                                  trader_id_id = trader,
+                                  link = 'http://127.0.0.1:8000/data/id='+str(data)
+                                  )
+            add.save()
+            return JsonResponse({"rr":1})
+        else:
+            return JsonResponse({"rr":0})
+    else:
+        return JsonResponse({"rr":0})
+    
+@csrf_exempt
+def exchange_request(request):#买家提出置换数据申请并，给出置换条件（一口价数据）
+    if request.is_ajax():
+        buyer = request.user.id
+        data = request.POST.get('data')
+        dataid = request.POST.get('dataid')
+        theprice = request.POST.get('theprice')
+        type = request.POST.get('type')
+        mywords = request.POST.get('mywords')
+        now = datetime.datetime.now()
+        trader = alldata.objects.get(id = dataid).owner_id
+        if int(type) == 1:
+            theprice = theprice * (-1)
+        if not exchangedata.objects.filter(dataid_id = dataid, buyer_id_id = buyer, trader_id_id = trader):
+            add = exchangedata(
+                                  post_time = now,\
+                                  price = theprice,\
+                                  state = 0,\
+                                  buyer_detail = mywords,\
+                                  buyer_id_id = buyer,\
+                                  dataid_id = dataid,\
+                                  trader_id_id = trader,
+                                  link = 'http://127.0.0.1:8000/data/id='+str(data)
+                                  )
+            add.save()
+            return JsonResponse({"rr":1})
+        else:
+            return JsonResponse({"rr":0})
+    else:
+        return JsonResponse({"rr":0})

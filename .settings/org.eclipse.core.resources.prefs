@@ -3,6 +3,7 @@ encoding//DataTrade/settings.py=utf-8
 encoding//DataTrade/urls.py=utf-8
 encoding//account/models.py=utf-8
 encoding//account/views.py=utf-8
+encoding//data/models.py=utf-8
 encoding//data/views.py=utf-8
 encoding//news/models.py=utf-8
 encoding//news/views.py=utf-8

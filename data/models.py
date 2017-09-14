@@ -67,3 +67,25 @@ class buydata_bargain(models.Model):
     state = models.IntegerField(default=0)   #state为0表示买家给卖家留言，为1表示卖家给卖家回复留言，为2表示卖家同意交易数据，为3表示卖家不同意交易数据
     buyer_detail = models.TextField(null = True)
     seller_detail = models.TextField(null = True)
+    
+class exchangedata(models.Model):
+    post_time = models.DateTimeField(default = "2012-05-15 21:05")
+    trader_id = models.ForeignKey(User,null = True,related_name='trad')
+    buyer_id = models.ForeignKey(User,null = True,related_name='buye')
+    dataid = models.ForeignKey(alldata,null = True)
+    price = models.IntegerField(default=0)
+    state = models.IntegerField(default=0)   #state为0表示买家给卖家留言，为1表示卖家给卖家回复留言，为2表示卖家同意交易数据，为3表示卖家不同意交易数据
+    buyer_detail = models.TextField(null = True)
+    seller_detail = models.TextField(null = True)
+    link = models.TextField(null = True)
+    
+class exchangedata_bargain(models.Model):
+    post_time = models.DateTimeField(default = "2012-05-15 21:05")
+    trader_id = models.ForeignKey(User,null = True,related_name='tr')
+    buyer_id = models.ForeignKey(User,null = True,related_name='bu')
+    dataid = models.ForeignKey(alldata_bargain,null = True)
+    price = models.IntegerField(default=0)
+    state = models.IntegerField(default=0)   #state为0表示买家给卖家留言，为1表示卖家给卖家回复留言，为2表示卖家同意交易数据，为3表示卖家不同意交易数据
+    buyer_detail = models.TextField(null = True)
+    seller_detail = models.TextField(null = True)
+    link = models.TextField(null = True)

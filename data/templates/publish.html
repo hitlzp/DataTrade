@@ -131,7 +131,7 @@
 					<div class="right01"  style="text-align: center;">发布数据(一口价)</div>
 				</div>
 				<div style = "float: right;margin-bottom: 20px;">
-					<select id = 'sel' name="sel" onchange="setsel()">
+					<select id = 'sel' name="sel" onchange="setsel2()">
 						<option value=0>一口价数据</option>
 						<option value=1>议价数据</option>
 						<option value=2>拍卖数据</option>
@@ -317,7 +317,7 @@
             }); 
 	}); 
 
-	function setsel()
+	function setsel2()
 	{
 	if($('#sel option:selected').val() == 0)
 	{
