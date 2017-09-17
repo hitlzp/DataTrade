@@ -649,7 +649,7 @@ def exchange_request_bargain(request):#买家提出置换数据申请并，给�
                                   buyer_id_id = buyer,\
                                   dataid_id = dataid,\
                                   trader_id_id = trader,
-                                  link = 'http://127.0.0.1:8000/data/id='+str(data)
+                                  link = 'http://127.0.0.1:8000/data_detail/?id='+str(data)
                                   )
             add.save()
             return JsonResponse({"rr":1})
@@ -680,7 +680,7 @@ def exchange_request(request):#买家提出置换数据申请并，给出置换�
                                   buyer_id_id = buyer,\
                                   dataid_id = dataid,\
                                   trader_id_id = trader,
-                                  link = 'http://127.0.0.1:8000/data/id='+str(data)
+                                  link = 'http://127.0.0.1:8000/data_detail/?id='+str(data)
                                   )
             add.save()
             return JsonResponse({"rr":1})
