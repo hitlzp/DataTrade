@@ -688,7 +688,7 @@ def exchange_request(request):#买家提出置换数据申请并，给出置换�
             return JsonResponse({"rr":0})
     else:
         return JsonResponse({"rr":0})
-############管理员审核置换数据，暂时取消，跳转为空
+############管理员审核置换数据，暂时取消，跳转为空！！！
 def check_exchange_data_list(request):  #管理员核对提交的置换数据是否合理
     return HttpResponse('0')
     '''
