@@ -130,72 +130,59 @@
             <div>
                 <div class="rrcc" id="RightBox">
                     <div class="right" id="li010">
-                        <div class="right01"  style="text-align: center;">议价订单列表</div>
+                        <div class="right01"  style="text-align: center;">置换订单列表</div>
                     </div>
                 </div>
                 <div class="rrcc" style = "width: auto;padding-left: 20px">
                     <table  border="0" cellspacing="0" cellpadding="0" class="table"> 
                         <tr class=" label-primary" style = "background-color:#f3f5f7"> 
-                            <td><span style="color:black">买家id</span></td> 
-                            <td >{{data.trader_id}}</td>
-                        </tr>
-                        <tr class=" label-primary" style = "background-color:#f3f5f7"> 
-                            <td><span style="color:black">买家姓名</span></td>
-                            <td >{{data.trader_id.first_name}}</td>
-                        </tr>
-                        <tr class=" label-primary" style = "background-color:#f3f5f7"> 
-                            <td><span style="color:black">数据名称</span></td>
+                            <th scope="col" width="10%"><span style="color:black">购买者</span></th> 
+                            <th scope="col" width="30%"><span style="color:black">数据名称</span></th> 
+                            <th scope="col" width="10%"><span style="color:black">数据来源</span></th> 
+                            <th scope="col" width="10%"><span style="color:black">价格</span></th> 
+                            <th scope="col" width="10%"><span style="color:black">交易状态</span></th> 
+                            <th scope="col" width="20%"><span style="color:black">购买者反馈</span></th> 
+                            <th scope="col"><span style="color:black">审查</span></th> 
+                        </tr> 
+                        {% for data in data %}
+                        <tr class="active">
+                            <td >{{data.buyer_id.first_name}}</td>
                             <td >{{data.dataid.file_name}}</td>
-                        </tr>
-                        <tr class=" label-primary" style = "background-color:#f3f5f7"> 
-                            <td><span style="color:black">价格</span></td>
+                            <td >一口价数据</td>
                             <td >{{data.dataid.price}}</td>
-                        </tr>
-                        <tr class=" label-primary" style = "background-color:#f3f5f7"> 
-                            <td><span style="color:black">交易时间</span></td>
-                            <td >{{data.post_time}}</td>
-                        </tr>
-                        <tr class=" label-primary" style = "background-color:#f3f5f7">
-                            <td><span style="color:black">交易状态</span></td>
-                             {%if data.state == 1 %}
+                            {%if data.state == 0 %}
                                 <td >对方已回复</td>
-                            {%elif data.state == 0 %}
+                            {%elif data.state == 1 %}
                                 <td >等待对方回复</td> 
                             {%elif data.state == 2%}
                                 <td >同意交易</td> 
                             {%else %}
                                 <td >不同意交易</td> 
                             {%endif%}
-                        </tr>
-                        <tr class=" label-primary" style = "background-color:#f3f5f7"> 
-                            <td><span style="color:black">我方交谈</span></td>
                             <td >{{data.buyer_detail}}</td>
-                        </tr>
-                        <tr class=" label-primary" style = "background-color:#f3f5f7"> 
-                            <td><span style="color:black">卖家反馈</span></td>
-                            <td >{{data.seller_detail}}</td>
-                        </tr>
+                            <td ><a href = "/exchange_detail_s?dataid={{data.dataid.id}}&dataclass=a">审查</a></td> 
+                        </tr> 
+                        {% endfor %}
+                        {% for data in data_bargin %}
+                        <tr class="active">
+                            <td >{{data.buyer_id.first_name}}</td>
+                            <td >{{data.dataid.file_name}}</td>
+                            <td >议价数据</td>
+                            <td >{{data.dataid.price}}</td>
+                            {%if data.state == 0 %}
+                                <td >对方已回复</td>
+                            {%elif data.state == 1 %}
+                                <td >等待对方回复</td> 
+                            {%elif data.state == 2%}
+                                <td >同意交易</td> 
+                            {%else %}
+                                <td >不同意交易</td> 
+                            {%endif%}
+                            <td >{{data.buyer_detail}}</td>
+                            <td ><a href = "/exchange_detail_s?dataid={{data.dataid.id}}&dataclass=b">审查</a></td> 
+                        </tr> 
+                        {% endfor %}
                     </table> 
-                </div>
-            </div>
-            <div class="rrcc" id="RightBox">
-
-                <div class="right" id="li010">
-                    <form action="#" method="post" >
-                        {% csrf_token %}
-                        {%if data.state == 1%}
-
-                            <div class="input-group"  style = "width:48%;padding: 10px;float:left">
-                                <label><input name="judge" type="radio" value='talk' />继续交谈 </label>
-                            </div>
-                            
-                            <div class="input-group"  style = "width:48%;padding: 10px;float:left">
-                                <input type="text"  style = "float:right;height:80px;width:300px" name='feedback'  value="与对方交谈" />
-                            </div>
-                            <input type="submit"  style = "float:right" value="提交" />
-                        {%endif%}
-                    </form>
-                    
                 </div>
             </div>
         </div>

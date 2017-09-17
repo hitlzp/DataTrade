@@ -94,5 +94,14 @@ urlpatterns = [
     url(r'^check_fixed_data_list/$', check_fixed_data_list),   #管理员对议价数据进行审核
     url(r'^check_fixed_data_detail/$', check_fixed_data_detail),   #管理员对议价数据进行审核
 
+    ############管理员审核置换数据，暂时取消，跳转为空
+    url(r'^check_exchange_data_list/$', check_exchange_data_list), #管理员对置换数据进行审核
+    url(r'^check_exchange_data_detail/$', check_exchange_data_detail), #管理员对置换数据进行审核
+    ############
+
+    url(r'^exchange_list_s/$', exchange_list_s), #展示卖家用户置换订单
+    url(r'^exchange_list_b/$', exchange_list_b), #展示买家用户置换订单
+    url(r'^exchange_detail_s/$', exchange_detail_s), #展示卖家用户置换订单
+    url(r'^exchange_detail_b/$', exchange_detail_b), #展示买家用户置换订单
     
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

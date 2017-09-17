@@ -466,9 +466,10 @@ def fixed_price_detail_s(request):   #卖家展示议价数据
     #print data
     post = request.POST
     if post:
-        if post['feedback'] != '':
-            data.seller_detail = post['feedback']
-            data.save()
+        if data.state < 1:
+            if post['feedback'] != '':
+                data.seller_detail = post['feedback']
+                data.save()
         if post['judge'] == 'talk':
             data.state = 1
             data.save()
@@ -499,10 +500,11 @@ def fixed_price_detail_b(request):   #买家展示议价数据
     print data.post_time
     post = request.POST
     if post:
-        if post['feedback'] != '':
-            data.buyer_detail = post['feedback']
-            data.save()
-        if post['judge'] == 'talk':
+        if data.state == 1:
+            if post['feedback'] != '':
+                data.buyer_detail = post['feedback']
+                data.save()
+        if post['feedback'] and post['judge'] == 'talk':
             data.state = 0
             data.save()
     content = {'data': data}
@@ -686,3 +688,133 @@ def exchange_request(request):#买家提出置换数据申请并，给出置换�
             return JsonResponse({"rr":0})
     else:
         return JsonResponse({"rr":0})
+############管理员审核置换数据，暂时取消，跳转为空
+def check_exchange_data_list(request):  #管理员核对提交的置换数据是否合理
+    return HttpResponse('0')
+    '''
+    userid = request.user.id
+    thisuser = User.objects.filter(id = userid)[0]
+    datas = exchangedata.objects.all()
+    content = {'data_list' : datas}
+    return render_to_response("check_exchange_data_list.html", content, context_instance=RequestContext(request))
+    '''
+    
+
+#author sctian
+def check_exchange_data_detail(request):    #管理员核对提交的置换数据是否合理
+    return HttpResponse('0')
+    '''
+    admin_id = request.user.id
+    admin_name = User.objects.filter(id = admin_id)[0].username
+    get = request.GET
+    data = exchangedata.objects.get(dataid_id = get["dataid"])
+    post = request.POST
+    if post:
+        if post['feedback'] != '':
+            data.detail = post['feedback']
+            data.save()
+        if post['judge'] == 'yes':
+            data.state = 1
+            data.save()
+        if post['judge'] == 'no':
+            data.state = -1
+            data.save()
+    content = {'data': data}
+    return render_to_response("check_exchange_data_detail.html",content,context_instance=RequestContext(request))
+    ''' 
+###############
+
+#author sctian 
+def exchange_list_s(request):  #卖家展示置换数据
+    admin_id = request.user.id
+    data = exchangedata.objects.filter(trader_id = admin_id)
+    data_bargin = exchangedata_bargain.objects.filter(trader_id = admin_id)
+    content = {'data': data, 'data_bargin': data_bargin}
+    return render_to_response("exchange_list_s.html", content, context_instance=RequestContext(request))
+
+#author sctian
+def exchange_detail_s(request):   #卖家展示置换数据
+    admin_id = request.user.id
+    admin_name = User.objects.filter(id = admin_id)[0].username
+    get = request.GET
+    content = {}
+    if get['dataclass'] == 'a':
+        data = exchangedata.objects.get(dataid_id = get["dataid"])
+        post = request.POST
+        if post:
+            if data.state < 1:
+                if post['feedback'] != '':
+                    data.seller_detail = post['feedback']
+                    data.save()
+            if post['judge'] == 'talk':
+                data.state = 1
+                data.save()
+            if post['judge'] == 'yes':
+                data.state = 2
+                data.save()
+            if post['judge'] == 'no':
+                data.state = 3
+                data.save()
+        content = {'data': data}
+    else:
+        data = exchangedata_bargain.objects.get(dataid_id = get["dataid"])
+        post = request.POST
+        if post:
+            if data.state < 1:
+                if post['feedback'] != '':
+                    data.seller_detail = post['feedback']
+                    data.save()
+            if post['judge'] == 'talk':
+                data.state = 1
+                data.save()
+            if post['judge'] == 'yes':
+                data.state = 2
+                data.save()
+            if post['judge'] == 'no':
+                data.state = 3
+                data.save()
+        content = {'data': data}
+    return render_to_response("exchange_detail_s.html",content,context_instance=RequestContext(request))
+
+
+#author sctian 
+def exchange_list_b(request):  #买家展示置换数据
+    admin_id = request.user.id
+    data = exchangedata.objects.filter(buyer_id = admin_id)
+    data_bargin = exchangedata_bargain.objects.filter(buyer_id = admin_id)
+    content = {'data': data, 'data_bargin': data_bargin}
+    return render_to_response("exchange_list_b.html", content, context_instance=RequestContext(request))
+
+#author sctian
+def exchange_detail_b(request):   #买家展示置换数据
+    admin_id = request.user.id
+    admin_name = User.objects.filter(id = admin_id)[0].username
+    get = request.GET
+    print get['dataclass']
+    if get['dataclass'] == 'a':
+        data = exchangedata.objects.get(dataid_id = get["dataid"])
+        print data.post_time
+        post = request.POST
+        if post:
+            if data.state == 1:
+                if post['feedback'] != '':
+                    data.buyer_detail = post['feedback']
+                    data.save()
+            if post['judge'] == 'talk':
+                data.state = 0
+                data.save()
+        content = {'data': data}
+    else:
+        data = exchangedata_bargain.objects.get(dataid_id = get["dataid"])
+        print data.post_time
+        post = request.POST
+        if post:
+            if data.state == 1:
+                if post['feedback'] != '':
+                    data.buyer_detail = post['feedback']
+                    data.save()
+            if post['judge'] == 'talk':
+                data.state = 0
+                data.save()
+        content = {'data': data}
+    return render_to_response("exchange_detail_b.html",content,context_instance=RequestContext(request))
