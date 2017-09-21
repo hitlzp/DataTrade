@@ -4,7 +4,8 @@ from django.template import RequestContext
 from django.shortcuts import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponseRedirect
-from data.models import alldata,datastate,buydata,alldata_bargain,datastate_bargain,buydata_bargain,exchangedata_bargain,exchangedata
+from data.models import alldata,datastate,buydata,alldata_bargain,datastate_bargain,buydata_bargain,exchangedata_bargain,exchangedata,\
+alldata_auction,datastate_auction
 from django.contrib.auth.models import User
 import datetime
 from django.http import JsonResponse
@@ -818,3 +819,105 @@ def exchange_detail_b(request):   #买家展示置换数据
                 data.save()
         content = {'data': data}
     return render_to_response("exchange_detail_b.html",content,context_instance=RequestContext(request))
+
+def uploaddata_auction(request):
+    userid =  request.user.id
+    thisuser = User.objects.filter(id = userid)[0]
+    url = 'img/pic_url_' + str(randint(1,4)) + '.png'
+    print url
+    post = request.POST
+    if post:
+            undone = alldata_auction.objects.filter(isaval=0, owner_id = userid)
+            dataid = undone[len(undone)-1]
+            now = datetime.datetime.now()
+            if undone:
+                alldata_auction.objects.filter(isaval=0, owner_id = userid).update(
+                            owner_id = userid,
+                            picture = url,
+                            isaval = 1,
+                            exchange  = int(post['sel1']),
+                            introduce = post['message'],
+                            price = post['price'],
+                            limit = int(post['sel2']),
+                            limit_count = post['usersum'],
+                            type = int(post['sel3']),
+                            post_time = now,
+                            dataname = post['dataname'],
+                            
+                            rule_type = int(post['rule_type']),
+                            length_time = int(post['length_time']),
+                            end_people = int(post['end_people']),
+                            rule_money = int(post['rule_money']),
+                            rule_time = int(post['rule_time']),
+                            price_current = post['price']
+                            )
+                alldata_auction.objects.filter(owner_id = userid, isaval = 0).delete()
+                add = datastate_auction(
+                                 dataid = dataid,
+                                 owner_id = userid,
+                                 state = 0
+                                 )
+                add.save()
+                return HttpResponseRedirect("/mydata/")
+    content= {"thisuser":thisuser}
+    return render_to_response("publish_auction.html",content,context_instance=RequestContext(request))
+
+@csrf_exempt
+def upload_image_auction(request):
+    userid =  request.user.id
+    reqfile = request.FILES['Filedata']
+    thetype = request.POST.get('thetype')
+    if (reqfile.size / 1024) > (1024 *1024):
+        thesize = str(round(reqfile.size / (1024.0 * 1024.0 *1024.0),2)) + 'G'
+    elif (reqfile.size / 1024) > 1024:
+        thesize = str(round(reqfile.size / (1024.0 * 1024.0),2)) + 'MB'
+    else:
+        thesize = str(round(reqfile.size / 1024.0,2)) + 'KB'
+    print thesize
+    undone = alldata_auction.objects.filter(isaval=0, owner_id = userid)
+    if undone:
+        if int(thetype) == 1:
+            sdemo = undone[len(undone)-1].Show_demo
+            add = alldata_auction(
+                          file_name = reqfile.name,
+                          file_scale = thesize,
+                          file = reqfile,
+                          owner_id = userid,
+                          isaval = 0,
+                          Show_demo = sdemo
+                          )
+            add.save()
+            alldata_auction.objects.filter(id = undone[len(undone)-1].id).delete()
+        else:
+            fname = undone[len(undone)-1].file_name
+            fscale = undone[len(undone)-1].file_scale
+            ffile = undone[len(undone)-1].file
+            add = alldata_auction(
+                          file_name = fname,
+                          file_scale = fscale,
+                          file = ffile,
+                          Show_demo = reqfile,
+                          owner_id = userid,
+                          isaval = 0
+                          )
+            add.save()
+            alldata_auction.objects.filter(id = undone[len(undone)-1].id).delete()
+            
+    else:
+        if int(thetype) == 1:
+            add = alldata_auction(
+                          file_name = reqfile.name,
+                          file_scale = thesize,
+                          file = reqfile,
+                          owner_id = userid,
+                          isaval = 0
+                          )
+            add.save()
+        else:
+            add = alldata_auction(
+                          Show_demo = reqfile,
+                          owner_id = userid,
+                          isaval = 0
+                          )
+            add.save()
+    return HttpResponse(1)

@@ -80,6 +80,7 @@ urlpatterns = [
     
     url(r'^publish/bargain/$', uploaddata_baigain),  #发布议价数据 
     url(r"^upload_image_bargain/$",upload_image_bargain),   #只起调用函数作用
+    url(r"^upload_image_auction/$",upload_image_auction),   #只起调用函数作用
 
 
     url(r'^fixed_price_list_s/$', fixed_price_list_s), #展示卖家用户议价订单
@@ -103,5 +104,7 @@ urlpatterns = [
     url(r'^exchange_list_b/$', exchange_list_b), #展示买家用户置换订单
     url(r'^exchange_detail_s/$', exchange_detail_s), #展示卖家用户置换订单
     url(r'^exchange_detail_b/$', exchange_detail_b), #展示买家用户置换订单
+    
+    url(r'^publish/auction/$', uploaddata_auction), #上传拍卖数据
     
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
